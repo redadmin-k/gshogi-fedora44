@@ -19,7 +19,9 @@ BuildRequires:  gtk3
 Provides:       bundled(gnushogi)
 
 %description
-gshogi is a GTK-based graphical front end for the GNU Shogi engine. It provides a simple user interface to play shogi, in contrast to the command-line interface offered by the engine itself.
+gshogi is a GTK-based graphical front end for the GNU Shogi engine. It provides
+a simple user interface to play shogi, in contrast to the command-line
+interface offered by the engine itself.
 
 %prep
 %autosetup -n gshogi-%{commit}
@@ -33,19 +35,23 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine. It provides 
 %install
 %pyproject_install
 
+# Clean up old setuptools bug: site-packages/usr/
 rm -rf %{buildroot}%{python3_sitearch}/usr
 
+# Fix .desktop: no extension for Icon, add GTK category
 desktop-file-install \
   --dir=%{buildroot}%{_datadir}/applications \
   --set-icon=gshogi \
   --add-category=GTK \
   gshogi.desktop
 
+# Place the icon
 install -Dm0644 gshogi.png \
   %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/gshogi.png
 
 %pyproject_save_files gshogi
 
+# License and doc
 install -Dm0644 LICENSE %{buildroot}%{_datadir}/licenses/%{name}/LICENSE
 
 %check
@@ -56,11 +62,10 @@ install -Dm0644 LICENSE %{buildroot}%{_datadir}/licenses/%{name}/LICENSE
 %{_datadir}/applications/gshogi.desktop
 %{_datadir}/icons/hicolor/64x64/apps/gshogi.png
 %license %{_datadir}/licenses/%{name}/LICENSE
+%doc README.rst
 
 %changelog
 * Fri Aug 15 2025 Akiyoshi Kurita <redadmin@fedoraproject.org> - 0.5.1-1
-- Switch to pyproject macros and auto file list
-- Fix .desktop (Icon without extension) and add GTK category
-- Remove stray site-packages/usr; install desktop/icon under /usr/share
-- Provide bundled(gnushogi)
+- Switch to pyproject macros, fix doc and icon handling, description wrapped.
+- Provides: bundled(gnushogi) and build fixes per review.
 
