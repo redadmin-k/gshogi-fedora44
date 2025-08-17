@@ -16,6 +16,8 @@ BuildRequires:  hicolor-icon-theme
 BuildRequires:  python3-gobject
 BuildRequires:  gtk3
 
+Requires:       hicolor-icon-theme
+
 Provides:       bundled(gnushogi)
 
 %description
@@ -63,6 +65,5 @@ install -Dm0644 gshogi.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/gsho
 
 %changelog
 * Fri Aug 15 2025 Akiyoshi Kurita <redadmin@fedoraproject.org> - 0.5.1-1
-- All Fedora review/rpmlint issues fixed: 80-char description wrap,
-  license/source audit, hicolor-icon-theme, doc/readme
+- All Fedora review/rpmlint issues fixed: hicolor-icon-theme, directory ownership, doc/readme, license/source audit
 
