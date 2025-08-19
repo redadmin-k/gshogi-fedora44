@@ -1,6 +1,9 @@
+%global forgeurl https://github.com/johncheetham/gshogi
 %global commit 7c4bd90199c5bda61984347ea68c32521e82a637
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global snapshotdate 20250818
+
+%forgemeta
 
 Name:           gshogi
 Version:        0.5.1^%{snapshotdate}.git%{shortcommit}
@@ -8,8 +11,8 @@ Release:        2%{?dist}
 Summary:        GTK front end for the GNU Shogi engine
 
 License:        GPL-3.0-or-later
-URL:            https://github.com/johncheetham/gshogi
-Source0:        https://github.com/johncheetham/gshogi/archive/%{commit}/gshogi-%{commit}.tar.gz
+URL:            %{forgeurl}
+Source0:        %{forgesource0}
 Patch0:         0001-drop-data_files-and-ez_setup.patch
 
 BuildRequires:  gcc
@@ -27,7 +30,8 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine.
 It provides a simple user interface to play shogi.
 
 %prep
-%autosetup -p1 -n gshogi-%{commit}
+# %{forgesetupargs} は %forgemeta が作る展開先名を使う
+%forgeautosetup -p1
 
 %generate_buildrequires
 %pyproject_buildrequires
@@ -53,7 +57,7 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/gshogi.desktop
 
 %changelog
 * Tue Aug 19 2025 Akiyoshi Kurita <redadmin@fedoraproject.org> - 0.5.1^20250818.git7c4bd90-2
-- Use Patch0 with %%autosetup -p1; drop data_files and ez_setup.py via patch
-- Run desktop-file-validate in %%check; use %%pyproject_buildrequires
-- Add Provides: bundled(gnushogi) since gshogi ships its own engine sources
+- Switch to Forge macros (%forgemeta, %{forgesource0}, %forgeautosetup) to stabilize source fetching
+- Keep Patch0: drop ez_setup.py and data_files; run desktop-file-validate in %%check
+- Use %%pyproject_buildrequires; add Provides: bundled(gnushogi)
 
