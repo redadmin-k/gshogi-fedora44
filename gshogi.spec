@@ -30,7 +30,7 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine.
 It provides a simple user interface to play shogi.
 
 %prep
-# %{forgesetupargs} は %forgemeta が作る展開先名を使う
+# Use %forgeautosetup to apply patches and unpack sources
 %forgeautosetup -p1
 
 %generate_buildrequires
