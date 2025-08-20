@@ -1,18 +1,15 @@
-%global forgeurl https://github.com/johncheetham/gshogi
 %global commit 7c4bd90199c5bda61984347ea68c32521e82a637
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 %global snapshotdate 20250818
 
-%forgemeta
-
 Name:           gshogi
 Version:        0.5.1^%{snapshotdate}.git%{shortcommit}
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        GTK front end for the GNU Shogi engine
 
 License:        GPL-3.0-or-later
-URL:            %{forgeurl}
-Source0:        %{forgesource0}
+URL:            https://github.com/johncheetham/gshogi
+Source0:        https://github.com/johncheetham/gshogi/archive/%{commit}/gshogi-%{commit}.tar.gz
 Patch0:         0001-drop-data_files-and-ez_setup.patch
 
 BuildRequires:  gcc
@@ -20,7 +17,7 @@ BuildRequires:  python3-devel
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-gobject
 BuildRequires:  gobject-introspection
-BuildRequires:  gtk3
+BuildRequires:  gtk3-devel
 
 # gshogi bundles its own copy of the gnushogi engine sources
 Provides:       bundled(gnushogi)
@@ -30,8 +27,7 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine.
 It provides a simple user interface to play shogi.
 
 %prep
-# Use %forgeautosetup to apply patches and unpack sources
-%forgeautosetup -p1
+%autosetup -p1 -n gshogi-%{commit}
 
 %generate_buildrequires
 %pyproject_buildrequires
@@ -56,8 +52,8 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/gshogi.desktop
 %doc README.rst
 
 %changelog
-* Tue Aug 19 2025 Akiyoshi Kurita <redadmin@fedoraproject.org> - 0.5.1^20250818.git7c4bd90-2
-- Switch to Forge macros (%forgemeta, %{forgesource0}, %forgeautosetup) to stabilize source fetching
-- Keep Patch0: drop ez_setup.py and data_files; run desktop-file-validate in %%check
-- Use %%pyproject_buildrequires; add Provides: bundled(gnushogi)
+* Wed Aug 20 2025 Akiyoshi Kurita <redadmin@fedoraproject.org> - 0.5.1^20250818.git7c4bd90-3
+- Use Patch0 with %%autosetup -p1; drop data_files and ez_setup.py via patch
+- Run desktop-file-validate in %%check; use %%pyproject_buildrequires
+- Add Provides: bundled(gnushogi) since gshogi ships its own engine sources
 
