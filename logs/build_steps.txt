@@ -1,0 +1,158 @@
+[root@dev-alma10 SPECS]# wget https://github.com/johncheetham/gshogi/archive/7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+--2025-08-21 10:34:35--  https://github.com/johncheetham/gshogi/archive/7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+Resolving github.com (github.com)... 20.27.177.113
+Connecting to github.com (github.com)|20.27.177.113|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://codeload.github.com/johncheetham/gshogi/tar.gz/7c4bd90199c5bda61984347ea68c32521e82a637 [following]
+--2025-08-21 10:34:36--  https://codeload.github.com/johncheetham/gshogi/tar.gz/7c4bd90199c5bda61984347ea68c32521e82a637
+Resolving codeload.github.com (codeload.github.com)... 20.27.177.114
+Connecting to codeload.github.com (codeload.github.com)|20.27.177.114|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [application/x-gzip]
+Saving to: ‘gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz’
+
+gshogi-7c4bd90199c5bda61984347ea68c32521e82a637     [ <=>                                                                                                 ] 734.27K  4.06MB/s    in 0.2s
+
+2025-08-21 10:34:36 (4.06 MB/s) - ‘gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz’ saved [751891]
+
+
+[root@dev-alma10 SPECS]# md5sum gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+8a96995c92222e86d0dba249fc028f50  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+
+[root@dev-alma10 SPECS]# fedpkg srpm --srpm-mock
+Using gshogi.spec
+sources file doesn't exist. Source files download skipped.
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir28nlv51d --copyin /root/rpmbuild/SPECS/gshogi.spec /var/tmp
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Mock Version: 6.3
+INFO: Mock Version: 6.3
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Finish: chroot init
+INFO: copying /root/rpmbuild/SPECS/gshogi.spec to /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp
+Finish: run
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir28nlv51d --copyout /var/tmp/output /tmp/mock_resultdir28nlv51d
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+Mock Version: 6.3
+INFO: Mock Version: 6.3
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+Finish: chroot init
+INFO: copying /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp/output to /tmp/mock_resultdir28nlv51d
+Finish: run
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --resultdir '/root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44' --buildsrpm --sources /root/rpmbuild/SPECS --spec gshogi.spec
+Start(bootstrap): init plugins
+INFO: selinux disabled
+Finish(bootstrap): init plugins
+Start: init plugins
+INFO: selinux disabled
+Finish: init plugins
+INFO: Signal handler active
+Start: run
+INFO: Start(gshogi.spec)  Config(fedora-rawhide-x86_64)
+Start: clean chroot
+Finish: clean chroot
+Mock Version: 6.3
+INFO: Mock Version: 6.3
+Start(bootstrap): chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+INFO: enabled package manager cache
+Start(bootstrap): cleaning package manager metadata
+Finish(bootstrap): cleaning package manager metadata
+INFO: Package manager dnf5 detected and used (fallback)
+Finish(bootstrap): chroot init
+Start: chroot init
+INFO: calling preinit hooks
+INFO: enabled root cache
+Start: unpacking root cache
+Finish: unpacking root cache
+INFO: enabled package manager cache
+Start: cleaning package manager metadata
+Finish: cleaning package manager metadata
+INFO: enabled HW Info plugin
+INFO: Package manager dnf5 detected and used (direct choice)
+INFO: Buildroot is handled by package management downloaded with a bootstrap image:
+  rpm-5.99.91-3.fc43.x86_64
+  rpm-sequoia-1.9.0-2.fc43.x86_64
+  dnf5-5.2.16.0-1.fc43.x86_64
+  dnf5-plugins-5.2.16.0-1.fc43.x86_64
+Start: dnf5 update
+Updating and loading repositories:
+ fedora                                 100% |  37.8 KiB/s |  41.1 KiB |  00m01s
+Repositories loaded.
+Nothing to do.
+Finish: dnf5 update
+Finish: chroot init
+Start: buildsrpm
+Start: rpmbuild -bs
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1755734400
+Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Finish: rpmbuild -bs
+Finish: buildsrpm
+INFO: Done(gshogi.spec) Config(fedora-rawhide-x86_64) 0 minutes 10 seconds
+INFO: Results and/or logs in: /root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44
+INFO: Cleaning up build root ('cleanup_on_success=True')
+Start: clean chroot
+Finish: clean chroot
+Finish: run
+
+
+[root@dev-alma10 7.fc44]# ll
+total 1732
+-rw-r--r-- 1 root root  14181 Aug 21 04:07  0001-drop-data_files-and-ez_setup.patch
+-rw-rw-r-- 1 root mock  11362 Aug 21 10:38  build.log
+-rw-r--r-- 1 root mock 770283 Aug 21 10:38 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
+-rw-r--r-- 1 root root 751891 Aug 21 09:00  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+-rw-r--r-- 1 root root   2975 Aug 21 09:00  gshogi.spec
+-rw-rw-r-- 1 root mock   3369 Aug 21 10:38  hw_info.log
+-rw-rw-r-- 1 root mock 203167 Aug 21 10:38  root.log
+-rw-rw-r-- 1 root mock   3115 Aug 21 10:38  state.log
+[root@dev-alma10 7.fc44]# pwd
+/root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44
+[root@dev-alma10 7.fc44]# md5sum  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
+8a96995c92222e86d0dba249fc028f50  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz

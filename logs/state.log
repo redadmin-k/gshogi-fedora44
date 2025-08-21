@@ -1,0 +1,59 @@
+2025-08-21 04:04:48,372 - Mock Version: 6.3
+2025-08-21 04:04:48,389 - Start(bootstrap): chroot init
+2025-08-21 04:04:48,472 - Start(bootstrap): cleaning package manager metadata
+2025-08-21 04:04:48,472 - Finish(bootstrap): cleaning package manager metadata
+2025-08-21 04:04:49,052 - Finish(bootstrap): chroot init
+2025-08-21 04:04:49,062 - Start: chroot init
+2025-08-21 04:04:49,095 - Start: unpacking root cache
+2025-08-21 04:04:50,079 - Finish: unpacking root cache
+2025-08-21 04:04:50,087 - Start: cleaning package manager metadata
+2025-08-21 04:04:50,093 - Finish: cleaning package manager metadata
+2025-08-21 04:04:50,717 - Start: dnf5 update
+2025-08-21 04:04:53,274 - Finish: dnf5 update
+2025-08-21 04:04:53,963 - Finish: chroot init
+2025-08-21 04:04:53,974 - Start: buildsrpm
+2025-08-21 04:04:53,984 - Start: rpmbuild -bs
+2025-08-21 04:04:54,138 - Finish: rpmbuild -bs
+2025-08-21 04:04:54,143 - Finish: buildsrpm
+2025-08-21 04:04:54,146 - Start: clean chroot
+2025-08-21 04:04:58,995 - Finish: clean chroot
+2025-08-21 04:07:53,975 - Mock Version: 6.3
+2025-08-21 04:07:53,994 - Start(bootstrap): chroot init
+2025-08-21 04:07:54,081 - Start(bootstrap): cleaning package manager metadata
+2025-08-21 04:07:54,082 - Finish(bootstrap): cleaning package manager metadata
+2025-08-21 04:07:54,820 - Finish(bootstrap): chroot init
+2025-08-21 04:07:54,829 - Start: chroot init
+2025-08-21 04:07:54,864 - Start: unpacking root cache
+2025-08-21 04:07:55,734 - Finish: unpacking root cache
+2025-08-21 04:07:55,741 - Start: cleaning package manager metadata
+2025-08-21 04:07:55,746 - Finish: cleaning package manager metadata
+2025-08-21 04:07:56,374 - Start: dnf5 update
+2025-08-21 04:07:59,325 - Finish: dnf5 update
+2025-08-21 04:08:00,000 - Finish: chroot init
+2025-08-21 04:08:00,009 - Start: buildsrpm
+2025-08-21 04:08:00,020 - Start: rpmbuild -bs
+2025-08-21 04:08:00,216 - Finish: rpmbuild -bs
+2025-08-21 04:08:00,221 - Finish: buildsrpm
+2025-08-21 04:08:00,225 - Start: clean chroot
+2025-08-21 04:08:04,920 - Finish: clean chroot
+2025-08-21 04:08:04,922 - Finish: run
+2025-08-21 10:37:58,515 - Mock Version: 6.3
+2025-08-21 10:37:58,533 - Start(bootstrap): chroot init
+2025-08-21 10:37:58,618 - Start(bootstrap): cleaning package manager metadata
+2025-08-21 10:37:58,618 - Finish(bootstrap): cleaning package manager metadata
+2025-08-21 10:37:59,186 - Finish(bootstrap): chroot init
+2025-08-21 10:37:59,196 - Start: chroot init
+2025-08-21 10:37:59,231 - Start: unpacking root cache
+2025-08-21 10:38:00,254 - Finish: unpacking root cache
+2025-08-21 10:38:00,262 - Start: cleaning package manager metadata
+2025-08-21 10:38:00,266 - Finish: cleaning package manager metadata
+2025-08-21 10:38:00,889 - Start: dnf5 update
+2025-08-21 10:38:03,490 - Finish: dnf5 update
+2025-08-21 10:38:04,318 - Finish: chroot init
+2025-08-21 10:38:04,327 - Start: buildsrpm
+2025-08-21 10:38:04,338 - Start: rpmbuild -bs
+2025-08-21 10:38:04,546 - Finish: rpmbuild -bs
+2025-08-21 10:38:04,552 - Finish: buildsrpm
+2025-08-21 10:38:04,556 - Start: clean chroot
+2025-08-21 10:38:09,367 - Finish: clean chroot
+2025-08-21 10:38:09,369 - Finish: run
