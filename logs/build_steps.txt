@@ -1,28 +1,5 @@
-[root@dev-alma10 SPECS]# wget https://github.com/johncheetham/gshogi/archive/7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
---2025-08-21 10:34:35--  https://github.com/johncheetham/gshogi/archive/7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
-Resolving github.com (github.com)... 20.27.177.113
-Connecting to github.com (github.com)|20.27.177.113|:443... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: https://codeload.github.com/johncheetham/gshogi/tar.gz/7c4bd90199c5bda61984347ea68c32521e82a637 [following]
---2025-08-21 10:34:36--  https://codeload.github.com/johncheetham/gshogi/tar.gz/7c4bd90199c5bda61984347ea68c32521e82a637
-Resolving codeload.github.com (codeload.github.com)... 20.27.177.114
-Connecting to codeload.github.com (codeload.github.com)|20.27.177.114|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: unspecified [application/x-gzip]
-Saving to: ‘gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz’
-
-gshogi-7c4bd90199c5bda61984347ea68c32521e82a637     [ <=>                                                                                                 ] 734.27K  4.06MB/s    in 0.2s
-
-2025-08-21 10:34:36 (4.06 MB/s) - ‘gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz’ saved [751891]
-
-
-[root@dev-alma10 SPECS]# md5sum gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
-8a96995c92222e86d0dba249fc028f50  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
-
-[root@dev-alma10 SPECS]# fedpkg srpm --srpm-mock
-Using gshogi.spec
-sources file doesn't exist. Source files download skipped.
-INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir28nlv51d --copyin /root/rpmbuild/SPECS/gshogi.spec /var/tmp
+[root@dev-alma10 ~]# mock -r fedora-rawhide-x86_64 /root/rpmbuild/SRPMS/gshogi-*.src.rpm
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 '/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
 Start(bootstrap): init plugins
 INFO: selinux disabled
 Finish(bootstrap): init plugins
@@ -31,67 +8,7 @@ INFO: selinux disabled
 Finish: init plugins
 INFO: Signal handler active
 Start: run
-Mock Version: 6.3
-INFO: Mock Version: 6.3
-Start(bootstrap): chroot init
-INFO: calling preinit hooks
-INFO: enabled root cache
-INFO: enabled package manager cache
-Start(bootstrap): cleaning package manager metadata
-Finish(bootstrap): cleaning package manager metadata
-INFO: Package manager dnf5 detected and used (fallback)
-Finish(bootstrap): chroot init
-Start: chroot init
-INFO: calling preinit hooks
-INFO: enabled root cache
-INFO: enabled package manager cache
-Start: cleaning package manager metadata
-Finish: cleaning package manager metadata
-INFO: enabled HW Info plugin
-INFO: Package manager dnf5 detected and used (direct choice)
-Finish: chroot init
-INFO: copying /root/rpmbuild/SPECS/gshogi.spec to /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp
-Finish: run
-INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir28nlv51d --copyout /var/tmp/output /tmp/mock_resultdir28nlv51d
-Start(bootstrap): init plugins
-INFO: selinux disabled
-Finish(bootstrap): init plugins
-Start: init plugins
-INFO: selinux disabled
-Finish: init plugins
-INFO: Signal handler active
-Start: run
-Mock Version: 6.3
-INFO: Mock Version: 6.3
-Start(bootstrap): chroot init
-INFO: calling preinit hooks
-INFO: enabled root cache
-INFO: enabled package manager cache
-Start(bootstrap): cleaning package manager metadata
-Finish(bootstrap): cleaning package manager metadata
-INFO: Package manager dnf5 detected and used (fallback)
-Finish(bootstrap): chroot init
-Start: chroot init
-INFO: calling preinit hooks
-INFO: enabled root cache
-INFO: enabled package manager cache
-Start: cleaning package manager metadata
-Finish: cleaning package manager metadata
-INFO: enabled HW Info plugin
-INFO: Package manager dnf5 detected and used (direct choice)
-Finish: chroot init
-INFO: copying /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp/output to /tmp/mock_resultdir28nlv51d
-Finish: run
-INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --resultdir '/root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44' --buildsrpm --sources /root/rpmbuild/SPECS --spec gshogi.spec
-Start(bootstrap): init plugins
-INFO: selinux disabled
-Finish(bootstrap): init plugins
-Start: init plugins
-INFO: selinux disabled
-Finish: init plugins
-INFO: Signal handler active
-Start: run
-INFO: Start(gshogi.spec)  Config(fedora-rawhide-x86_64)
+INFO: Start(/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm)  Config(fedora-rawhide-x86_64)
 Start: clean chroot
 Finish: clean chroot
 Mock Version: 6.3
@@ -121,38 +38,2183 @@ INFO: Buildroot is handled by package management downloaded with a bootstrap ima
   dnf5-plugins-5.2.16.0-1.fc43.x86_64
 Start: dnf5 update
 Updating and loading repositories:
- fedora                                 100% |  37.8 KiB/s |  41.1 KiB |  00m01s
+ fedora                                 100% |   5.5 KiB/s |   6.2 KiB |  00m01s
 Repositories loaded.
 Nothing to do.
 Finish: dnf5 update
 Finish: chroot init
-Start: buildsrpm
-Start: rpmbuild -bs
+Start: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Start: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
 Building target platforms: x86_64
 Building for target x86_64
 setting SOURCE_DATE_EPOCH=1755734400
 Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-Finish: rpmbuild -bs
-Finish: buildsrpm
-INFO: Done(gshogi.spec) Config(fedora-rawhide-x86_64) 0 minutes 10 seconds
-INFO: Results and/or logs in: /root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44
-INFO: Cleaning up build root ('cleanup_on_success=True')
-Start: clean chroot
-Finish: clean chroot
+Updating and loading repositories:
+ fedora                                 100% |   7.0 KiB/s |   6.2 KiB |  00m01s
+Repositories loaded.
+Package                     Arch   Version                      Repository      Size
+Installing:
+ desktop-file-utils         x86_64 0.28-2.fc43                  fedora     218.4 KiB
+ gcc                        x86_64 15.2.1-1.fc44.1              fedora     111.9 MiB
+ gobject-introspection      x86_64 1.84.0-3.fc43                fedora     392.8 KiB
+ gtk3-devel                 x86_64 3.24.49-3.fc43               fedora      34.1 MiB
+ python3-cairo              x86_64 1.28.0-3.fc44                fedora     492.9 KiB
+ python3-devel              x86_64 3.14.0~rc2-1.fc44            fedora       1.9 MiB
+ python3-gobject            x86_64 3.52.3-3.fc44                fedora      27.8 KiB
+Installing dependencies:
+ abattis-cantarell-vf-fonts noarch 0.301-15.fc43                fedora     192.7 KiB
+ adwaita-cursor-theme       noarch 48.1-2.fc43                  fedora      11.4 MiB
+ adwaita-icon-theme         noarch 48.1-2.fc43                  fedora       1.2 MiB
+ adwaita-icon-theme-legacy  noarch 46.2-4.fc43                  fedora       2.1 MiB
+ annobin-docs               noarch 12.99-1.fc43                 fedora      98.9 KiB
+ annobin-plugin-gcc         x86_64 12.99-1.fc43                 fedora       1.0 MiB
+ at-spi2-atk                x86_64 2.57.1-2.fc44                fedora     283.7 KiB
+ at-spi2-atk-devel          x86_64 2.57.1-2.fc44                fedora       1.6 KiB
+ at-spi2-core               x86_64 2.57.1-2.fc44                fedora       1.5 MiB
+ at-spi2-core-devel         x86_64 2.57.1-2.fc44                fedora       4.3 MiB
+ atk                        x86_64 2.57.1-2.fc44                fedora     248.6 KiB
+ atk-devel                  x86_64 2.57.1-2.fc44                fedora       5.9 MiB
+ avahi-glib                 x86_64 0.9~rc2-6.fc43               fedora      19.6 KiB
+ avahi-libs                 x86_64 0.9~rc2-6.fc43               fedora     171.6 KiB
+ brotli                     x86_64 1.1.0-9.fc44                 fedora      31.6 KiB
+ brotli-devel               x86_64 1.1.0-9.fc44                 fedora      65.6 KiB
+ bubblewrap                 x86_64 0.11.0-2.fc43                fedora     135.0 KiB
+ bzip2-devel                x86_64 1.0.8-21.fc43                fedora     309.8 KiB
+ cairo                      x86_64 1.18.4-2.fc43                fedora       1.8 MiB
+ cairo-devel                x86_64 1.18.4-2.fc43                fedora       2.3 MiB
+ cairo-gobject              x86_64 1.18.4-2.fc43                fedora      31.1 KiB
+ cairo-gobject-devel        x86_64 1.18.4-2.fc43                fedora       7.0 KiB
+ cmake-filesystem           x86_64 3.31.6-4.fc43                fedora       0.0   B
+ colord-libs                x86_64 1.4.8-2.fc43                 fedora     830.7 KiB
+ cpp                        x86_64 15.2.1-1.fc44.1              fedora      37.9 MiB
+ cpuinfo                    x86_64 24.09.26-2.git1e83a2f.fc43.2 fedora     107.0 KiB
+ cups-filesystem            noarch 1:2.4.12-4.fc43              fedora       0.0   B
+ cups-libs                  x86_64 1:2.4.12-4.fc43              fedora     618.7 KiB
+ dbus                       x86_64 1:1.16.0-4.fc43              fedora       0.0   B
+ dbus-devel                 x86_64 1:1.16.0-4.fc43              fedora     131.7 KiB
+ dbus-libs                  x86_64 1:1.16.0-4.fc43              fedora     345.5 KiB
+ default-fonts-core-sans    noarch 4.2-5.fc43                   fedora      11.9 KiB
+ emacs-filesystem           noarch 1:30.0-5.fc43                fedora       0.0   B
+ expat                      x86_64 2.7.1-3.fc43                 fedora     294.2 KiB
+ fontconfig                 x86_64 2.17.0-3.fc43                fedora     765.9 KiB
+ fontconfig-devel           x86_64 2.17.0-3.fc43                fedora     123.6 KiB
+ fonts-filesystem           noarch 1:2.0.5-23.fc43              fedora       0.0   B
+ freetype                   x86_64 2.13.3-3.fc43                fedora     850.2 KiB
+ freetype-devel             x86_64 2.13.3-3.fc43                fedora       8.5 MiB
+ fribidi                    x86_64 1.0.16-3.fc43                fedora     190.3 KiB
+ fribidi-devel              x86_64 1.0.16-3.fc43                fedora      78.0 KiB
+ gcc-plugin-annobin         x86_64 15.2.1-1.fc44.1              fedora      57.2 KiB
+ gdk-pixbuf2                x86_64 2.43.3-7.fc44                fedora       2.5 MiB
+ gdk-pixbuf2-devel          x86_64 2.43.3-7.fc44                fedora       2.3 MiB
+ gdk-pixbuf2-modules        x86_64 2.43.3-7.fc44                fedora     114.8 KiB
+ gettext                    x86_64 0.26-1.fc44                  fedora      12.7 MiB
+ gettext-envsubst           x86_64 0.26-1.fc44                  fedora      74.7 KiB
+ gettext-libs               x86_64 0.26-1.fc44                  fedora       2.2 MiB
+ gettext-runtime            x86_64 0.26-1.fc44                  fedora     708.1 KiB
+ glib2                      x86_64 2.85.4-1.fc44                fedora      14.7 MiB
+ glib2-devel                x86_64 2.85.4-1.fc44                fedora      15.9 MiB
+ glibc-devel                x86_64 2.42.9000-3.fc44             fedora       2.3 MiB
+ glycin-devel               x86_64 2.0~beta.3-1.fc44            fedora     122.2 KiB
+ glycin-libs                x86_64 2.0~beta.3-1.fc44            fedora       5.2 MiB
+ glycin-loaders             x86_64 2.0~beta.3-1.fc44            fedora      13.2 MiB
+ google-noto-fonts-common   noarch 20250801-4.fc43              fedora      17.7 KiB
+ google-noto-sans-vf-fonts  noarch 20250801-4.fc43              fedora       1.4 MiB
+ graphite2                  x86_64 1.3.14-19.fc43               fedora     191.8 KiB
+ graphite2-devel            x86_64 1.3.14-19.fc43               fedora      49.3 KiB
+ gtk-update-icon-cache      x86_64 3.24.49-3.fc43               fedora      62.2 KiB
+ gtk3                       x86_64 3.24.49-3.fc43               fedora      23.1 MiB
+ harfbuzz                   x86_64 11.4.4-1.fc44                fedora       2.8 MiB
+ harfbuzz-cairo             x86_64 11.4.4-1.fc44                fedora      48.1 KiB
+ harfbuzz-devel             x86_64 11.4.4-1.fc44                fedora       5.3 MiB
+ harfbuzz-icu               x86_64 11.4.4-1.fc44                fedora      15.4 KiB
+ hicolor-icon-theme         noarch 0.18-2.fc43                  fedora      72.4 KiB
+ highway                    x86_64 1.2.0-5.fc42                 fedora       4.4 MiB
+ hwdata                     noarch 0.398-1.fc43                 fedora       9.6 MiB
+ jbigkit-libs               x86_64 2.1-32.fc43                  fedora     113.5 KiB
+ json-glib                  x86_64 1.10.6-3.fc43                fedora     586.7 KiB
+ kernel-headers             x86_64 6.17.0-0.rc3.31.fc44         fedora       6.7 MiB
+ lcms2                      x86_64 2.16-6.fc43                  fedora     433.7 KiB
+ lcms2-devel                x86_64 2.16-6.fc43                  fedora     135.7 KiB
+ libX11                     x86_64 1.8.12-1.fc43                fedora       1.3 MiB
+ libX11-common              noarch 1.8.12-1.fc43                fedora       1.2 MiB
+ libX11-devel               x86_64 1.8.12-1.fc43                fedora       1.0 MiB
+ libX11-xcb                 x86_64 1.8.12-1.fc43                fedora      10.9 KiB
+ libXau                     x86_64 1.0.12-3.fc43                fedora      72.9 KiB
+ libXau-devel               x86_64 1.0.12-3.fc43                fedora       7.5 KiB
+ libXcomposite              x86_64 0.4.6-6.fc43                 fedora      40.5 KiB
+ libXcomposite-devel        x86_64 0.4.6-6.fc43                 fedora       8.0 KiB
+ libXcursor                 x86_64 1.2.3-3.fc43                 fedora      53.4 KiB
+ libXcursor-devel           x86_64 1.2.3-3.fc43                 fedora      22.7 KiB
+ libXdamage                 x86_64 1.1.6-6.fc43                 fedora      39.6 KiB
+ libXdamage-devel           x86_64 1.1.6-6.fc43                 fedora       2.5 KiB
+ libXext                    x86_64 1.3.6-4.fc43                 fedora      90.0 KiB
+ libXext-devel              x86_64 1.3.6-4.fc43                 fedora      98.9 KiB
+ libXfixes                  x86_64 6.0.1-6.fc43                 fedora      26.2 KiB
+ libXfixes-devel            x86_64 6.0.1-6.fc43                 fedora       9.2 KiB
+ libXft                     x86_64 2.3.8-9.fc43                 fedora     164.4 KiB
+ libXft-devel               x86_64 2.3.8-9.fc43                 fedora      31.7 KiB
+ libXi                      x86_64 1.8.2-3.fc43                 fedora      80.6 KiB
+ libXi-devel                x86_64 1.8.2-3.fc43                 fedora     132.5 KiB
+ libXinerama                x86_64 1.1.5-9.fc43                 fedora      15.0 KiB
+ libXinerama-devel          x86_64 1.1.5-9.fc43                 fedora       7.0 KiB
+ libXrandr                  x86_64 1.5.4-6.fc43                 fedora      51.8 KiB
+ libXrandr-devel            x86_64 1.5.4-6.fc43                 fedora      21.8 KiB
+ libXrender                 x86_64 0.9.12-3.fc43                fedora      46.0 KiB
+ libXrender-devel           x86_64 0.9.12-3.fc43                fedora      50.1 KiB
+ libXtst                    x86_64 1.2.5-3.fc43                 fedora      33.5 KiB
+ libXtst-devel              x86_64 1.2.5-3.fc43                 fedora      11.6 KiB
+ libXxf86vm                 x86_64 1.1.6-3.fc43                 fedora      25.3 KiB
+ libaom                     x86_64 3.12.0-3.fc43                fedora       5.0 MiB
+ libblkid-devel             x86_64 2.41.1-16.fc44               fedora      44.9 KiB
+ libcap-devel               x86_64 2.76-3.fc44                  fedora      37.5 KiB
+ libcloudproviders          x86_64 0.3.6-2.fc43                 fedora     124.3 KiB
+ libcloudproviders-devel    x86_64 0.3.6-2.fc43                 fedora     375.4 KiB
+ libdatrie                  x86_64 0.2.13-12.fc43               fedora      53.8 KiB
+ libdatrie-devel            x86_64 0.2.13-12.fc43               fedora     558.1 KiB
+ libdav1d                   x86_64 1.5.1-2.fc43                 fedora       1.7 MiB
+ libdrm                     x86_64 2.4.125-3.fc44               fedora     395.8 KiB
+ libedit                    x86_64 3.1-56.20250104cvs.fc43      fedora     240.1 KiB
+ libepoxy                   x86_64 1.5.10-10.fc43               fedora       1.1 MiB
+ libepoxy-devel             x86_64 1.5.10-10.fc43               fedora       1.6 MiB
+ libffi-devel               x86_64 3.5.1-2.fc43                 fedora      33.9 KiB
+ libglvnd                   x86_64 1:1.7.0-8.fc43               fedora     526.1 KiB
+ libglvnd-core-devel        x86_64 1:1.7.0-8.fc43               fedora      40.3 KiB
+ libglvnd-devel             x86_64 1:1.7.0-8.fc43               fedora       2.1 MiB
+ libglvnd-egl               x86_64 1:1.7.0-8.fc43               fedora      64.7 KiB
+ libglvnd-gles              x86_64 1:1.7.0-8.fc43               fedora      97.9 KiB
+ libglvnd-glx               x86_64 1:1.7.0-8.fc43               fedora     601.2 KiB
+ libglvnd-opengl            x86_64 1:1.7.0-8.fc43               fedora     144.8 KiB
+ libgusb                    x86_64 0.4.9-4.fc43                 fedora     162.0 KiB
+ libheif                    x86_64 1.20.1-2.fc43                fedora       1.5 MiB
+ libicu                     x86_64 77.1-1.fc43                  fedora      36.4 MiB
+ libicu-devel               x86_64 77.1-1.fc43                  fedora       5.0 MiB
+ libjpeg-turbo              x86_64 3.1.1-2.fc43                 fedora     799.5 KiB
+ libjpeg-turbo-devel        x86_64 3.1.1-2.fc43                 fedora     353.9 KiB
+ libjxl                     x86_64 1:0.11.1-4.fc44              fedora       3.1 MiB
+ liblerc                    x86_64 4.0.0-9.fc43                 fedora     624.1 KiB
+ liblerc-devel              x86_64 4.0.0-9.fc43                 fedora       4.3 MiB
+ libmount-devel             x86_64 2.41.1-16.fc44               fedora      65.5 KiB
+ libmpc                     x86_64 1.3.1-8.fc43                 fedora     160.6 KiB
+ libopenjph                 x86_64 0.21.5-1.fc44                fedora     458.2 KiB
+ libpciaccess               x86_64 0.16-16.fc43                 fedora      44.5 KiB
+ libpng                     x86_64 2:1.6.50-2.fc43              fedora     237.7 KiB
+ libpng-devel               x86_64 2:1.6.50-2.fc43              fedora     885.6 KiB
+ librsvg2                   x86_64 2.61.0-1.fc44                fedora       5.0 MiB
+ libseccomp                 x86_64 2.6.0-2.fc43                 fedora     224.9 KiB
+ libseccomp-devel           x86_64 2.6.0-2.fc43                 fedora     114.3 KiB
+ libselinux-devel           x86_64 3.9-4.fc44                   fedora     127.3 KiB
+ libsepol-devel             x86_64 3.9-2.fc43                   fedora     121.4 KiB
+ libsoup3                   x86_64 3.6.5-4.fc43                 fedora       1.1 MiB
+ libtextstyle               x86_64 0.26-1.fc44                  fedora     199.5 KiB
+ libthai                    x86_64 0.1.29-11.fc43               fedora     783.4 KiB
+ libthai-devel              x86_64 0.1.29-11.fc43               fedora     644.3 KiB
+ libtiff                    x86_64 4.7.0-8.fc44                 fedora     619.0 KiB
+ libtiff-devel              x86_64 4.7.0-8.fc44                 fedora     761.9 KiB
+ libtinysparql              x86_64 3.10~beta-2.fc43             fedora       1.3 MiB
+ libvmaf                    x86_64 3.0.0-4.fc43                 fedora     827.0 KiB
+ libwayland-client          x86_64 1.24.0-1.fc43                fedora      62.0 KiB
+ libwayland-cursor          x86_64 1.24.0-1.fc43                fedora      37.3 KiB
+ libwayland-egl             x86_64 1.24.0-1.fc43                fedora      12.4 KiB
+ libwayland-server          x86_64 1.24.0-1.fc43                fedora      78.5 KiB
+ libwebp                    x86_64 1.6.0-2.fc43                 fedora     956.6 KiB
+ libwebp-devel              x86_64 1.6.0-2.fc43                 fedora     121.7 KiB
+ libxcb                     x86_64 1.17.0-6.fc43                fedora       1.1 MiB
+ libxcb-devel               x86_64 1.17.0-6.fc43                fedora       2.7 MiB
+ libxcrypt-devel            x86_64 4.4.38-8.fc43                fedora      30.8 KiB
+ libxkbcommon               x86_64 1.11.0-1.fc43                fedora     408.2 KiB
+ libxkbcommon-devel         x86_64 1.11.0-1.fc43                fedora     383.4 KiB
+ libxml2-devel              x86_64 2.12.10-4.fc44               fedora       3.4 MiB
+ libxshmfence               x86_64 1.3.2-7.fc43                 fedora      12.4 KiB
+ libzstd-devel              x86_64 1.5.7-2.fc43                 fedora     208.0 KiB
+ llvm-filesystem            x86_64 20.1.8-18.fc44               fedora       0.0   B
+ llvm-libs                  x86_64 20.1.8-18.fc44               fedora     139.7 MiB
+ lm_sensors-libs            x86_64 3.6.0-23.fc43                fedora      85.8 KiB
+ lzo                        x86_64 2.10-15.fc43                 fedora     178.9 KiB
+ lzo-devel                  x86_64 2.10-15.fc43                 fedora     212.2 KiB
+ lzo-minilzo                x86_64 2.10-15.fc43                 fedora      36.7 KiB
+ make                       x86_64 1:4.4.1-11.fc43              fedora       1.8 MiB
+ mesa-dri-drivers           x86_64 25.2.1-1.fc44                fedora      47.9 MiB
+ mesa-filesystem            x86_64 25.2.1-1.fc44                fedora       3.6 KiB
+ mesa-libEGL                x86_64 25.2.1-1.fc44                fedora     306.4 KiB
+ mesa-libGL                 x86_64 25.2.1-1.fc44                fedora     286.2 KiB
+ mesa-libgbm                x86_64 25.2.1-1.fc44                fedora      19.7 KiB
+ mpdecimal                  x86_64 4.0.1-2.fc43                 fedora     217.2 KiB
+ noopenh264                 x86_64 2.6.0-2.fc43                 fedora      39.2 KiB
+ openjpeg                   x86_64 2.5.3-8.fc43                 fedora     455.7 KiB
+ pango                      x86_64 1.57.0-1.fc44                fedora       1.0 MiB
+ pango-devel                x86_64 1.57.0-1.fc44                fedora       1.5 MiB
+ pcre2-devel                x86_64 10.45-1.fc43.1               fedora       2.1 MiB
+ pcre2-utf16                x86_64 10.45-1.fc43.1               fedora     626.3 KiB
+ pcre2-utf32                x86_64 10.45-1.fc43.1               fedora     598.2 KiB
+ pixman                     x86_64 0.46.2-2.fc43                fedora     710.3 KiB
+ pixman-devel               x86_64 0.46.2-2.fc43                fedora      56.1 KiB
+ pyproject-rpm-macros       noarch 1.18.3-2.fc43                fedora     114.5 KiB
+ python-pip-wheel           noarch 25.1.1-16.fc44               fedora       1.2 MiB
+ python-rpm-macros          noarch 3.14-7.fc44                  fedora      27.6 KiB
+ python3                    x86_64 3.14.0~rc2-1.fc44            fedora      28.9 KiB
+ python3-gobject-base       x86_64 3.52.3-3.fc44                fedora       1.5 MiB
+ python3-libs               x86_64 3.14.0~rc2-1.fc44            fedora      42.9 MiB
+ python3-packaging          noarch 25.0-5.fc44                  fedora     607.4 KiB
+ python3-rpm-generators     noarch 14-13.fc43                   fedora      81.7 KiB
+ python3-rpm-macros         noarch 3.14-7.fc44                  fedora       6.5 KiB
+ rav1e-libs                 x86_64 0.7.1-8.fc43                 fedora       3.0 MiB
+ rsvg-pixbuf-loader         x86_64 2.61.0-1.fc44                fedora     339.5 KiB
+ shared-mime-info           x86_64 2.4-2.fc43                   fedora       5.2 MiB
+ spirv-tools-libs           x86_64 2025.3-4.fc43                fedora       5.6 MiB
+ svt-av1-libs               x86_64 2.3.0-2.fc43                 fedora       5.6 MiB
+ sysprof-capture-devel      x86_64 49~alpha-2.fc43              fedora     802.7 KiB
+ systemd-devel              x86_64 258~rc3-2.fc44               fedora     616.3 KiB
+ systemd-rpm-macros         noarch 258~rc3-2.fc44               fedora       8.5 KiB
+ tzdata                     noarch 2025b-3.fc43                 fedora       1.6 MiB
+ wayland-devel              x86_64 1.24.0-1.fc43                fedora     691.9 KiB
+ xkeyboard-config           noarch 2.45-1.fc43                  fedora      10.2 MiB
+ xml-common                 noarch 0.6.3-67.fc43                fedora      78.4 KiB
+ xorg-x11-proto-devel       noarch 2024.1-5.fc43                fedora       1.7 MiB
+ xprop                      x86_64 1.2.8-4.fc43                 fedora      54.7 KiB
+ xz-devel                   x86_64 1:5.8.1-2.fc43               fedora     258.8 KiB
+ zlib-ng-compat-devel       x86_64 2.2.5-1.fc43                 fedora     107.0 KiB
+
+Transaction Summary:
+ Installing:       218 packages
+
+Total size of inbound packages is 195 MiB. Need to download 0 B.
+After this operation, 734 MiB extra will be used (install 734 MiB, remove 0 B).
+[  1/218] desktop-file-utils-0:0.28-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  2/218] gcc-0:15.2.1-1.fc44.1.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  3/218] gobject-introspection-0:1.84. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  4/218] gtk3-devel-0:3.24.49-3.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  5/218] python3-cairo-0:1.28.0-3.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  6/218] python3-devel-0:3.14.0~rc2-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  7/218] python3-gobject-0:3.52.3-3.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  8/218] emacs-filesystem-1:30.0-5.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[  9/218] glib2-0:2.85.4-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 10/218] cpp-0:15.2.1-1.fc44.1.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 11/218] libmpc-0:1.3.1-8.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 12/218] make-1:4.4.1-11.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 13/218] atk-0:2.57.1-2.fc44.x86_64    100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 14/218] cairo-0:1.18.4-2.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 15/218] gdk-pixbuf2-0:2.43.3-7.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 16/218] gtk3-0:3.24.49-3.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 17/218] harfbuzz-0:11.4.4-1.fc44.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 18/218] libepoxy-0:1.5.10-10.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 19/218] pango-0:1.57.0-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 20/218] python3-libs-0:3.14.0~rc2-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 21/218] cairo-gobject-0:1.18.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 22/218] python3-gobject-base-0:3.52.3 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 23/218] at-spi2-core-0:2.57.1-2.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 24/218] fontconfig-0:2.17.0-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 25/218] freetype-0:2.13.3-3.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 26/218] libX11-0:1.8.12-1.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 27/218] libXext-0:1.3.6-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 28/218] libXrender-0:0.9.12-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 29/218] libpng-2:1.6.50-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 30/218] libxcb-0:1.17.0-6.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 31/218] lzo-0:2.10-15.fc43.x86_64     100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 32/218] pixman-0:0.46.2-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 33/218] glycin-libs-0:2.0~beta.3-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 34/218] shared-mime-info-0:2.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 35/218] adwaita-icon-theme-0:48.1-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 36/218] at-spi2-atk-0:2.57.1-2.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 37/218] colord-libs-0:1.4.8-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 38/218] cups-libs-1:2.4.12-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 39/218] fribidi-0:1.0.16-3.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 40/218] gdk-pixbuf2-modules-0:2.43.3- 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 41/218] gtk-update-icon-cache-0:3.24. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 42/218] hicolor-icon-theme-0:0.18-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 43/218] libXcomposite-0:0.4.6-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 44/218] libXcursor-0:1.2.3-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 45/218] libXdamage-0:1.1.6-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 46/218] libXfixes-0:6.0.1-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 47/218] libXi-0:1.8.2-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 48/218] libXinerama-0:1.1.5-9.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 49/218] libXrandr-0:1.5.4-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 50/218] libcloudproviders-0:0.3.6-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 51/218] libtinysparql-0:3.10~beta-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 52/218] libwayland-client-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 53/218] libwayland-cursor-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 54/218] libwayland-egl-0:1.24.0-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 55/218] libxkbcommon-0:1.11.0-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 56/218] graphite2-0:1.3.14-19.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 57/218] libXft-0:2.3.8-9.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 58/218] libthai-0:0.1.29-11.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 59/218] expat-0:2.7.1-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 60/218] mpdecimal-0:4.0.1-2.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 61/218] python-pip-wheel-0:25.1.1-16. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 62/218] tzdata-0:2025b-3.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 63/218] dbus-1:1.16.0-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 64/218] dbus-libs-1:1.16.0-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 65/218] libXtst-0:1.2.5-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 66/218] xprop-0:1.2.8-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 67/218] default-fonts-core-sans-0:4.2 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 68/218] fonts-filesystem-1:2.0.5-23.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 69/218] xml-common-0:0.6.3-67.fc43.no 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 70/218] libX11-common-0:1.8.12-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 71/218] libXau-0:1.0.12-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 72/218] glycin-loaders-0:2.0~beta.3-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 73/218] lcms2-0:2.16-6.fc43.x86_64    100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 74/218] libseccomp-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 75/218] adwaita-cursor-theme-0:48.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 76/218] adwaita-icon-theme-legacy-0:4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 77/218] libgusb-0:0.4.9-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 78/218] avahi-libs-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 79/218] cups-filesystem-1:2.4.12-4.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 80/218] libjpeg-turbo-0:3.1.1-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 81/218] libtiff-0:4.7.0-8.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 82/218] avahi-glib-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 83/218] json-glib-0:1.10.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 84/218] libicu-0:77.1-1.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 85/218] libsoup3-0:3.6.5-4.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 86/218] xkeyboard-config-0:2.45-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 87/218] libdatrie-0:0.2.13-12.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 88/218] abattis-cantarell-vf-fonts-0: 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 89/218] google-noto-sans-vf-fonts-0:2 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 90/218] bubblewrap-0:0.11.0-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 91/218] libheif-0:1.20.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 92/218] libjxl-1:0.11.1-4.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 93/218] librsvg2-0:2.61.0-1.fc44.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 94/218] jbigkit-libs-0:2.1-32.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 95/218] liblerc-0:4.0.0-9.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 96/218] libwebp-0:1.6.0-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 97/218] google-noto-fonts-common-0:20 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 98/218] libaom-0:3.12.0-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[ 99/218] libdav1d-0:1.5.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[100/218] libopenjph-0:0.21.5-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[101/218] noopenh264-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[102/218] openjpeg-0:2.5.3-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[103/218] rav1e-libs-0:0.7.1-8.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[104/218] svt-av1-libs-0:2.3.0-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[105/218] highway-0:1.2.0-5.fc42.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[106/218] libvmaf-0:3.0.0-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[107/218] cpuinfo-0:24.09.26-2.git1e83a 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[108/218] python3-0:3.14.0~rc2-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[109/218] rsvg-pixbuf-loader-0:2.61.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[110/218] at-spi2-atk-devel-0:2.57.1-2. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[111/218] atk-devel-0:2.57.1-2.fc44.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[112/218] cairo-devel-0:1.18.4-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[113/218] cairo-gobject-devel-0:1.18.4- 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[114/218] fontconfig-devel-0:2.17.0-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[115/218] gettext-0:0.26-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[116/218] gettext-libs-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[117/218] gettext-runtime-0:0.26-1.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[118/218] libtextstyle-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[119/218] gettext-envsubst-0:0.26-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[120/218] fribidi-devel-0:1.0.16-3.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[121/218] gdk-pixbuf2-devel-0:2.43.3-7. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[122/218] glib2-devel-0:2.85.4-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[123/218] glycin-devel-0:2.0~beta.3-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[124/218] python3-packaging-0:25.0-5.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[125/218] libX11-devel-0:1.8.12-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[126/218] libX11-xcb-0:1.8.12-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[127/218] xorg-x11-proto-devel-0:2024.1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[128/218] libXcomposite-devel-0:0.4.6-6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[129/218] libXcursor-devel-0:1.2.3-3.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[130/218] libXdamage-devel-0:1.1.6-6.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[131/218] libXext-devel-0:1.3.6-4.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[132/218] libXfixes-devel-0:6.0.1-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[133/218] libXi-devel-0:1.8.2-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[134/218] libXinerama-devel-0:1.1.5-9.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[135/218] libXrandr-devel-0:1.5.4-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[136/218] libcloudproviders-devel-0:0.3 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[137/218] libepoxy-devel-0:1.5.10-10.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[138/218] libxkbcommon-devel-0:1.11.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[139/218] pango-devel-0:1.57.0-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[140/218] freetype-devel-0:2.13.3-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[141/218] wayland-devel-0:1.24.0-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[142/218] libwayland-server-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[143/218] lcms2-devel-0:2.16-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[144/218] libseccomp-devel-0:2.6.0-2.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[145/218] libffi-devel-0:3.5.1-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[146/218] libmount-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[147/218] libselinux-devel-0:3.9-4.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[148/218] libsepol-devel-0:3.9-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[149/218] pcre2-devel-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[150/218] pcre2-utf16-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[151/218] pcre2-utf32-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[152/218] sysprof-capture-devel-0:49~al 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[153/218] zlib-ng-compat-devel-0:2.2.5- 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[154/218] cmake-filesystem-0:3.31.6-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[155/218] libjpeg-turbo-devel-0:3.1.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[156/218] libpng-devel-2:1.6.50-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[157/218] libtiff-devel-0:4.7.0-8.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[158/218] glibc-devel-0:2.42.9000-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[159/218] libxcrypt-devel-0:4.4.38-8.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[160/218] brotli-devel-0:1.1.0-9.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[161/218] brotli-0:1.1.0-9.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[162/218] bzip2-devel-0:1.0.8-21.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[163/218] harfbuzz-devel-0:11.4.4-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[164/218] harfbuzz-cairo-0:11.4.4-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[165/218] harfbuzz-icu-0:11.4.4-1.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[166/218] libxml2-devel-0:2.12.10-4.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[167/218] xz-devel-1:5.8.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[168/218] libXrender-devel-0:0.9.12-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[169/218] libxcb-devel-0:1.17.0-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[170/218] pixman-devel-0:0.46.2-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[171/218] lzo-devel-0:2.10-15.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[172/218] lzo-minilzo-0:2.10-15.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[173/218] at-spi2-core-devel-0:2.57.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[174/218] dbus-devel-1:1.16.0-4.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[175/218] libXft-devel-0:2.3.8-9.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[176/218] libthai-devel-0:0.1.29-11.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[177/218] libXau-devel-0:1.0.12-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[178/218] liblerc-devel-0:4.0.0-9.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[179/218] libwebp-devel-0:1.6.0-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[180/218] libzstd-devel-0:1.5.7-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[181/218] libdatrie-devel-0:0.2.13-12.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[182/218] libblkid-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[183/218] libglvnd-devel-1:1.7.0-8.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[184/218] libglvnd-1:1.7.0-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[185/218] libglvnd-core-devel-1:1.7.0-8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[186/218] libglvnd-egl-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[187/218] libglvnd-gles-1:1.7.0-8.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[188/218] libglvnd-glx-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[189/218] libglvnd-opengl-1:1.7.0-8.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[190/218] mesa-libEGL-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[191/218] mesa-libGL-0:25.2.1-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[192/218] libdrm-0:2.4.125-3.fc44.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[193/218] mesa-dri-drivers-0:25.2.1-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[194/218] mesa-libgbm-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[195/218] libXxf86vm-0:1.1.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[196/218] libpciaccess-0:0.16-16.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[197/218] libxshmfence-0:1.3.2-7.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[198/218] llvm-libs-0:20.1.8-18.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[199/218] lm_sensors-libs-0:3.6.0-23.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[200/218] mesa-filesystem-0:25.2.1-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[201/218] spirv-tools-libs-0:2025.3-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[202/218] hwdata-0:0.398-1.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[203/218] libedit-0:3.1-56.20250104cvs. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[204/218] llvm-filesystem-0:20.1.8-18.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[205/218] graphite2-devel-0:1.3.14-19.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[206/218] libicu-devel-0:77.1-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[207/218] kernel-headers-0:6.17.0-0.rc3 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[208/218] systemd-devel-0:258~rc3-2.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[209/218] libXtst-devel-0:1.2.5-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[210/218] libcap-devel-0:2.76-3.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[211/218] annobin-plugin-gcc-0:12.99-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[212/218] gcc-plugin-annobin-0:15.2.1-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[213/218] annobin-docs-0:12.99-1.fc43.n 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[214/218] systemd-rpm-macros-0:258~rc3- 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[215/218] pyproject-rpm-macros-0:1.18.3 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[216/218] python-rpm-macros-0:3.14-7.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[217/218] python3-rpm-generators-0:14-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[218/218] python3-rpm-macros-0:3.14-7.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+--------------------------------------------------------------------------------
+[218/218] Total                         100% |   0.0   B/s |   0.0   B |  00m00s
+Running transaction
+[  1/220] Verify package files          100% | 291.0   B/s | 218.0   B |  00m01s
+[  2/220] Prepare transaction           100% |   1.1 KiB/s | 218.0   B |  00m00s
+[  3/220] Installing glib2-0:2.85.4-1.f 100% | 120.9 MiB/s |  14.7 MiB |  00m00s
+[  4/220] Installing xorg-x11-proto-dev 100% |  52.4 MiB/s |   1.8 MiB |  00m00s
+[  5/220] Installing expat-0:2.7.1-3.fc 100% |   6.9 MiB/s | 296.3 KiB |  00m00s
+[  6/220] Installing libglvnd-1:1.7.0-8 100% |  30.3 MiB/s | 527.5 KiB |  00m00s
+[  7/220] Installing cmake-filesystem-0 100% | 446.5 KiB/s |   7.6 KiB |  00m00s
+[  8/220] Installing zlib-ng-compat-dev 100% |   5.9 MiB/s | 108.5 KiB |  00m00s
+[  9/220] Installing libX11-xcb-0:1.8.1 100% | 841.0 KiB/s |  11.8 KiB |  00m00s
+[ 10/220] Installing libjpeg-turbo-0:3. 100% |  31.3 MiB/s | 801.2 KiB |  00m00s
+[ 11/220] Installing dbus-libs-1:1.16.0 100% |  14.7 MiB/s | 346.6 KiB |  00m00s
+[ 12/220] Installing libwayland-client- 100% |   3.1 MiB/s |  63.2 KiB |  00m00s
+[ 13/220] Installing libpng-2:1.6.50-2. 100% |   6.7 MiB/s | 239.0 KiB |  00m00s
+[ 14/220] Installing libpng-devel-2:1.6 100% |  18.1 MiB/s | 889.5 KiB |  00m00s
+[ 15/220] Installing avahi-libs-0:0.9~r 100% |   8.9 MiB/s | 174.0 KiB |  00m00s
+[ 16/220] Installing shared-mime-info-0 100% |  44.6 MiB/s |   2.6 MiB |  00m00s
+[ 17/220] Installing python-rpm-macros- 100% |   2.8 MiB/s |  28.5 KiB |  00m00s
+[ 18/220] Installing libwebp-0:1.6.0-2. 100% |  44.7 MiB/s | 960.7 KiB |  00m00s
+[ 19/220] Installing libicu-0:77.1-1.fc 100% | 282.1 MiB/s |  36.4 MiB |  00m00s
+[ 20/220] Installing lcms2-0:2.16-6.fc4 100% |  23.6 MiB/s | 435.3 KiB |  00m00s
+[ 21/220] Installing fonts-filesystem-1 100% |  59.2 KiB/s | 788.0   B |  00m00s
+[ 22/220] Installing fribidi-0:1.0.16-3 100% |   4.2 MiB/s | 192.8 KiB |  00m00s
+[ 23/220] Installing libepoxy-0:1.5.10- 100% |  67.4 MiB/s |   1.1 MiB |  00m00s
+[ 24/220] Installing fribidi-devel-0:1. 100% |   5.0 MiB/s |  81.9 KiB |  00m00s
+[ 25/220] Installing python3-rpm-macros 100% | 567.1 KiB/s |   6.8 KiB |  00m00s
+[ 26/220] Installing libwayland-cursor- 100% |   2.2 MiB/s |  38.5 KiB |  00m00s
+[ 27/220] Installing libjpeg-turbo-deve 100% |  16.6 MiB/s | 356.5 KiB |  00m00s
+[ 28/220] Installing libcloudproviders- 100% |   5.6 MiB/s | 126.2 KiB |  00m00s
+[ 29/220] Installing json-glib-0:1.10.6 100% |  15.8 MiB/s | 598.6 KiB |  00m00s
+[ 30/220] Installing libffi-devel-0:3.5 100% |   1.7 MiB/s |  35.6 KiB |  00m00s
+[ 31/220] Installing libtextstyle-0:0.2 100% |  10.3 MiB/s | 200.3 KiB |  00m00s
+[ 32/220] Installing gettext-libs-0:0.2 100% |  76.9 MiB/s |   2.2 MiB |  00m00s
+[ 33/220] Installing libdav1d-0:1.5.1-2 100% |  70.6 MiB/s |   1.7 MiB |  00m00s
+[ 34/220] Installing liblerc-0:4.0.0-9. 100% |  25.5 MiB/s | 625.6 KiB |  00m00s
+[ 35/220] Installing libdatrie-0:0.2.13 100% |   2.6 MiB/s |  54.9 KiB |  00m00s
+[ 36/220] Installing libthai-0:0.1.29-1 100% |  27.4 MiB/s | 785.2 KiB |  00m00s
+[ 37/220] Installing libseccomp-0:2.6.0 100% |  10.5 MiB/s | 226.8 KiB |  00m00s
+[ 38/220] Installing libXau-0:1.0.12-3. 100% |   2.7 MiB/s |  74.5 KiB |  00m00s
+[ 39/220] Installing libxcb-0:1.17.0-6. 100% |  29.2 MiB/s |   1.1 MiB |  00m00s
+[ 40/220] Installing xml-common-0:0.6.3 100% |   4.4 MiB/s |  81.1 KiB |  00m00s
+[ 41/220] Installing graphite2-0:1.3.14 100% |   3.0 MiB/s | 193.9 KiB |  00m00s
+[ 42/220] Installing harfbuzz-0:11.4.4- 100% | 109.3 MiB/s |   2.8 MiB |  00m00s
+[ 43/220] Installing freetype-0:2.13.3- 100% |  32.0 MiB/s | 851.9 KiB |  00m00s
+[ 44/220] Installing libwayland-egl-0:1 100% | 752.8 KiB/s |  13.6 KiB |  00m00s
+[ 45/220] Installing pixman-0:0.46.2-2. 100% |  40.9 MiB/s | 711.4 KiB |  00m00s
+[ 46/220] Installing pixman-devel-0:0.4 100% |   4.3 MiB/s |  56.9 KiB |  00m00s
+[ 47/220] Installing lzo-0:2.10-15.fc43 100% |   8.0 MiB/s | 180.5 KiB |  00m00s
+[ 48/220] Installing libmpc-0:1.3.1-8.f 100% |   6.6 MiB/s | 162.1 KiB |  00m00s
+[ 49/220] Installing cpp-0:15.2.1-1.fc4 100% | 234.3 MiB/s |  37.9 MiB |  00m00s
+[ 50/220] Installing harfbuzz-icu-0:11. 100% | 956.1 KiB/s |  16.3 KiB |  00m00s
+[ 51/220] Installing graphite2-devel-0: 100% |   2.9 MiB/s |  50.8 KiB |  00m00s
+[ 52/220] Installing libXau-devel-0:1.0 100% | 390.3 KiB/s |   9.4 KiB |  00m00s
+[ 53/220] Installing libxcb-devel-0:1.1 100% |   4.9 MiB/s |   3.1 MiB |  00m01s
+[ 54/220] Installing libseccomp-devel-0 100% |   2.0 MiB/s | 121.0 KiB |  00m00s
+[ 55/220] Installing libdatrie-devel-0: 100% |  14.5 MiB/s | 565.3 KiB |  00m00s
+[ 56/220] Installing libthai-devel-0:0. 100% |  20.0 MiB/s | 656.3 KiB |  00m00s
+[ 57/220] Installing liblerc-devel-0:4. 100% | 129.9 MiB/s |   4.3 MiB |  00m00s
+[ 58/220] Installing libgusb-0:0.4.9-4. 100% |   8.0 MiB/s | 163.7 KiB |  00m00s
+[ 59/220] Installing colord-libs-0:1.4. 100% |  30.2 MiB/s | 833.8 KiB |  00m00s
+[ 60/220] Installing libcloudproviders- 100% |  12.5 MiB/s | 382.6 KiB |  00m00s
+[ 61/220] Installing pyproject-rpm-macr 100% |   4.7 MiB/s | 116.5 KiB |  00m00s
+[ 62/220] Installing abattis-cantarell- 100% |   8.6 MiB/s | 194.4 KiB |  00m00s
+[ 63/220] Installing lcms2-devel-0:2.16 100% |   8.3 MiB/s | 136.4 KiB |  00m00s
+[ 64/220] Installing libicu-devel-0:77. 100% |  80.7 MiB/s |   5.1 MiB |  00m00s
+[ 65/220] Installing libwebp-devel-0:1. 100% |   7.2 MiB/s | 125.4 KiB |  00m00s
+[ 66/220] Installing avahi-glib-0:0.9~r 100% |   1.8 MiB/s |  20.4 KiB |  00m00s
+[ 67/220] Installing libglvnd-opengl-1: 100% |   7.5 MiB/s | 145.6 KiB |  00m00s
+[ 68/220] Installing gobject-introspect 100% |  10.2 MiB/s | 397.1 KiB |  00m00s
+[ 69/220] Installing libsoup3-0:3.6.5-4 100% |  32.9 MiB/s |   1.2 MiB |  00m00s
+[ 70/220] Installing libtinysparql-0:3. 100% |  46.2 MiB/s |   1.3 MiB |  00m00s
+[ 71/220] Installing annobin-docs-0:12. 100% |   5.1 MiB/s | 100.1 KiB |  00m00s
+[ 72/220] Installing libcap-devel-0:2.7 100% |   1.5 MiB/s |  49.8 KiB |  00m00s
+[ 73/220] Installing systemd-devel-0:25 100% |   9.3 MiB/s | 749.4 KiB |  00m00s
+[ 74/220] Installing dbus-devel-1:1.16. 100% |   4.9 MiB/s | 136.5 KiB |  00m00s
+[ 75/220] Installing kernel-headers-0:6 100% |  73.1 MiB/s |   6.9 MiB |  00m00s
+[ 76/220] Installing glibc-devel-0:2.42 100% |  42.1 MiB/s |   2.4 MiB |  00m00s
+[ 77/220] Installing libxcrypt-devel-0: 100% |   1.5 MiB/s |  33.1 KiB |  00m00s
+[ 78/220] Installing llvm-filesystem-0: 100% |  28.0 KiB/s |   1.1 KiB |  00m00s
+[ 79/220] Installing libedit-0:3.1-56.2 100% |   9.8 MiB/s | 241.8 KiB |  00m00s
+[ 80/220] Installing llvm-libs-0:20.1.8 100% | 340.7 MiB/s | 139.7 MiB |  00m00s
+[ 81/220] Installing hwdata-0:0.398-1.f 100% | 246.0 MiB/s |   9.6 MiB |  00m00s
+[ 82/220] Installing libpciaccess-0:0.1 100% |   1.5 MiB/s |  45.9 KiB |  00m00s
+[ 83/220] Installing libdrm-0:2.4.125-3 100% |  15.6 MiB/s | 399.7 KiB |  00m00s
+[ 84/220] Installing spirv-tools-libs-0 100% | 129.5 MiB/s |   5.6 MiB |  00m00s
+[ 85/220] Installing mesa-filesystem-0: 100% | 238.5 KiB/s |   4.3 KiB |  00m00s
+[ 86/220] Installing lm_sensors-libs-0: 100% |   2.9 MiB/s |  86.9 KiB |  00m00s
+[ 87/220] Installing libxshmfence-0:1.3 100% | 645.6 KiB/s |  13.6 KiB |  00m00s
+[ 88/220] Installing mesa-dri-drivers-0 100% | 313.1 MiB/s |  47.9 MiB |  00m00s
+[ 89/220] Installing mesa-libgbm-0:25.2 100% |   1.4 MiB/s |  20.5 KiB |  00m00s
+[ 90/220] Installing mesa-libEGL-0:25.2 100% |  14.3 MiB/s | 307.4 KiB |  00m00s
+[ 91/220] Installing libglvnd-egl-1:1.7 100% |   3.1 MiB/s |  66.3 KiB |  00m00s
+[ 92/220] Installing libglvnd-gles-1:1. 100% |   4.6 MiB/s |  99.3 KiB |  00m00s
+[ 93/220] Installing libglvnd-core-deve 100% |   1.7 MiB/s |  41.1 KiB |  00m00s
+[ 94/220] Installing libblkid-devel-0:2 100% |   2.2 MiB/s |  46.0 KiB |  00m00s
+[ 95/220] Installing libzstd-devel-0:1. 100% |  14.6 MiB/s | 208.8 KiB |  00m00s
+[ 96/220] Installing lzo-minilzo-0:2.10 100% |   2.0 MiB/s |  37.9 KiB |  00m00s
+[ 97/220] Installing lzo-devel-0:2.10-1 100% |  10.0 MiB/s | 215.3 KiB |  00m00s
+[ 98/220] Installing xz-devel-1:5.8.1-2 100% |   9.2 MiB/s | 262.6 KiB |  00m00s
+[ 99/220] Installing libxml2-devel-0:2. 100% |  62.1 MiB/s |   3.4 MiB |  00m00s
+[100/220] Installing bzip2-devel-0:1.0. 100% |  20.2 MiB/s | 310.7 KiB |  00m00s
+[101/220] Installing brotli-0:1.1.0-9.f 100% | 659.0 KiB/s |  32.3 KiB |  00m00s
+[102/220] Installing brotli-devel-0:1.1 100% |   2.4 MiB/s |  68.0 KiB |  00m00s
+[103/220] Installing sysprof-capture-de 100% |  32.8 MiB/s | 805.6 KiB |  00m00s
+[104/220] Installing pcre2-utf32-0:10.4 100% |  29.3 MiB/s | 599.1 KiB |  00m00s
+[105/220] Installing pcre2-utf16-0:10.4 100% |  25.5 MiB/s | 627.2 KiB |  00m00s
+[106/220] Installing pcre2-devel-0:10.4 100% |  38.0 MiB/s |   2.1 MiB |  00m00s
+[107/220] Installing libsepol-devel-0:3 100% |   4.2 MiB/s | 128.9 KiB |  00m00s
+[108/220] Installing libselinux-devel-0 100% |   4.7 MiB/s | 162.1 KiB |  00m00s
+[109/220] Installing libmount-devel-0:2 100% |   2.4 MiB/s |  66.5 KiB |  00m00s
+[110/220] Installing libwayland-server- 100% |   3.7 MiB/s |  79.7 KiB |  00m00s
+[111/220] Installing wayland-devel-0:1. 100% |  14.2 MiB/s | 700.4 KiB |  00m00s
+[112/220] Installing gettext-envsubst-0 100% |   2.0 MiB/s |  76.1 KiB |  00m00s
+[113/220] Installing gettext-runtime-0: 100% |  14.6 MiB/s | 718.7 KiB |  00m00s
+[114/220] Installing gettext-0:0.26-1.f 100% | 179.9 MiB/s |  12.8 MiB |  00m00s
+[115/220] Installing cpuinfo-0:24.09.26 100% |   3.2 MiB/s | 109.7 KiB |  00m00s
+[116/220] Installing svt-av1-libs-0:2.3 100% | 181.0 MiB/s |   5.6 MiB |  00m00s
+[117/220] Installing libvmaf-0:3.0.0-4. 100% |  38.5 MiB/s | 828.4 KiB |  00m00s
+[118/220] Installing libaom-0:3.12.0-3. 100% | 121.8 MiB/s |   5.0 MiB |  00m00s
+[119/220] Installing highway-0:1.2.0-5. 100% | 131.9 MiB/s |   4.4 MiB |  00m00s
+[120/220] Installing libjxl-1:0.11.1-4. 100% |  95.4 MiB/s |   3.1 MiB |  00m00s
+[121/220] Installing rav1e-libs-0:0.7.1 100% |  85.5 MiB/s |   3.0 MiB |  00m00s
+[122/220] Installing openjpeg-0:2.5.3-8 100% |  18.6 MiB/s | 457.7 KiB |  00m00s
+[123/220] Installing noopenh264-0:2.6.0 100% |   1.7 MiB/s |  40.7 KiB |  00m00s
+[124/220] Installing libopenjph-0:0.21. 100% |  16.6 MiB/s | 459.3 KiB |  00m00s
+[125/220] Installing libheif-0:1.20.1-2 100% |  53.4 MiB/s |   1.5 MiB |  00m00s
+[126/220] Installing google-noto-fonts- 100% |   1.4 MiB/s |  18.5 KiB |  00m00s
+[127/220] Installing google-noto-sans-v 100% |  49.7 MiB/s |   1.4 MiB |  00m00s
+[128/220] Installing default-fonts-core 100% | 758.0 KiB/s |  18.2 KiB |  00m00s
+[129/220] Installing fontconfig-0:2.17. 100% | 725.1 KiB/s | 785.3 KiB |  00m01s
+[130/220] Installing jbigkit-libs-0:2.1 100% |   4.0 MiB/s | 115.4 KiB |  00m00s
+[131/220] Installing libtiff-0:4.7.0-8. 100% |  21.7 MiB/s | 621.3 KiB |  00m00s
+[132/220] Installing libtiff-devel-0:4. 100% |  31.4 MiB/s | 772.7 KiB |  00m00s
+[133/220] Installing bubblewrap-0:0.11. 100% |   3.3 MiB/s | 137.2 KiB |  00m00s
+[134/220] Installing xkeyboard-config-0 100% | 106.9 MiB/s |  10.3 MiB |  00m00s
+[135/220] Installing libxkbcommon-0:1.1 100% | 622.0 KiB/s | 409.9 KiB |  00m01s
+[136/220] Installing libxkbcommon-devel 100% |   7.7 MiB/s | 385.1 KiB |  00m00s
+[137/220] Installing cups-filesystem-1: 100% |  54.0 KiB/s |   1.8 KiB |  00m00s
+[138/220] Installing cups-libs-1:2.4.12 100% |  17.3 MiB/s | 620.3 KiB |  00m00s
+[139/220] Installing adwaita-icon-theme 100% |  19.9 MiB/s |   2.4 MiB |  00m00s
+[140/220] Installing adwaita-cursor-the 100% | 326.5 MiB/s |  11.4 MiB |  00m00s
+[141/220] Installing adwaita-icon-theme 100% |  20.3 MiB/s |   1.3 MiB |  00m00s
+[142/220] Installing libX11-common-0:1. 100% |  34.9 MiB/s |   1.2 MiB |  00m00s
+[143/220] Installing libX11-0:1.8.12-1. 100% |  51.3 MiB/s |   1.3 MiB |  00m00s
+[144/220] Installing libX11-devel-0:1.8 100% |  16.2 MiB/s |   1.1 MiB |  00m00s
+[145/220] Installing libXext-0:1.3.6-4. 100% |   3.9 MiB/s |  91.2 KiB |  00m00s
+[146/220] Installing libXext-devel-0:1. 100% |   4.0 MiB/s | 110.9 KiB |  00m00s
+[147/220] Installing libXrender-0:0.9.1 100% |   1.9 MiB/s |  47.3 KiB |  00m00s
+[148/220] Installing cairo-0:1.18.4-2.f 100% |  61.1 MiB/s |   1.8 MiB |  00m00s
+[149/220] Installing libXrender-devel-0 100% |   2.6 MiB/s |  51.0 KiB |  00m00s
+[150/220] Installing cairo-gobject-0:1. 100% |   2.2 MiB/s |  32.0 KiB |  00m00s
+[151/220] Installing libXi-0:1.8.2-3.fc 100% |   3.8 MiB/s |  81.7 KiB |  00m00s
+[152/220] Installing libXfixes-0:6.0.1- 100% |   1.5 MiB/s |  27.6 KiB |  00m00s
+[153/220] Installing libXfixes-devel-0: 100% | 520.8 KiB/s |   9.9 KiB |  00m00s
+[154/220] Installing libXi-devel-0:1.8. 100% |   5.6 MiB/s | 144.6 KiB |  00m00s
+[155/220] Installing libXcursor-0:1.2.3 100% |   2.6 MiB/s |  55.1 KiB |  00m00s
+[156/220] Installing libXdamage-0:1.1.6 100% | 572.0 KiB/s |  41.2 KiB |  00m00s
+[157/220] Installing libXtst-0:1.2.5-3. 100% | 823.6 KiB/s |  34.6 KiB |  00m00s
+[158/220] Installing libXrandr-0:1.5.4- 100% |   3.0 MiB/s |  53.0 KiB |  00m00s
+[159/220] Installing libXft-0:2.3.8-9.f 100% |  14.7 MiB/s | 165.9 KiB |  00m00s
+[160/220] Installing pango-0:1.57.0-1.f 100% |  31.0 MiB/s |   1.0 MiB |  00m00s
+[161/220] Installing rsvg-pixbuf-loader 100% |  47.5 MiB/s | 340.5 KiB |  00m00s
+[162/220] Installing librsvg2-0:2.61.0- 100% | 217.5 MiB/s |   5.0 MiB |  00m00s
+[163/220] Installing glycin-loaders-0:2 100% | 366.8 MiB/s |  13.2 MiB |  00m00s
+[164/220] Installing glycin-libs-0:2.0~ 100% | 262.4 MiB/s |   5.2 MiB |  00m00s
+[165/220] Installing gdk-pixbuf2-0:2.43 100% |  65.0 MiB/s |   2.5 MiB |  00m00s
+[166/220] Installing libXinerama-0:1.1. 100% |   1.1 MiB/s |  16.1 KiB |  00m00s
+[167/220] Installing libXcomposite-0:0. 100% |   6.8 MiB/s |  42.0 KiB |  00m00s
+[168/220] Installing libXcomposite-deve 100% |   2.1 MiB/s |  10.5 KiB |  00m00s
+[169/220] Installing libXinerama-devel- 100% |   1.7 MiB/s |   8.5 KiB |  00m00s
+[170/220] Installing gdk-pixbuf2-module 100% |  16.3 MiB/s | 116.9 KiB |  00m00s
+[171/220] Installing gtk-update-icon-ca 100% |   2.7 MiB/s |  63.3 KiB |  00m00s
+[172/220] Installing libXrandr-devel-0: 100% |   4.0 MiB/s |  24.7 KiB |  00m00s
+[173/220] Installing libXtst-devel-0:1. 100% |   2.3 MiB/s |  14.0 KiB |  00m00s
+[174/220] Installing libXdamage-devel-0 100% | 613.3 KiB/s |   3.1 KiB |  00m00s
+[175/220] Installing libXcursor-devel-0 100% |   3.2 MiB/s |  32.8 KiB |  00m00s
+[176/220] Installing harfbuzz-cairo-0:1 100% |   6.8 MiB/s |  49.0 KiB |  00m00s
+[177/220] Installing libXxf86vm-0:1.1.6 100% |   3.2 MiB/s |  26.5 KiB |  00m00s
+[178/220] Installing mesa-libGL-0:25.2. 100% |  28.0 MiB/s | 287.1 KiB |  00m00s
+[179/220] Installing libglvnd-glx-1:1.7 100% |  53.5 MiB/s | 602.6 KiB |  00m00s
+[180/220] Installing libglvnd-devel-1:1 100% | 141.4 MiB/s |   2.1 MiB |  00m00s
+[181/220] Installing libepoxy-devel-0:1 100% | 176.6 MiB/s |   1.6 MiB |  00m00s
+[182/220] Installing xprop-0:1.2.8-4.fc 100% |   1.8 MiB/s |  56.0 KiB |  00m00s
+[183/220] Installing dbus-1:1.16.0-4.fc 100% |  12.1 KiB/s | 124.0   B |  00m00s
+[184/220] Installing tzdata-0:2025b-3.f 100% |  20.8 MiB/s |   1.9 MiB |  00m00s
+[185/220] Installing python-pip-wheel-0 100% | 177.9 MiB/s |   1.2 MiB |  00m00s
+[186/220] Installing mpdecimal-0:4.0.1- 100% |  14.2 MiB/s | 218.8 KiB |  00m00s
+[187/220] Installing python3-libs-0:3.1 100% | 184.3 MiB/s |  43.3 MiB |  00m00s
+[188/220] Installing python3-0:3.14.0~r 100% |   1.2 MiB/s |  30.7 KiB |  00m00s
+[189/220] Installing at-spi2-core-0:2.5 100% |  67.7 MiB/s |   1.6 MiB |  00m00s
+[190/220] Installing atk-0:2.57.1-2.fc4 100% |  34.9 MiB/s | 250.0 KiB |  00m00s
+[191/220] Installing at-spi2-atk-0:2.57 100% |  34.9 MiB/s | 285.7 KiB |  00m00s
+[192/220] Installing python3-packaging- 100% |  40.4 MiB/s | 619.9 KiB |  00m00s
+[193/220] Installing glib2-devel-0:2.85 100% | 192.6 MiB/s |  16.0 MiB |  00m00s
+[194/220] Installing atk-devel-0:2.57.1 100% | 120.7 MiB/s |   6.0 MiB |  00m00s
+[195/220] Installing harfbuzz-devel-0:1 100% | 108.8 MiB/s |   5.3 MiB |  00m00s
+[196/220] Installing freetype-devel-0:2 100% |  29.1 MiB/s |   8.5 MiB |  00m00s
+[197/220] Installing fontconfig-devel-0 100% |   6.8 MiB/s | 159.4 KiB |  00m00s
+[198/220] Installing cairo-devel-0:1.18 100% | 114.5 MiB/s |   2.3 MiB |  00m00s
+[199/220] Installing cairo-gobject-deve 100% |   1.1 MiB/s |   7.6 KiB |  00m00s
+[200/220] Installing glycin-devel-0:2.0 100% |  20.1 MiB/s | 123.3 KiB |  00m00s
+[201/220] Installing gdk-pixbuf2-devel- 100% |  53.5 MiB/s |   2.3 MiB |  00m00s
+[202/220] Installing libXft-devel-0:2.3 100% |   4.3 MiB/s |  44.3 KiB |  00m00s
+[203/220] Installing pango-devel-0:1.57 100% |  95.2 MiB/s |   1.5 MiB |  00m00s
+[204/220] Installing at-spi2-core-devel 100% | 117.6 MiB/s |   4.4 MiB |  00m00s
+[205/220] Installing at-spi2-atk-devel- 100% | 535.2 KiB/s |   2.1 KiB |  00m00s
+[206/220] Installing python3-rpm-genera 100% |  13.5 MiB/s |  82.9 KiB |  00m00s
+[207/220] Installing python3-cairo-0:1. 100% |  44.1 MiB/s | 496.4 KiB |  00m00s
+[208/220] Installing python3-gobject-ba 100% |  78.4 MiB/s |   1.5 MiB |  00m00s
+[209/220] Installing hicolor-icon-theme 100% |   5.0 MiB/s | 179.7 KiB |  00m00s
+[210/220] Installing gtk3-0:3.24.49-3.f 100% | 220.5 MiB/s |  23.1 MiB |  00m00s
+[211/220] Installing make-1:4.4.1-11.fc 100% |  48.7 MiB/s |   1.8 MiB |  00m00s
+[212/220] Installing gcc-0:15.2.1-1.fc4 100% | 125.9 MiB/s | 111.9 MiB |  00m01s
+[213/220] Installing emacs-filesystem-1 100% |  75.9 KiB/s | 544.0   B |  00m00s
+[214/220] Installing desktop-file-utils 100% |   7.7 MiB/s | 222.2 KiB |  00m00s
+[215/220] Installing annobin-plugin-gcc 100% |  30.8 MiB/s |   1.0 MiB |  00m00s
+[216/220] Installing gcc-plugin-annobin 100% |   1.4 MiB/s |  58.8 KiB |  00m00s
+[217/220] Installing gtk3-devel-0:3.24. 100% | 242.8 MiB/s |  34.2 MiB |  00m00s
+[218/220] Installing python3-gobject-0: 100% |   4.7 MiB/s |  28.6 KiB |  00m00s
+[219/220] Installing python3-devel-0:3. 100% |  20.7 MiB/s |   2.0 MiB |  00m00s
+[220/220] Installing systemd-rpm-macros 100% | 696.0   B/s |   8.9 KiB |  00m13s
+Complete!
+Finish: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Start: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1755734400
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.633QNf
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.5rC9Yy
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ rm -rf gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ /usr/lib/rpm/rpmuncompress -x /builddir/build/SOURCES/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/0001-drop-data_files-and-ez_setup.patch
++ /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.XgxFIi
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ echo pyproject-rpm-macros
++ echo python3-devel
++ echo 'python3dist(packaging)'
++ echo 'python3dist(pip) >= 19'
++ '[' -f pyproject.toml ']'
++ '[' -f setup.py ']'
++ echo 'python3dist(setuptools) >= 40.8'
++ rm -rfv '*.dist-info/'
++ '[' -f /usr/bin/python3 ']'
++ mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ echo -n
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ VALAFLAGS=-g
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ CC=gcc
++ CXX=g++
++ TMPDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ RPM_TOXENV=py314
++ FEDORA=44
++ HOSTNAME=rpmbuild
++ /usr/bin/python3 -Bs /usr/lib/rpm/redhat/pyproject_buildrequires.py --generate-extras --python3_pkgversion 3 --wheeldir /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir --output '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
+Handling setuptools >= 40.8 from default build backend
+Requirement not satisfied: setuptools >= 40.8
+Exiting dependency generation pass: build backend
++ cat '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
++ rm -rfv '*.dist-info/'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.buildreqs.nosrc.rpm
+INFO: Going to install missing dynamic buildrequires
+Updating and loading repositories:
+ fedora                                 100% |   9.0 KiB/s |   6.2 KiB |  00m01s
+Repositories loaded.
+Package "desktop-file-utils-0.28-2.fc43.x86_64" is already installed.
+Package "gcc-15.2.1-1.fc44.1.x86_64" is already installed.
+Package "gobject-introspection-1.84.0-3.fc43.x86_64" is already installed.
+Package "gtk3-devel-3.24.49-3.fc43.x86_64" is already installed.
+Package "pyproject-rpm-macros-1.18.3-2.fc43.noarch" is already installed.
+Package "python3-cairo-1.28.0-3.fc44.x86_64" is already installed.
+Package "python3-devel-3.14.0~rc2-1.fc44.x86_64" is already installed.
+Package "python3-gobject-3.52.3-3.fc44.x86_64" is already installed.
+Package "python3-packaging-25.0-5.fc44.noarch" is already installed.
+
+Package             Arch   Version        Repository      Size
+Installing:
+ python3-pip        noarch 25.1.1-16.fc44 fedora      12.5 MiB
+ python3-setuptools noarch 78.1.1-12.fc44 fedora       9.0 MiB
+
+Transaction Summary:
+ Installing:         2 packages
+
+Total size of inbound packages is 5 MiB. Need to download 0 B.
+After this operation, 22 MiB extra will be used (install 22 MiB, remove 0 B).
+[1/2] python3-pip-0:25.1.1-16.fc44.noar 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[2/2] python3-setuptools-0:78.1.1-12.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+--------------------------------------------------------------------------------
+[2/2] Total                             100% |   0.0   B/s |   0.0   B |  00m00s
+Running transaction
+[1/4] Verify package files              100% |  76.0   B/s |   2.0   B |  00m00s
+[2/4] Prepare transaction               100% |  51.0   B/s |   2.0   B |  00m00s
+[3/4] Installing python3-setuptools-0:7 100% |  82.3 MiB/s |   9.2 MiB |  00m00s
+[4/4] Installing python3-pip-0:25.1.1-1 100% |  14.0 MiB/s |  12.8 MiB |  00m01s
+Complete!
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1755734400
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.sbxXsL
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ echo pyproject-rpm-macros
++ echo python3-devel
++ echo 'python3dist(packaging)'
++ echo 'python3dist(pip) >= 19'
++ '[' -f pyproject.toml ']'
++ '[' -f setup.py ']'
++ echo 'python3dist(setuptools) >= 40.8'
++ rm -rfv '*.dist-info/'
++ '[' -f /usr/bin/python3 ']'
++ mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ echo -n
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ VALAFLAGS=-g
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ CC=gcc
++ CXX=g++
++ TMPDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ RPM_TOXENV=py314
++ FEDORA=44
++ HOSTNAME=rpmbuild
++ /usr/bin/python3 -Bs /usr/lib/rpm/redhat/pyproject_buildrequires.py --generate-extras --python3_pkgversion 3 --wheeldir /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir --output '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
+Handling setuptools >= 40.8 from default build backend
+Requirement satisfied: setuptools >= 40.8
+   (installed: setuptools 78.1.1)
+/usr/lib/python3.14/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: GNU General Public License (GPL)
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running egg_info
+creating gshogi.egg-info
+writing gshogi.egg-info/PKG-INFO
+writing dependency_links to gshogi.egg-info/dependency_links.txt
+writing entry points to gshogi.egg-info/entry_points.txt
+writing top-level names to gshogi.egg-info/top_level.txt
+writing manifest file 'gshogi.egg-info/SOURCES.txt'
+reading manifest file 'gshogi.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'gshogi.egg-info/SOURCES.txt'
+running dist_info
+writing gshogi.egg-info/PKG-INFO
+writing dependency_links to gshogi.egg-info/dependency_links.txt
+writing entry points to gshogi.egg-info/entry_points.txt
+writing top-level names to gshogi.egg-info/top_level.txt
+reading manifest file 'gshogi.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'gshogi.egg-info/SOURCES.txt'
+creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-0.5.1.dist-info'
++ cat '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
++ rm -rfv gshogi-0.5.1.dist-info/
+removed 'gshogi-0.5.1.dist-info/entry_points.txt'
+removed 'gshogi-0.5.1.dist-info/top_level.txt'
+removed 'gshogi-0.5.1.dist-info/METADATA'
+removed 'gshogi-0.5.1.dist-info/licenses/LICENSE'
+removed directory 'gshogi-0.5.1.dist-info/licenses'
+removed directory 'gshogi-0.5.1.dist-info/'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.buildreqs.nosrc.rpm
+INFO: Going to install missing dynamic buildrequires
+Updating and loading repositories:
+ fedora                                 100% |  11.1 KiB/s |   6.2 KiB |  00m01s
+Repositories loaded.
+Package "desktop-file-utils-0.28-2.fc43.x86_64" is already installed.
+Package "gcc-15.2.1-1.fc44.1.x86_64" is already installed.
+Package "gobject-introspection-1.84.0-3.fc43.x86_64" is already installed.
+Package "gtk3-devel-3.24.49-3.fc43.x86_64" is already installed.
+Package "pyproject-rpm-macros-1.18.3-2.fc43.noarch" is already installed.
+Package "python3-cairo-1.28.0-3.fc44.x86_64" is already installed.
+Package "python3-devel-3.14.0~rc2-1.fc44.x86_64" is already installed.
+Package "python3-gobject-3.52.3-3.fc44.x86_64" is already installed.
+Package "python3-packaging-25.0-5.fc44.noarch" is already installed.
+Package "python3-pip-25.1.1-16.fc44.noarch" is already installed.
+Package "python3-setuptools-78.1.1-12.fc44.noarch" is already installed.
+
+Nothing to do.
+Start: Outputting list of installed packages
+Finish: Outputting list of installed packages
+Building target platforms: x86_64
+Building for target x86_64
+setting SOURCE_DATE_EPOCH=1755734400
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.xuwu9x
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ echo pyproject-rpm-macros
++ echo python3-devel
++ echo 'python3dist(packaging)'
++ echo 'python3dist(pip) >= 19'
++ '[' -f pyproject.toml ']'
++ '[' -f setup.py ']'
++ echo 'python3dist(setuptools) >= 40.8'
++ rm -rfv '*.dist-info/'
++ '[' -f /usr/bin/python3 ']'
++ mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ echo -n
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ VALAFLAGS=-g
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ CC=gcc
++ CXX=g++
++ TMPDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ RPM_TOXENV=py314
++ FEDORA=44
++ HOSTNAME=rpmbuild
++ /usr/bin/python3 -Bs /usr/lib/rpm/redhat/pyproject_buildrequires.py --generate-extras --python3_pkgversion 3 --wheeldir /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir --output '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
+Handling setuptools >= 40.8 from default build backend
+Requirement satisfied: setuptools >= 40.8
+   (installed: setuptools 78.1.1)
+/usr/lib/python3.14/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+!!
+
+        ********************************************************************************
+        Please consider removing the following classifiers in favor of a SPDX license expression:
+
+        License :: OSI Approved :: GNU General Public License (GPL)
+
+        See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+        ********************************************************************************
+
+!!
+  self._finalize_license_expression()
+running egg_info
+writing gshogi.egg-info/PKG-INFO
+writing dependency_links to gshogi.egg-info/dependency_links.txt
+writing entry points to gshogi.egg-info/entry_points.txt
+writing top-level names to gshogi.egg-info/top_level.txt
+reading manifest file 'gshogi.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'gshogi.egg-info/SOURCES.txt'
+running dist_info
+writing gshogi.egg-info/PKG-INFO
+writing dependency_links to gshogi.egg-info/dependency_links.txt
+writing entry points to gshogi.egg-info/entry_points.txt
+writing top-level names to gshogi.egg-info/top_level.txt
+reading manifest file 'gshogi.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+adding license file 'LICENSE'
+writing manifest file 'gshogi.egg-info/SOURCES.txt'
+creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-0.5.1.dist-info'
++ cat '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-buildrequires'
++ rm -rfv gshogi-0.5.1.dist-info/
+removed 'gshogi-0.5.1.dist-info/entry_points.txt'
+removed 'gshogi-0.5.1.dist-info/top_level.txt'
+removed 'gshogi-0.5.1.dist-info/METADATA'
+removed 'gshogi-0.5.1.dist-info/licenses/LICENSE'
+removed directory 'gshogi-0.5.1.dist-info/licenses'
+removed directory 'gshogi-0.5.1.dist-info/'
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.ZbcI6L
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ VALAFLAGS=-g
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ CC=gcc
++ CXX=g++
++ TMPDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ /usr/bin/python3 -Bs /usr/lib/rpm/redhat/pyproject_wheel.py /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir
+Processing /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
+  Preparing metadata (pyproject.toml): started
+  Running command Preparing metadata (pyproject.toml)
+  /usr/lib/python3.14/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+  !!
+
+          ********************************************************************************
+          Please consider removing the following classifiers in favor of a SPDX license expression:
+
+          License :: OSI Approved :: GNU General Public License (GPL)
+
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+
+  !!
+    self._finalize_license_expression()
+  running dist_info
+  creating /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info
+  writing /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/PKG-INFO
+  writing dependency_links to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/dependency_links.txt
+  writing entry points to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/entry_points.txt
+  writing top-level names to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/top_level.txt
+  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/SOURCES.txt'
+  reading manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/SOURCES.txt'
+  reading manifest template 'MANIFEST.in'
+  adding license file 'LICENSE'
+  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi.egg-info/SOURCES.txt'
+  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-rts29462/gshogi-0.5.1.dist-info'
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: gshogi
+  Building wheel for gshogi (pyproject.toml): started
+  Running command Building wheel for gshogi (pyproject.toml)
+  /usr/lib/python3.14/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+  !!
+
+          ********************************************************************************
+          Please consider removing the following classifiers in favor of a SPDX license expression:
+
+          License :: OSI Approved :: GNU General Public License (GPL)
+
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+
+  !!
+    self._finalize_license_expression()
+  running bdist_wheel
+  running build
+  running build_py
+  creating build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/__init__.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/board.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/comments.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/constants.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/drag_and_drop.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/engine_debug.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/engine_manager.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/engine_output.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/gamelist.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/gshogi.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/gui.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/gv.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/load_save.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/move_list.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/pieces.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/psn.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/set_board_colours.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/time_control.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/usi.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  copying gshogi/utils.py -> build/lib.linux-x86_64-cpython-314/gshogi
+  running egg_info
+  writing gshogi.egg-info/PKG-INFO
+  writing dependency_links to gshogi.egg-info/dependency_links.txt
+  writing entry points to gshogi.egg-info/entry_points.txt
+  writing top-level names to gshogi.egg-info/top_level.txt
+  reading manifest file 'gshogi.egg-info/SOURCES.txt'
+  reading manifest template 'MANIFEST.in'
+  adding license file 'LICENSE'
+  writing manifest file 'gshogi.egg-info/SOURCES.txt'
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.data' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.data' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.data' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.data' to be distributed and are
+          already explicitly excluding 'gshogi.data' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.glade' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.glade' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.glade' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.glade' to be distributed and are
+          already explicitly excluding 'gshogi.glade' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.images' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.images' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.images' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.images' to be distributed and are
+          already explicitly excluding 'gshogi.images' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.images.eastern' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.images.eastern' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.images.eastern' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.images.eastern' to be distributed and are
+          already explicitly excluding 'gshogi.images.eastern' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.images.gshogi' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.images.gshogi' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.images.gshogi' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.images.gshogi' to be distributed and are
+          already explicitly excluding 'gshogi.images.gshogi' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.images.western' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.images.western' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.images.western' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.images.western' to be distributed and are
+          already explicitly excluding 'gshogi.images.western' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.locale.en_US.LC_MESSAGES' is absent from the `packages` configuration.
+  !!
+
+          ********************************************************************************
+          ############################
+          # Package would be ignored #
+          ############################
+          Python recognizes 'gshogi.locale.en_US.LC_MESSAGES' as an importable package[^1],
+          but it is absent from setuptools' `packages` configuration.
+
+          This leads to an ambiguous overall configuration. If you want to distribute this
+          package, please make sure that 'gshogi.locale.en_US.LC_MESSAGES' is explicitly added
+          to the `packages` configuration field.
+
+          Alternatively, you can also rely on setuptools' discovery methods
+          (for example by using `find_namespace_packages(...)`/`find_namespace:`
+          instead of `find_packages(...)`/`find:`).
+
+          You can read more about "package discovery" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
+          If you don't want 'gshogi.locale.en_US.LC_MESSAGES' to be distributed and are
+          already explicitly excluding 'gshogi.locale.en_US.LC_MESSAGES' via
+          `find_namespace_packages(...)/find_namespace` or `find_packages(...)/find`,
+          you can try to use `exclude_package_data`, or `include-package-data=False` in
+          combination with a more fine grained `package-data` configuration.
+
+          You can read more about "package data files" on setuptools documentation page:
+
+          - https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+
+
+          [^1]: For Python, any directory (with suitable naming) can be imported,
+                even if it does not contain any `.py` files.
+                On the other hand, currently there is no concept of package data
+                directory, all directories are treated like packages.
+          ********************************************************************************
+
+  !!
+    check.warn(importable)
+  creating build/lib.linux-x86_64-cpython-314/gshogi/data
+  copying gshogi/data/opening.bbk -> build/lib.linux-x86_64-cpython-314/gshogi/data
+  creating build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/comments.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/common_engine_settings.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/engine_debug.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/engine_output.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/gamelist.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/main_window.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/move_list.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/preferences.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/set_colours.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  copying gshogi/glade/set_pieces.glade -> build/lib.linux-x86_64-cpython-314/gshogi/glade
+  creating build/lib.linux-x86_64-cpython-314/gshogi/images
+  copying gshogi/images/logo.png -> build/lib.linux-x86_64-cpython-314/gshogi/images
+  copying gshogi/images/wood1.png -> build/lib.linux-x86_64-cpython-314/gshogi/images
+  copying gshogi/images/wood1_hl.png -> build/lib.linux-x86_64-cpython-314/gshogi/images
+  creating build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/bishopB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/bishopPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/bishopPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/bishopW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/goldB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/goldW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/kingB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/kingW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/knightB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/knightPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/knightPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/knightW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/lanceB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/lancePB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/lancePW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/lanceW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/pawnB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/pawnPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/pawnPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/pawnW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/rookB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/rookPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/rookPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/rookW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/silverB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/silverPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/silverPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  copying gshogi/images/eastern/silverW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/eastern
+  creating build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/bishopB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/bishopPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/goldB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/kingB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/knightB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/knightPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/lanceB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/lancePB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/pawnB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/pawnPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/rookB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/rookPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/silverB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  copying gshogi/images/gshogi/silverPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi
+  creating build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/bishopB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/bishopPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/bishopPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/bishopW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/goldB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/goldW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/kingB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/kingW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/knightB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/knightPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/knightPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/knightW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/lanceB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/lancePB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/lancePW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/lanceW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/pawnB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/pawnPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/pawnPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/pawnW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/rookB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/rookPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/rookPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/rookW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/silverB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/silverPB.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/silverPW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  copying gshogi/images/western/silverW.png -> build/lib.linux-x86_64-cpython-314/gshogi/images/western
+  creating build/lib.linux-x86_64-cpython-314/gshogi/locale/en_US/LC_MESSAGES
+  copying gshogi/locale/en_US/LC_MESSAGES/gshogi.mo -> build/lib.linux-x86_64-cpython-314/gshogi/locale/en_US/LC_MESSAGES
+  running build_ext
+  building 'gshogi.engine' extension
+  creating build/temp.linux-x86_64-cpython-314/engine
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/attacks.c -o build/temp.linux-x86_64-cpython-314/engine/attacks.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/book.c -o build/temp.linux-x86_64-cpython-314/engine/book.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/commondsp.c -o build/temp.linux-x86_64-cpython-314/engine/commondsp.o
+  engine/commondsp.c: In function ‘ListGame’:
+  engine/commondsp.c:820:33: warning: ‘%s’ directive writing up to 247 bytes into a region of size between 1 and 252 [-Wformat-overflow=]
+    820 |         sprintf(fname, "CLp%s.%s%s-%s%s%s%c",
+        |         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+    821 |                 patchlevel, dbuf + 4, dbuf + 8, dbuf + 11, dbuf + 14,
+        |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    822 |                 dbuf + 17, ColorStr[computer][0]);
+        |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  In file included from /usr/include/stdio.h:970,
+                   from engine/gnushogi.h:132,
+                   from engine/commondsp.c:71:
+  In function ‘sprintf’,
+      inlined from ‘ListGame’ at engine/commondsp.c:820:9:
+  /usr/include/bits/stdio2.h:30:10: note: ‘__sprintf_chk’ output 7 or more bytes (assuming 1228) into a destination of size 256
+     30 |   return __builtin___sprintf_chk (__s, __USE_FORTIFY_LEVEL - 1,
+        |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     31 |                                   __glibc_objsize (__s), __fmt,
+        |                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     32 |                                   __va_arg_pack ());
+        |                                   ~~~~~~~~~~~~~~~~~
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/enginemodule.c -o build/temp.linux-x86_64-cpython-314/engine/enginemodule.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/eval.c -o build/temp.linux-x86_64-cpython-314/engine/eval.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/genmove.c -o build/temp.linux-x86_64-cpython-314/engine/genmove.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/globals.c -o build/temp.linux-x86_64-cpython-314/engine/globals.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/init.c -o build/temp.linux-x86_64-cpython-314/engine/init.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/pattern.c -o build/temp.linux-x86_64-cpython-314/engine/pattern.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/rawdsp.c -o build/temp.linux-x86_64-cpython-314/engine/rawdsp.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/search.c -o build/temp.linux-x86_64-cpython-314/engine/search.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/sysdeps.c -o build/temp.linux-x86_64-cpython-314/engine/sysdeps.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/tcontrl.c -o build/temp.linux-x86_64-cpython-314/engine/tcontrl.o
+  gcc -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -fPIC -DHAVE_BCOPY=1 -DHAVE_ERRNO_H=1 -DHAVE_FCNTL_H=1 -DHAVE_MEMCPY=1 -DHAVE_MEMSET=1 -DHAVE_UNISTD_H=1 -DHASHFILE=\"data/gnushogi.hsh\" -I/usr/include/python3.14 -c engine/util.c -o build/temp.linux-x86_64-cpython-314/engine/util.o
+  gcc -shared -Wl,-z,relro -Wl,--as-needed -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes -O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1 -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer build/temp.linux-x86_64-cpython-314/engine/attacks.o build/temp.linux-x86_64-cpython-314/engine/book.o build/temp.linux-x86_64-cpython-314/engine/commondsp.o build/temp.linux-x86_64-cpython-314/engine/enginemodule.o build/temp.linux-x86_64-cpython-314/engine/eval.o build/temp.linux-x86_64-cpython-314/engine/genmove.o build/temp.linux-x86_64-cpython-314/engine/globals.o build/temp.linux-x86_64-cpython-314/engine/init.o build/temp.linux-x86_64-cpython-314/engine/pattern.o build/temp.linux-x86_64-cpython-314/engine/rawdsp.o build/temp.linux-x86_64-cpython-314/engine/search.o build/temp.linux-x86_64-cpython-314/engine/sysdeps.o build/temp.linux-x86_64-cpython-314/engine/tcontrl.o build/temp.linux-x86_64-cpython-314/engine/util.o -L/usr/lib64 -o build/lib.linux-x86_64-cpython-314/gshogi/engine.cpython-314-x86_64-linux-gnu.so
+  installing to build/bdist.linux-x86_64/wheel
+  running install
+  running install_lib
+  creating build/bdist.linux-x86_64/wheel
+  creating build/bdist.linux-x86_64/wheel/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/__init__.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/board.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/comments.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/constants.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/drag_and_drop.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/engine_debug.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/engine_manager.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/engine_output.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/gamelist.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/gshogi.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/gui.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/gv.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/load_save.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/move_list.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/pieces.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/psn.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/set_board_colours.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/time_control.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/usi.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/utils.py -> build/bdist.linux-x86_64/wheel/./gshogi
+  creating build/bdist.linux-x86_64/wheel/gshogi/data
+  copying build/lib.linux-x86_64-cpython-314/gshogi/data/opening.bbk -> build/bdist.linux-x86_64/wheel/./gshogi/data
+  creating build/bdist.linux-x86_64/wheel/gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/comments.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/common_engine_settings.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/engine_debug.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/engine_output.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/gamelist.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/main_window.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/move_list.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/preferences.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/set_colours.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  copying build/lib.linux-x86_64-cpython-314/gshogi/glade/set_pieces.glade -> build/bdist.linux-x86_64/wheel/./gshogi/glade
+  creating build/bdist.linux-x86_64/wheel/gshogi/images
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/logo.png -> build/bdist.linux-x86_64/wheel/./gshogi/images
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/wood1.png -> build/bdist.linux-x86_64/wheel/./gshogi/images
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/wood1_hl.png -> build/bdist.linux-x86_64/wheel/./gshogi/images
+  creating build/bdist.linux-x86_64/wheel/gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/bishopB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/bishopPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/bishopPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/bishopW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/goldB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/goldW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/kingB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/kingW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/knightB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/knightPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/knightPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/knightW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/lanceB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/lancePB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/lancePW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/lanceW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/pawnB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/pawnPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/pawnPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/pawnW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/rookB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/rookPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/rookPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/rookW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/silverB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/silverPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/silverPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/eastern/silverW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/eastern
+  creating build/bdist.linux-x86_64/wheel/gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/bishopB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/bishopPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/goldB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/kingB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/knightB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/knightPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/lanceB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/lancePB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/pawnB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/pawnPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/rookB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/rookPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/silverB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/gshogi/silverPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/gshogi
+  creating build/bdist.linux-x86_64/wheel/gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/bishopB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/bishopPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/bishopPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/bishopW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/goldB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/goldW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/kingB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/kingW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/knightB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/knightPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/knightPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/knightW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/lanceB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/lancePB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/lancePW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/lanceW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/pawnB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/pawnPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/pawnPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/pawnW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/rookB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/rookPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/rookPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/rookW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/silverB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/silverPB.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/silverPW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  copying build/lib.linux-x86_64-cpython-314/gshogi/images/western/silverW.png -> build/bdist.linux-x86_64/wheel/./gshogi/images/western
+  creating build/bdist.linux-x86_64/wheel/gshogi/locale
+  creating build/bdist.linux-x86_64/wheel/gshogi/locale/en_US
+  creating build/bdist.linux-x86_64/wheel/gshogi/locale/en_US/LC_MESSAGES
+  copying build/lib.linux-x86_64-cpython-314/gshogi/locale/en_US/LC_MESSAGES/gshogi.mo -> build/bdist.linux-x86_64/wheel/./gshogi/locale/en_US/LC_MESSAGES
+  copying build/lib.linux-x86_64-cpython-314/gshogi/engine.cpython-314-x86_64-linux-gnu.so -> build/bdist.linux-x86_64/wheel/./gshogi
+  running install_egg_info
+  Copying gshogi.egg-info to build/bdist.linux-x86_64/wheel/./gshogi-0.5.1-py3.14.egg-info
+  running install_scripts
+  creating build/bdist.linux-x86_64/wheel/gshogi-0.5.1.dist-info/WHEEL
+  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-wheel-ze3qnz0k/.tmp-t262oujb/gshogi-0.5.1-cp314-cp314-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+  adding 'gshogi/__init__.py'
+  adding 'gshogi/board.py'
+  adding 'gshogi/comments.py'
+  adding 'gshogi/constants.py'
+  adding 'gshogi/drag_and_drop.py'
+  adding 'gshogi/engine.cpython-314-x86_64-linux-gnu.so'
+  adding 'gshogi/engine_debug.py'
+  adding 'gshogi/engine_manager.py'
+  adding 'gshogi/engine_output.py'
+  adding 'gshogi/gamelist.py'
+  adding 'gshogi/gshogi.py'
+  adding 'gshogi/gui.py'
+  adding 'gshogi/gv.py'
+  adding 'gshogi/load_save.py'
+  adding 'gshogi/move_list.py'
+  adding 'gshogi/pieces.py'
+  adding 'gshogi/psn.py'
+  adding 'gshogi/set_board_colours.py'
+  adding 'gshogi/time_control.py'
+  adding 'gshogi/usi.py'
+  adding 'gshogi/utils.py'
+  adding 'gshogi/data/opening.bbk'
+  adding 'gshogi/glade/comments.glade'
+  adding 'gshogi/glade/common_engine_settings.glade'
+  adding 'gshogi/glade/engine_debug.glade'
+  adding 'gshogi/glade/engine_output.glade'
+  adding 'gshogi/glade/gamelist.glade'
+  adding 'gshogi/glade/main_window.glade'
+  adding 'gshogi/glade/move_list.glade'
+  adding 'gshogi/glade/preferences.glade'
+  adding 'gshogi/glade/set_colours.glade'
+  adding 'gshogi/glade/set_pieces.glade'
+  adding 'gshogi/images/logo.png'
+  adding 'gshogi/images/wood1.png'
+  adding 'gshogi/images/wood1_hl.png'
+  adding 'gshogi/images/eastern/bishopB.png'
+  adding 'gshogi/images/eastern/bishopPB.png'
+  adding 'gshogi/images/eastern/bishopPW.png'
+  adding 'gshogi/images/eastern/bishopW.png'
+  adding 'gshogi/images/eastern/goldB.png'
+  adding 'gshogi/images/eastern/goldW.png'
+  adding 'gshogi/images/eastern/kingB.png'
+  adding 'gshogi/images/eastern/kingW.png'
+  adding 'gshogi/images/eastern/knightB.png'
+  adding 'gshogi/images/eastern/knightPB.png'
+  adding 'gshogi/images/eastern/knightPW.png'
+  adding 'gshogi/images/eastern/knightW.png'
+  adding 'gshogi/images/eastern/lanceB.png'
+  adding 'gshogi/images/eastern/lancePB.png'
+  adding 'gshogi/images/eastern/lancePW.png'
+  adding 'gshogi/images/eastern/lanceW.png'
+  adding 'gshogi/images/eastern/pawnB.png'
+  adding 'gshogi/images/eastern/pawnPB.png'
+  adding 'gshogi/images/eastern/pawnPW.png'
+  adding 'gshogi/images/eastern/pawnW.png'
+  adding 'gshogi/images/eastern/rookB.png'
+  adding 'gshogi/images/eastern/rookPB.png'
+  adding 'gshogi/images/eastern/rookPW.png'
+  adding 'gshogi/images/eastern/rookW.png'
+  adding 'gshogi/images/eastern/silverB.png'
+  adding 'gshogi/images/eastern/silverPB.png'
+  adding 'gshogi/images/eastern/silverPW.png'
+  adding 'gshogi/images/eastern/silverW.png'
+  adding 'gshogi/images/gshogi/bishopB.png'
+  adding 'gshogi/images/gshogi/bishopPB.png'
+  adding 'gshogi/images/gshogi/goldB.png'
+  adding 'gshogi/images/gshogi/kingB.png'
+  adding 'gshogi/images/gshogi/knightB.png'
+  adding 'gshogi/images/gshogi/knightPB.png'
+  adding 'gshogi/images/gshogi/lanceB.png'
+  adding 'gshogi/images/gshogi/lancePB.png'
+  adding 'gshogi/images/gshogi/pawnB.png'
+  adding 'gshogi/images/gshogi/pawnPB.png'
+  adding 'gshogi/images/gshogi/rookB.png'
+  adding 'gshogi/images/gshogi/rookPB.png'
+  adding 'gshogi/images/gshogi/silverB.png'
+  adding 'gshogi/images/gshogi/silverPB.png'
+  adding 'gshogi/images/western/bishopB.png'
+  adding 'gshogi/images/western/bishopPB.png'
+  adding 'gshogi/images/western/bishopPW.png'
+  adding 'gshogi/images/western/bishopW.png'
+  adding 'gshogi/images/western/goldB.png'
+  adding 'gshogi/images/western/goldW.png'
+  adding 'gshogi/images/western/kingB.png'
+  adding 'gshogi/images/western/kingW.png'
+  adding 'gshogi/images/western/knightB.png'
+  adding 'gshogi/images/western/knightPB.png'
+  adding 'gshogi/images/western/knightPW.png'
+  adding 'gshogi/images/western/knightW.png'
+  adding 'gshogi/images/western/lanceB.png'
+  adding 'gshogi/images/western/lancePB.png'
+  adding 'gshogi/images/western/lancePW.png'
+  adding 'gshogi/images/western/lanceW.png'
+  adding 'gshogi/images/western/pawnB.png'
+  adding 'gshogi/images/western/pawnPB.png'
+  adding 'gshogi/images/western/pawnPW.png'
+  adding 'gshogi/images/western/pawnW.png'
+  adding 'gshogi/images/western/rookB.png'
+  adding 'gshogi/images/western/rookPB.png'
+  adding 'gshogi/images/western/rookPW.png'
+  adding 'gshogi/images/western/rookW.png'
+  adding 'gshogi/images/western/silverB.png'
+  adding 'gshogi/images/western/silverPB.png'
+  adding 'gshogi/images/western/silverPW.png'
+  adding 'gshogi/images/western/silverW.png'
+  adding 'gshogi/locale/en_US/LC_MESSAGES/gshogi.mo'
+  adding 'gshogi-0.5.1.dist-info/licenses/LICENSE'
+  adding 'gshogi-0.5.1.dist-info/METADATA'
+  adding 'gshogi-0.5.1.dist-info/WHEEL'
+  adding 'gshogi-0.5.1.dist-info/entry_points.txt'
+  adding 'gshogi-0.5.1.dist-info/top_level.txt'
+  adding 'gshogi-0.5.1.dist-info/RECORD'
+  removing build/bdist.linux-x86_64/wheel
+  Building wheel for gshogi (pyproject.toml): finished with status 'done'
+  Created wheel for gshogi: filename=gshogi-0.5.1-cp314-cp314-linux_x86_64.whl size=874425 sha256=19d3f3bbd02d3168579df856b95f32ac35c9cd0f66497eac08949034cc56404d
+  Stored in directory: /builddir/.cache/pip/wheels/e0/3d/30/684338a3946600d4030d68f5afdf73ebae13bc1e8406515948
+Successfully built gshogi
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.UiNVeV
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ '[' /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT '!=' / ']'
++ rm -rf /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
+++ dirname /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
++ mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ mkdir /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
+++ ls /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir/gshogi-0.5.1-cp314-cp314-linux_x86_64.whl
+++ xargs basename --multiple
+++ sed -E 's/([^-]+)-([^-]+)-.+\.whl/\1==\2/'
++ specifier=gshogi==0.5.1
++ '[' -z gshogi==0.5.1 ']'
++ TMPDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir
++ /usr/bin/python3 -m pip install --root /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT --prefix /usr --no-deps --disable-pip-version-check --progress-bar off --verbose --ignore-installed --no-warn-script-location --no-index --no-cache-dir --find-links /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir gshogi==0.5.1
+Using pip 25.1.1 from /usr/lib/python3.14/site-packages/pip (python 3.14)
+Looking in links: /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/pyproject-wheeldir
+Processing ./pyproject-wheeldir/gshogi-0.5.1-cp314-cp314-linux_x86_64.whl
+Installing collected packages: gshogi
+  Creating /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin
+  changing mode of /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin/gshogi to 755
+Successfully installed gshogi-0.5.1
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
++ '[' -d /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin ']'
++ '[' -z sP ']'
++ shebang_flags=-kasP
++ /usr/bin/python3 -B /usr/lib/rpm/redhat/pathfix.py -pni /usr/bin/python3 -kasP /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin/gshogi
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin/gshogi: updating
++ rm -rfv /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin/__pycache__
++ rm -f '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-ghost-distinfo'
++ site_dirs=()
++ '[' -d /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib/python3.14/site-packages ']'
++ '[' /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages '!=' /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib/python3.14/site-packages ']'
++ '[' -d /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages ']'
++ site_dirs+=("/usr/lib64/python3.14/site-packages")
++ for site_dir in ${site_dirs[@]}
++ for distinfo in /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT$site_dir/*.dist-info
++ echo '%ghost /usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info'
++ sed -i s/pip/rpm/ /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/INSTALLER
++ PYTHONPATH=/usr/lib/rpm/redhat
++ /usr/bin/python3 -B /usr/lib/rpm/redhat/pyproject_preprocess_record.py --buildroot /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT --record /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/RECORD --output '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-record'
++ rm -fv /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/RECORD
+removed '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/RECORD'
++ rm -fv /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/REQUESTED
+removed '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi-0.5.1.dist-info/REQUESTED'
+++ wc -l '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-ghost-distinfo'
+++ cut -f1 '-d '
++ lines=1
++ '[' 1 -ne 1 ']'
++ RPM_FILES_ESCAPE=4.19
++ /usr/bin/python3 /usr/lib/rpm/redhat/pyproject_save_files.py --output-files '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-files' --output-modules '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-modules' --buildroot /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT --sitelib /usr/lib/python3.14/site-packages --sitearch /usr/lib64/python3.14/site-packages --python-version 3.14 --pyproject-record '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-record' --prefix /usr -l gshogi
++ install -Dm0644 gshogi.desktop /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/applications/gshogi.desktop
++ install -Dm0644 gshogi.png /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/icons/hicolor/64x64/apps/gshogi.png
++ /usr/bin/find-debuginfo -j4 --strict-build-id -m -i --build-id-seed '0.5.1^20250818.git7c4bd90-7.fc44' --unique-debug-suffix '-0.5.1^20250818.git7c4bd90-7.fc44.x86_64' --unique-debug-src-base 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64' --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 -S debugsourcefiles.list /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
+find-debuginfo: starting
+Extracting debug info from 1 files
+DWARF-compressing 1 files
+sepdebugcrcfix: Updated 1 CRC32s, 0 CRC32s did match.
+Creating .debug symlinks for symlinks to ELF files
+Copying sources found by 'debugedit -l' to /usr/src/debug/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64
+find-debuginfo: done
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-ldconfig
++ /usr/lib/rpm/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-lto /usr/bin/strip
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/redhat/brp-mangle-shebangs
++ /usr/lib/rpm/brp-remove-la-files
++ /usr/lib/rpm/redhat/brp-python-rpm-in-distinfo
++ env /usr/lib/rpm/redhat/brp-python-bytecompile '' 1 0 -j4
+Bytecompiling .py files below /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14 using python3.14
+Bytecompiling .py files below /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib/debug/usr/lib64/python3.14 using python3.14
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/bin/add-determinism --brp -j4 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/__init__.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/constants.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/drag_and_drop.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/comments.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_debug.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_output.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gamelist.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_manager.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gv.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/board.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/load_save.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/move_list.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/pieces.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/psn.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gshogi.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/set_board_colours.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gui.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/utils.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/usi.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/time_control.cpython-314.pyc: rewriting with normalized contents
+Scanned 36 directories and 177 files,
+               processed 20 inodes,
+               20 modified (0 replaced + 20 rewritten),
+               0 unsupported format, 0 errors
+Reading /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/SPECPARTS/rpm-debuginfo.specpart
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.YWIq0r
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CFLAGS
++ CXXFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
++ export CXXFLAGS
++ FFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FFLAGS
++ FCFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -I/usr/lib64/gfortran/modules  '
++ export FCFLAGS
++ VALAFLAGS=-g
++ export VALAFLAGS
++ RUSTFLAGS='-Copt-level=3 -Cdebuginfo=2 -Ccodegen-units=1 -Cstrip=none -Cforce-frame-pointers=yes -Clink-arg=-specs=/usr/lib/rpm/redhat/redhat-package-notes --cap-lints=warn'
++ export RUSTFLAGS
++ LDFLAGS='-Wl,-z,relro -Wl,--as-needed  -Wl,-z,pack-relative-relocs -Wl,-z,now -specs=/usr/lib/rpm/redhat/redhat-hardened-ld -specs=/usr/lib/rpm/redhat/redhat-hardened-ld-errors -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -Wl,--build-id=sha1 -specs=/usr/lib/rpm/redhat/redhat-package-notes  '
++ export LDFLAGS
++ LT_SYS_LIBRARY_PATH=/usr/lib64:
++ export LT_SYS_LIBRARY_PATH
++ CC=gcc
++ export CC
++ CXX=g++
++ export CXX
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ '[' '!' -f '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-modules' ']'
++ PATH=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
++ PYTHONPATH=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages:/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib/python3.14/site-packages
++ _PYTHONSITE=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages:/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib/python3.14/site-packages
++ PYTHONDONTWRITEBYTECODE=1
++ /usr/bin/python3 -sP /usr/lib/rpm/redhat/import_all_modules.py -f '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64-pyproject-modules'
+Check import: gshogi
+Check import: gshogi.board
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/board.py:20: PyGIWarning: Gtk was imported without specifying a version first. Use gi.require_version('Gtk', '3.0') before import to ensure that the right version gets loaded.
+  from gi.repository import Gtk
+Check import: gshogi.comments
+Check import: gshogi.constants
+Check import: gshogi.drag_and_drop
+Check import: gshogi.engine
+Check import: gshogi.engine_debug
+Check import: gshogi.engine_manager
+Check import: gshogi.engine_output
+Check import: gshogi.gamelist
+Check import: gshogi.gshogi
+Check import: gshogi.gui
+Check import: gshogi.gv
+Check import: gshogi.load_save
+Check import: gshogi.move_list
+Check import: gshogi.pieces
+Check import: gshogi.psn
+Check import: gshogi.set_board_colours
+Check import: gshogi.time_control
+Check import: gshogi.usi
+Check import: gshogi.utils
++ desktop-file-validate /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/applications/gshogi.desktop
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/applications/gshogi.desktop: error: (will be fatal in the future): value "gshogi.png" for key "Icon" in group "Desktop Entry" is an icon name with an extension, but there should be no extension as described in the Icon Theme Specification if the value is not an absolute path
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/applications/gshogi.desktop: hint: value item "GNOME" in key "Categories" in group "Desktop Entry" can be extended with another category among the following categories: GTK
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Processing files: gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.HgaI2K
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ DOCDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/doc/gshogi
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export DOCDIR
++ /usr/bin/mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/doc/gshogi
++ cp -pr /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/README.rst /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/doc/gshogi
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.ovYkK2
++ umask 022
++ cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
++ cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
++ LICENSEDIR=/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/licenses/gshogi
++ export LC_ALL=C.UTF-8
++ LC_ALL=C.UTF-8
++ export LICENSEDIR
++ /usr/bin/mkdir -p /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/licenses/gshogi
++ cp -pr /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/LICENSE /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/share/licenses/gshogi
++ RPM_EC=0
+++ jobs -p
++ exit 0
+Provides: application() application(gshogi.desktop) bundled(gnushogi) gshogi = 0.5.1^20250818.git7c4bd90-7.fc44 gshogi(x86-64) = 0.5.1^20250818.git7c4bd90-7.fc44 python3.14dist(gshogi) = 0.5.1 python3dist(gshogi) = 0.5.1
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PartialHardlinkSets) <= 4.0.4-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires: /usr/bin/python3 libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.38)(64bit) libc.so.6(GLIBC_2.4)(64bit) libc.so.6(GLIBC_ABI_DT_RELR)(64bit) python(abi) = 3.14 rtld(GNU_HASH)
+Processing files: gshogi-debugsource-0.5.1^20250818.git7c4bd90-7.fc44.x86_64
+Provides: gshogi-debugsource = 0.5.1^20250818.git7c4bd90-7.fc44 gshogi-debugsource(x86-64) = 0.5.1^20250818.git7c4bd90-7.fc44
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Processing files: gshogi-debuginfo-0.5.1^20250818.git7c4bd90-7.fc44.x86_64
+Provides: debuginfo(build-id) = a873ac32cfebf92855c6fb0d52f034fcc0576cff gshogi-debuginfo = 0.5.1^20250818.git7c4bd90-7.fc44 gshogi-debuginfo(x86-64) = 0.5.1^20250818.git7c4bd90-7.fc44
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Recommends: gshogi-debugsource(x86-64) = 0.5.1^20250818.git7c4bd90-7.fc44
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
+Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Wrote: /builddir/build/RPMS/gshogi-debuginfo-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
+Wrote: /builddir/build/RPMS/gshogi-debugsource-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
+Wrote: /builddir/build/RPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
+Finish: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+Finish: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+INFO: Done(/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm) Config(fedora-rawhide-x86_64) 0 minutes 57 seconds
+INFO: Results and/or logs in: /var/lib/mock/fedora-rawhide-x86_64/result
 Finish: run
-
-
-[root@dev-alma10 7.fc44]# ll
-total 1732
--rw-r--r-- 1 root root  14181 Aug 21 04:07  0001-drop-data_files-and-ez_setup.patch
--rw-rw-r-- 1 root mock  11362 Aug 21 10:38  build.log
--rw-r--r-- 1 root mock 770283 Aug 21 10:38 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
--rw-r--r-- 1 root root 751891 Aug 21 09:00  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
--rw-r--r-- 1 root root   2975 Aug 21 09:00  gshogi.spec
--rw-rw-r-- 1 root mock   3369 Aug 21 10:38  hw_info.log
--rw-rw-r-- 1 root mock 203167 Aug 21 10:38  root.log
--rw-rw-r-- 1 root mock   3115 Aug 21 10:38  state.log
-[root@dev-alma10 7.fc44]# pwd
-/root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44
-[root@dev-alma10 7.fc44]# md5sum  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
-8a96995c92222e86d0dba249fc028f50  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz

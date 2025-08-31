@@ -9,7 +9,9 @@ Summary:        A graphical GTK interface for playing GNU Shogi
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/johncheetham/gshogi
-Source0:        https://github.com/johncheetham/gshogi/archive/%{commit}/gshogi-%{commit}.tar.gz
+Source0:        %{name}-%{commit}.tar.gz
+
+# If any Fedora-specific bugfixes, add Patch here. No Patch for artifact removal.
 Patch0:         0001-drop-data_files-and-ez_setup.patch
 
 # For compiling the bundled gnushogi C engine
@@ -35,7 +37,10 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine.
 It provides a simple user interface to play shogi against the computer.
 
 %prep
-%autosetup -p1 -n gshogi-%{commit}
+%autosetup -p1 -n %{name}-%{commit}
+
+# No need to delete ez_setup.py, build/, dist/, *.egg-info here,
+# because the tarball is already cleaned.
 
 %generate_buildrequires
 %pyproject_buildrequires
@@ -79,3 +84,4 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/gshogi.desktop
 - Use Patch0 with %%autosetup -p1; drop data_files and ez_setup.py via patch
 - Run desktop-file-validate in %%check; use %%pyproject_buildrequires
 - Add Provides: bundled(gnushogi) since gshogi ships its own engine sources
+
