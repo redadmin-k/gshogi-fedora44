@@ -39,9 +39,6 @@ It provides a simple user interface to play shogi against the computer.
 %prep
 %autosetup -p1 -n %{name}-%{commit}
 
-# No need to delete ez_setup.py, build/, dist/, *.egg-info here,
-# because the tarball is already cleaned.
-
 %generate_buildrequires
 %pyproject_buildrequires
 
