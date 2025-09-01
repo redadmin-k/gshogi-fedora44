@@ -1,7 +1,7 @@
 [root@dev-alma10 SPECS]# fedpkg srpm --srpm-mock
 Using gshogi.spec
 sources file doesn't exist. Source files download skipped.
-INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir7awh6i0i --copyin /root/rpmbuild/SPECS/gshogi.spec /var/tmp
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdirkkrzx5j4 --copyin /root/rpmbuild/SPECS/gshogi.spec /var/tmp
 Start(bootstrap): init plugins
 INFO: selinux disabled
 Finish(bootstrap): init plugins
@@ -31,7 +31,7 @@ INFO: Package manager dnf5 detected and used (direct choice)
 Finish: chroot init
 INFO: copying /root/rpmbuild/SPECS/gshogi.spec to /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp
 Finish: run
-INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdir7awh6i0i --copyout /var/tmp/output /tmp/mock_resultdir7awh6i0i
+INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --chroot --resultdir /tmp/mock_resultdirkkrzx5j4 --copyout /var/tmp/output /tmp/mock_resultdirkkrzx5j4
 Start(bootstrap): init plugins
 INFO: selinux disabled
 Finish(bootstrap): init plugins
@@ -59,7 +59,7 @@ Finish: cleaning package manager metadata
 INFO: enabled HW Info plugin
 INFO: Package manager dnf5 detected and used (direct choice)
 Finish: chroot init
-INFO: copying /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp/output to /tmp/mock_resultdir7awh6i0i
+INFO: copying /var/lib/mock/fedora-rawhide-x86_64/root/var/tmp/output to /tmp/mock_resultdirkkrzx5j4
 Finish: run
 INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 --resultdir '/root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44' --buildsrpm --sources /root/rpmbuild/SPECS --spec gshogi.spec
 Start(bootstrap): init plugins
@@ -100,7 +100,7 @@ INFO: Buildroot is handled by package management downloaded with a bootstrap ima
   dnf5-plugins-5.2.16.0-1.fc43.x86_64
 Start: dnf5 update
 Updating and loading repositories:
- fedora                                 100% |  17.3 KiB/s |   6.8 KiB |  00m00s
+ fedora                                 100% |   4.3 KiB/s |   6.8 KiB |  00m02s
 Repositories loaded.
 Nothing to do.
 Finish: dnf5 update
@@ -120,25 +120,26 @@ Start: clean chroot
 Finish: clean chroot
 Finish: run
 
-
 [root@dev-alma10 SPECS]# cd /root/rpmbuild/SPECS/results_gshogi/0.5.1^20250818.git7c4bd90/7.fc44
 
+
 [root@dev-alma10 7.fc44]# ll
-total 3760
+total 3832
 -rw-r--r-- 1 root root   14181 Aug 21 04:07  0001-drop-data_files-and-ez_setup.patch
--rw-rw-r-- 1 root mock   56753 Sep  1 19:12  build.log
--rw-r--r-- 1 root mock  765608 Sep  1 19:12 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
+-rw-rw-r-- 1 root mock   59740 Sep  1 20:22  build.log
+-rw-r--r-- 1 root mock  765777 Sep  1 20:22 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
 -rw-r--r-- 1 root root  751891 Aug 21 09:00  gshogi-7c4bd90199c5bda61984347ea68c32521e82a637.tar.gz
 -rw-r--r-- 1 root root    2975 Aug 21 09:00  gshogi.spec
--rw-rw-r-- 1 root mock    3369 Sep  1 19:12  hw_info.log
+-rw-rw-r-- 1 root mock    3369 Sep  1 20:21  hw_info.log
 drwxr-xr-x 2 root root      98 Aug 21 10:47  logs
--rw-rw-r-- 1 root mock 1305923 Sep  1 19:12  root.log
--rw-rw-r-- 1 root mock   20076 Sep  1 19:12  state.log
-[root@dev-alma10 7.fc44]# cp 'gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm' /root/rpmbuild/SRPMS/
-cp: overwrite '/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'? yes
-[root@dev-alma10 7.fc44]# cd
+-rw-rw-r-- 1 root mock 1373699 Sep  1 20:22  root.log
+-rw-rw-r-- 1 root mock   21127 Sep  1 20:22  state.log
 
-[root@dev-alma10 ~]# mock -r fedora-rawhide-x86_64 /root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+[root@dev-alma10 7.fc44]# cp gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm /root/rpmbuild/SRPMS/
+cp: overwrite '/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'? yes
+
+
+[root@dev-alma10 ~]#  mock -r fedora-rawhide-x86_64 /root/rpmbuild/SRPMS/gshogi-*.src.rpm
 INFO: mock.py version 6.3 starting (python version = 3.12.9, NVR = mock-6.3-1.el10_0), args: /usr/libexec/mock/mock -r fedora-rawhide-x86_64 '/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm'
 Start(bootstrap): init plugins
 INFO: selinux disabled
@@ -178,7 +179,7 @@ INFO: Buildroot is handled by package management downloaded with a bootstrap ima
   dnf5-plugins-5.2.16.0-1.fc43.x86_64
 Start: dnf5 update
 Updating and loading repositories:
- fedora                                 100% |  15.9 KiB/s |   6.8 KiB |  00m00s
+ fedora                                 100% |  25.1 KiB/s |   6.8 KiB |  00m00s
 Repositories loaded.
 Nothing to do.
 Finish: dnf5 update
@@ -190,7 +191,7 @@ Building for target x86_64
 setting SOURCE_DATE_EPOCH=1755734400
 Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
 Updating and loading repositories:
- fedora                                 100% |   6.7 KiB/s |   6.8 KiB |  00m01s
+ fedora                                 100% |   9.1 KiB/s |   6.8 KiB |  00m01s
 Repositories loaded.
 Package                     Arch   Version                      Repository      Size
 Installing:
@@ -417,7 +418,7 @@ Installing dependencies:
 Transaction Summary:
  Installing:       218 packages
 
-Total size of inbound packages is 195 MiB. Need to download 3 MiB.
+Total size of inbound packages is 195 MiB. Need to download 0 B.
 After this operation, 734 MiB extra will be used (install 734 MiB, remove 0 B).
 [  1/218] desktop-file-utils-0:0.28-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
@@ -451,636 +452,641 @@ After this operation, 734 MiB extra will be used (install 734 MiB, remove 0 B).
 >>> Already downloaded
 [ 16/218] gtk3-0:3.24.49-3.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 17/218] libepoxy-0:1.5.10-10.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 17/218] harfbuzz-0:11.4.5-1.fc44.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 18/218] pango-0:1.57.0-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+[ 18/218] libepoxy-0:1.5.10-10.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 19/218] python3-libs-0:3.14.0~rc2-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 19/218] pango-0:1.57.0-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 20/218] cairo-gobject-0:1.18.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 20/218] python3-libs-0:3.14.0~rc2-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 21/218] python3-gobject-base-0:3.52.3 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 21/218] cairo-gobject-0:1.18.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 22/218] at-spi2-core-0:2.57.1-2.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 22/218] python3-gobject-base-0:3.52.3 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 23/218] fontconfig-0:2.17.0-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 23/218] at-spi2-core-0:2.57.1-2.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 24/218] freetype-0:2.13.3-3.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 24/218] fontconfig-0:2.17.0-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 25/218] libX11-0:1.8.12-1.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 25/218] freetype-0:2.13.3-3.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 26/218] libXext-0:1.3.6-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 26/218] libX11-0:1.8.12-1.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 27/218] libXrender-0:0.9.12-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 27/218] libXext-0:1.3.6-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 28/218] libpng-2:1.6.50-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 28/218] libXrender-0:0.9.12-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 29/218] libxcb-0:1.17.0-6.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 29/218] libpng-2:1.6.50-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 30/218] lzo-0:2.10-15.fc43.x86_64     100% |   0.0   B/s |   0.0   B |  00m00s
+[ 30/218] libxcb-0:1.17.0-6.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 31/218] pixman-0:0.46.2-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 31/218] lzo-0:2.10-15.fc43.x86_64     100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 32/218] glycin-libs-0:2.0~beta.3-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 32/218] pixman-0:0.46.2-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 33/218] shared-mime-info-0:2.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 33/218] glycin-libs-0:2.0~beta.3-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 34/218] adwaita-icon-theme-0:48.1-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 34/218] shared-mime-info-0:2.4-2.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 35/218] at-spi2-atk-0:2.57.1-2.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 35/218] adwaita-icon-theme-0:48.1-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 36/218] colord-libs-0:1.4.8-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 36/218] at-spi2-atk-0:2.57.1-2.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 37/218] cups-libs-1:2.4.12-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 37/218] colord-libs-0:1.4.8-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 38/218] fribidi-0:1.0.16-3.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 38/218] cups-libs-1:2.4.12-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 39/218] gdk-pixbuf2-modules-0:2.43.3- 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 39/218] fribidi-0:1.0.16-3.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 40/218] gtk-update-icon-cache-0:3.24. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 40/218] gdk-pixbuf2-modules-0:2.43.3- 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 41/218] hicolor-icon-theme-0:0.18-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 41/218] gtk-update-icon-cache-0:3.24. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 42/218] libXcomposite-0:0.4.6-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 42/218] hicolor-icon-theme-0:0.18-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 43/218] libXcursor-0:1.2.3-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 43/218] libXcomposite-0:0.4.6-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 44/218] libXdamage-0:1.1.6-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 44/218] libXcursor-0:1.2.3-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 45/218] libXfixes-0:6.0.1-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 45/218] libXdamage-0:1.1.6-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 46/218] libXi-0:1.8.2-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+[ 46/218] libXfixes-0:6.0.1-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 47/218] libXinerama-0:1.1.5-9.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 47/218] libXi-0:1.8.2-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 48/218] libXrandr-0:1.5.4-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 48/218] libXinerama-0:1.1.5-9.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 49/218] libcloudproviders-0:0.3.6-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 49/218] libXrandr-0:1.5.4-6.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 50/218] libtinysparql-0:3.10~beta-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 50/218] libcloudproviders-0:0.3.6-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 51/218] libwayland-client-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 51/218] libtinysparql-0:3.10~beta-2.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 52/218] libwayland-cursor-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 52/218] libwayland-client-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 53/218] libwayland-egl-0:1.24.0-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 53/218] libwayland-cursor-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 54/218] libxkbcommon-0:1.11.0-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 54/218] libwayland-egl-0:1.24.0-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 55/218] graphite2-0:1.3.14-19.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 55/218] libxkbcommon-0:1.11.0-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 56/218] libXft-0:2.3.8-9.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+[ 56/218] graphite2-0:1.3.14-19.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 57/218] libthai-0:0.1.29-11.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 57/218] libXft-0:2.3.8-9.fc43.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 58/218] expat-0:2.7.1-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+[ 58/218] libthai-0:0.1.29-11.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 59/218] mpdecimal-0:4.0.1-2.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 59/218] expat-0:2.7.1-3.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 60/218] tzdata-0:2025b-3.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
+[ 60/218] mpdecimal-0:4.0.1-2.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 61/218] dbus-1:1.16.0-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+[ 61/218] python-pip-wheel-0:25.2-2.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 62/218] dbus-libs-1:1.16.0-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 62/218] tzdata-0:2025b-3.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 63/218] libXtst-0:1.2.5-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 63/218] dbus-1:1.16.0-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 64/218] xprop-0:1.2.8-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+[ 64/218] dbus-libs-1:1.16.0-4.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 65/218] default-fonts-core-sans-0:4.2 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 65/218] libXtst-0:1.2.5-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 66/218] fonts-filesystem-1:2.0.5-23.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 66/218] xprop-0:1.2.8-4.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 67/218] xml-common-0:0.6.3-67.fc43.no 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 67/218] default-fonts-core-sans-0:4.2 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 68/218] libX11-common-0:1.8.12-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 68/218] fonts-filesystem-1:2.0.5-23.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 69/218] libXau-0:1.0.12-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 69/218] xml-common-0:0.6.3-67.fc43.no 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 70/218] glycin-loaders-0:2.0~beta.3-1 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 70/218] libX11-common-0:1.8.12-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 71/218] lcms2-0:2.16-6.fc43.x86_64    100% |   0.0   B/s |   0.0   B |  00m00s
+[ 71/218] libXau-0:1.0.12-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 72/218] libseccomp-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 72/218] glycin-loaders-0:2.0~beta.3-1 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 73/218] adwaita-cursor-theme-0:48.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 73/218] lcms2-0:2.16-6.fc43.x86_64    100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 74/218] adwaita-icon-theme-legacy-0:4 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 74/218] libseccomp-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 75/218] libgusb-0:0.4.9-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 75/218] adwaita-cursor-theme-0:48.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 76/218] avahi-libs-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 76/218] adwaita-icon-theme-legacy-0:4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 77/218] cups-filesystem-1:2.4.12-4.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 77/218] libgusb-0:0.4.9-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 78/218] libjpeg-turbo-0:3.1.1-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 78/218] avahi-libs-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 79/218] libtiff-0:4.7.0-8.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 79/218] cups-filesystem-1:2.4.12-4.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 80/218] avahi-glib-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 80/218] libjpeg-turbo-0:3.1.1-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 81/218] json-glib-0:1.10.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 81/218] libtiff-0:4.7.0-8.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 82/218] libicu-0:77.1-1.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
+[ 82/218] avahi-glib-0:0.9~rc2-6.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 83/218] libsoup3-0:3.6.5-4.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 83/218] json-glib-0:1.10.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 84/218] xkeyboard-config-0:2.45-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 84/218] libicu-0:77.1-1.fc43.x86_64   100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 85/218] libdatrie-0:0.2.13-12.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 85/218] libsoup3-0:3.6.5-4.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 86/218] abattis-cantarell-vf-fonts-0: 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 86/218] xkeyboard-config-0:2.45-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 87/218] google-noto-sans-vf-fonts-0:2 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 87/218] libdatrie-0:0.2.13-12.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 88/218] bubblewrap-0:0.11.0-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 88/218] abattis-cantarell-vf-fonts-0: 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 89/218] libheif-0:1.20.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 89/218] google-noto-sans-vf-fonts-0:2 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 90/218] libjxl-1:0.11.1-4.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 90/218] bubblewrap-0:0.11.0-2.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 91/218] librsvg2-0:2.61.0-1.fc44.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 91/218] libheif-0:1.20.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 92/218] jbigkit-libs-0:2.1-32.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 92/218] libjxl-1:0.11.1-4.fc44.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 93/218] liblerc-0:4.0.0-9.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 93/218] librsvg2-0:2.61.0-1.fc44.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 94/218] libwebp-0:1.6.0-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 94/218] jbigkit-libs-0:2.1-32.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 95/218] google-noto-fonts-common-0:20 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 95/218] liblerc-0:4.0.0-9.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 96/218] libaom-0:3.12.0-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 96/218] libwebp-0:1.6.0-2.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 97/218] libdav1d-0:1.5.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 97/218] google-noto-fonts-common-0:20 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 98/218] libopenjph-0:0.21.5-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 98/218] libaom-0:3.12.0-3.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[ 99/218] noopenh264-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[ 99/218] libdav1d-0:1.5.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[100/218] openjpeg-0:2.5.3-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[100/218] libopenjph-0:0.21.5-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[101/218] rav1e-libs-0:0.7.1-8.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[101/218] noopenh264-0:2.6.0-2.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[102/218] svt-av1-libs-0:2.3.0-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[102/218] openjpeg-0:2.5.3-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[103/218] highway-0:1.2.0-5.fc42.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[103/218] rav1e-libs-0:0.7.1-8.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[104/218] libvmaf-0:3.0.0-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
+[104/218] svt-av1-libs-0:2.3.0-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[105/218] cpuinfo-0:24.09.26-2.git1e83a 100% |   0.0   B/s |   0.0   B |  00m00s
+[105/218] highway-0:1.2.0-5.fc42.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[106/218] python3-0:3.14.0~rc2-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[106/218] libvmaf-0:3.0.0-4.fc43.x86_64 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[107/218] rsvg-pixbuf-loader-0:2.61.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
+[107/218] cpuinfo-0:24.09.26-2.git1e83a 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[108/218] at-spi2-atk-devel-0:2.57.1-2. 100% |   0.0   B/s |   0.0   B |  00m00s
+[108/218] python3-0:3.14.0~rc2-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[109/218] atk-devel-0:2.57.1-2.fc44.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[109/218] rsvg-pixbuf-loader-0:2.61.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[110/218] cairo-devel-0:1.18.4-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[110/218] at-spi2-atk-devel-0:2.57.1-2. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[111/218] cairo-gobject-devel-0:1.18.4- 100% |   0.0   B/s |   0.0   B |  00m00s
+[111/218] atk-devel-0:2.57.1-2.fc44.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[112/218] fontconfig-devel-0:2.17.0-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[112/218] cairo-devel-0:1.18.4-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[113/218] gettext-0:0.26-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+[113/218] cairo-gobject-devel-0:1.18.4- 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[114/218] gettext-libs-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[114/218] fontconfig-devel-0:2.17.0-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[115/218] gettext-runtime-0:0.26-1.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
+[115/218] gettext-0:0.26-1.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[116/218] libtextstyle-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[116/218] gettext-libs-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[117/218] gettext-envsubst-0:0.26-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[117/218] gettext-runtime-0:0.26-1.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[118/218] fribidi-devel-0:1.0.16-3.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[118/218] libtextstyle-0:0.26-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[119/218] gdk-pixbuf2-devel-0:2.43.3-7. 100% |   0.0   B/s |   0.0   B |  00m00s
+[119/218] gettext-envsubst-0:0.26-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[120/218] glib2-devel-0:2.85.4-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[120/218] fribidi-devel-0:1.0.16-3.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[121/218] glycin-devel-0:2.0~beta.3-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[121/218] gdk-pixbuf2-devel-0:2.43.3-7. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[122/218] python3-packaging-0:25.0-5.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[122/218] glib2-devel-0:2.85.4-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[123/218] libX11-devel-0:1.8.12-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[123/218] glycin-devel-0:2.0~beta.3-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[124/218] libX11-xcb-0:1.8.12-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[124/218] python3-packaging-0:25.0-5.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[125/218] xorg-x11-proto-devel-0:2024.1 100% |   0.0   B/s |   0.0   B |  00m00s
+[125/218] libX11-devel-0:1.8.12-1.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[126/218] libXcomposite-devel-0:0.4.6-6 100% |   0.0   B/s |   0.0   B |  00m00s
+[126/218] libX11-xcb-0:1.8.12-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[127/218] libXcursor-devel-0:1.2.3-3.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[127/218] xorg-x11-proto-devel-0:2024.1 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[128/218] libXdamage-devel-0:1.1.6-6.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[128/218] libXcomposite-devel-0:0.4.6-6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[129/218] libXext-devel-0:1.3.6-4.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[129/218] libXcursor-devel-0:1.2.3-3.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[130/218] libXfixes-devel-0:6.0.1-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[130/218] libXdamage-devel-0:1.1.6-6.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[131/218] libXi-devel-0:1.8.2-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[131/218] libXext-devel-0:1.3.6-4.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[132/218] libXinerama-devel-0:1.1.5-9.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[132/218] libXfixes-devel-0:6.0.1-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[133/218] libXrandr-devel-0:1.5.4-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[133/218] libXi-devel-0:1.8.2-3.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[134/218] libcloudproviders-devel-0:0.3 100% |   0.0   B/s |   0.0   B |  00m00s
+[134/218] libXinerama-devel-0:1.1.5-9.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[135/218] libepoxy-devel-0:1.5.10-10.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[135/218] libXrandr-devel-0:1.5.4-6.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[136/218] libxkbcommon-devel-0:1.11.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
+[136/218] libcloudproviders-devel-0:0.3 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[137/218] pango-devel-0:1.57.0-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[137/218] libepoxy-devel-0:1.5.10-10.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[138/218] freetype-devel-0:2.13.3-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[138/218] libxkbcommon-devel-0:1.11.0-1 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[139/218] wayland-devel-0:1.24.0-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[139/218] pango-devel-0:1.57.0-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[140/218] libwayland-server-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[140/218] freetype-devel-0:2.13.3-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[141/218] lcms2-devel-0:2.16-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[141/218] wayland-devel-0:1.24.0-1.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[142/218] libseccomp-devel-0:2.6.0-2.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[142/218] libwayland-server-0:1.24.0-1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[143/218] libffi-devel-0:3.5.1-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[143/218] lcms2-devel-0:2.16-6.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[144/218] libmount-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[144/218] libseccomp-devel-0:2.6.0-2.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[145/218] libselinux-devel-0:3.9-4.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
+[145/218] libffi-devel-0:3.5.1-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[146/218] libsepol-devel-0:3.9-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[146/218] libmount-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[147/218] pcre2-devel-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[147/218] libselinux-devel-0:3.9-4.fc44 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[148/218] pcre2-utf16-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[148/218] libsepol-devel-0:3.9-2.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[149/218] pcre2-utf32-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[149/218] pcre2-devel-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[150/218] sysprof-capture-devel-0:49~al 100% |   0.0   B/s |   0.0   B |  00m00s
+[150/218] pcre2-utf16-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[151/218] zlib-ng-compat-devel-0:2.2.5- 100% |   0.0   B/s |   0.0   B |  00m00s
+[151/218] pcre2-utf32-0:10.45-1.fc43.1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[152/218] cmake-filesystem-0:3.31.6-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[152/218] sysprof-capture-devel-0:49~al 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[153/218] libjpeg-turbo-devel-0:3.1.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+[153/218] zlib-ng-compat-devel-0:2.2.5- 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[154/218] libpng-devel-2:1.6.50-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[154/218] cmake-filesystem-0:3.31.6-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[155/218] libtiff-devel-0:4.7.0-8.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
+[155/218] libjpeg-turbo-devel-0:3.1.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[156/218] glibc-devel-0:2.42.9000-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[156/218] libpng-devel-2:1.6.50-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[157/218] libxcrypt-devel-0:4.4.38-8.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[157/218] libtiff-devel-0:4.7.0-8.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[158/218] brotli-devel-0:1.1.0-9.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[158/218] glibc-devel-0:2.42.9000-3.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[159/218] brotli-0:1.1.0-9.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
+[159/218] libxcrypt-devel-0:4.4.38-8.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[160/218] bzip2-devel-0:1.0.8-21.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[160/218] brotli-devel-0:1.1.0-9.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[161/218] libxml2-devel-0:2.12.10-4.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[161/218] brotli-0:1.1.0-9.fc44.x86_64  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[162/218] xz-devel-1:5.8.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[162/218] bzip2-devel-0:1.0.8-21.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[163/218] libXrender-devel-0:0.9.12-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[163/218] harfbuzz-devel-0:11.4.5-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[164/218] libxcb-devel-0:1.17.0-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[164/218] harfbuzz-cairo-0:11.4.5-1.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[165/218] pixman-devel-0:0.46.2-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[165/218] harfbuzz-icu-0:11.4.5-1.fc44. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[166/218] lzo-devel-0:2.10-15.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
+[166/218] libxml2-devel-0:2.12.10-4.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[167/218] lzo-minilzo-0:2.10-15.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[167/218] xz-devel-1:5.8.1-2.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[168/218] at-spi2-core-devel-0:2.57.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
+[168/218] libXrender-devel-0:0.9.12-3.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[169/218] dbus-devel-1:1.16.0-4.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[169/218] libxcb-devel-0:1.17.0-6.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[170/218] libXft-devel-0:2.3.8-9.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[170/218] pixman-devel-0:0.46.2-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[171/218] libthai-devel-0:0.1.29-11.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[171/218] lzo-devel-0:2.10-15.fc43.x86_ 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[172/218] libXau-devel-0:1.0.12-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[172/218] lzo-minilzo-0:2.10-15.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[173/218] liblerc-devel-0:4.0.0-9.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[173/218] at-spi2-core-devel-0:2.57.1-2 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[174/218] libwebp-devel-0:1.6.0-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[174/218] dbus-devel-1:1.16.0-4.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[175/218] libzstd-devel-0:1.5.7-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[175/218] libXft-devel-0:2.3.8-9.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[176/218] libdatrie-devel-0:0.2.13-12.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[176/218] libthai-devel-0:0.1.29-11.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[177/218] libblkid-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[177/218] libXau-devel-0:1.0.12-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[178/218] libglvnd-devel-1:1.7.0-8.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
+[178/218] liblerc-devel-0:4.0.0-9.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[179/218] libglvnd-1:1.7.0-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[179/218] libwebp-devel-0:1.6.0-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[180/218] libglvnd-core-devel-1:1.7.0-8 100% |   0.0   B/s |   0.0   B |  00m00s
+[180/218] libzstd-devel-0:1.5.7-2.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[181/218] libglvnd-egl-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[181/218] libdatrie-devel-0:0.2.13-12.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[182/218] libglvnd-gles-1:1.7.0-8.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[182/218] libblkid-devel-0:2.41.1-16.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[183/218] libglvnd-glx-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[183/218] libglvnd-devel-1:1.7.0-8.fc43 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[184/218] libglvnd-opengl-1:1.7.0-8.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[184/218] libglvnd-1:1.7.0-8.fc43.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[185/218] mesa-libEGL-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[185/218] libglvnd-core-devel-1:1.7.0-8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[186/218] mesa-libGL-0:25.2.1-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[186/218] libglvnd-egl-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[187/218] libdrm-0:2.4.125-3.fc44.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
+[187/218] libglvnd-gles-1:1.7.0-8.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[188/218] mesa-dri-drivers-0:25.2.1-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[188/218] libglvnd-glx-1:1.7.0-8.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[189/218] mesa-libgbm-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[189/218] libglvnd-opengl-1:1.7.0-8.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[190/218] libXxf86vm-0:1.1.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
+[190/218] mesa-libEGL-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[191/218] libpciaccess-0:0.16-16.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[191/218] mesa-libGL-0:25.2.1-1.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[192/218] libxshmfence-0:1.3.2-7.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
+[192/218] libdrm-0:2.4.125-3.fc44.x86_6 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[193/218] llvm-libs-0:20.1.8-18.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[193/218] mesa-dri-drivers-0:25.2.1-1.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[194/218] lm_sensors-libs-0:3.6.0-23.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[194/218] mesa-libgbm-0:25.2.1-1.fc44.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[195/218] mesa-filesystem-0:25.2.1-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[195/218] libXxf86vm-0:1.1.6-3.fc43.x86 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[196/218] spirv-tools-libs-0:2025.3-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[196/218] libpciaccess-0:0.16-16.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[197/218] hwdata-0:0.398-1.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
+[197/218] libxshmfence-0:1.3.2-7.fc43.x 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[198/218] libedit-0:3.1-56.20250104cvs. 100% |   0.0   B/s |   0.0   B |  00m00s
+[198/218] llvm-libs-0:20.1.8-18.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[199/218] llvm-filesystem-0:20.1.8-18.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[199/218] lm_sensors-libs-0:3.6.0-23.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[200/218] graphite2-devel-0:1.3.14-19.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[200/218] mesa-filesystem-0:25.2.1-1.fc 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[201/218] libicu-devel-0:77.1-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[201/218] spirv-tools-libs-0:2025.3-4.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[202/218] kernel-headers-0:6.17.0-0.rc3 100% |   0.0   B/s |   0.0   B |  00m00s
+[202/218] hwdata-0:0.398-1.fc43.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[203/218] systemd-devel-0:258~rc3-2.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
+[203/218] libedit-0:3.1-56.20250104cvs. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[204/218] libXtst-devel-0:1.2.5-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
+[204/218] llvm-filesystem-0:20.1.8-18.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[205/218] libcap-devel-0:2.76-3.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
+[205/218] graphite2-devel-0:1.3.14-19.f 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[206/218] annobin-plugin-gcc-0:12.99-1. 100% |   0.0   B/s |   0.0   B |  00m00s
+[206/218] libicu-devel-0:77.1-1.fc43.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[207/218] gcc-plugin-annobin-0:15.2.1-1 100% |   0.0   B/s |   0.0   B |  00m00s
+[207/218] kernel-headers-0:6.17.0-0.rc3 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[208/218] annobin-docs-0:12.99-1.fc43.n 100% |   0.0   B/s |   0.0   B |  00m00s
+[208/218] systemd-devel-0:258~rc3-2.fc4 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[209/218] systemd-rpm-macros-0:258~rc3- 100% |   0.0   B/s |   0.0   B |  00m00s
+[209/218] libXtst-devel-0:1.2.5-3.fc43. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[210/218] pyproject-rpm-macros-0:1.18.3 100% |   0.0   B/s |   0.0   B |  00m00s
+[210/218] libcap-devel-0:2.76-3.fc44.x8 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[211/218] python-rpm-macros-0:3.14-7.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[211/218] annobin-plugin-gcc-0:12.99-1. 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[212/218] python3-rpm-generators-0:14-1 100% |   0.0   B/s |   0.0   B |  00m00s
+[212/218] gcc-plugin-annobin-0:15.2.1-1 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[213/218] python3-rpm-macros-0:3.14-7.f 100% |   0.0   B/s |   0.0   B |  00m00s
+[213/218] annobin-docs-0:12.99-1.fc43.n 100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[214/218] harfbuzz-devel-0:11.4.5-1.fc4 100% | 893.5 KiB/s | 455.7 KiB |  00m01s
-[215/218] harfbuzz-cairo-0:11.4.5-1.fc4 100% | 199.3 KiB/s |  30.3 KiB |  00m00s
-[216/218] harfbuzz-0:11.4.5-1.fc44.x86_ 100% |   1.5 MiB/s |   1.1 MiB |  00m01s
-[217/218] harfbuzz-icu-0:11.4.5-1.fc44. 100% | 277.6 KiB/s |  15.8 KiB |  00m00s
-[218/218] python-pip-wheel-0:25.2-2.fc4 100% |   1.5 MiB/s |   1.1 MiB |  00m01s
+[214/218] systemd-rpm-macros-0:258~rc3- 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[215/218] pyproject-rpm-macros-0:1.18.3 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[216/218] python-rpm-macros-0:3.14-7.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[217/218] python3-rpm-generators-0:14-1 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
+[218/218] python3-rpm-macros-0:3.14-7.f 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
 --------------------------------------------------------------------------------
-[218/218] Total                         100% |   2.8 MiB/s |   2.7 MiB |  00m01s
+[218/218] Total                         100% |   0.0   B/s |   0.0   B |  00m00s
 Running transaction
-[  1/220] Verify package files          100% | 297.0   B/s | 218.0   B |  00m01s
-[  2/220] Prepare transaction           100% |   1.0 KiB/s | 218.0   B |  00m00s
-[  3/220] Installing glib2-0:2.85.4-1.f 100% | 146.0 MiB/s |  14.7 MiB |  00m00s
-[  4/220] Installing xorg-x11-proto-dev 100% |  61.5 MiB/s |   1.8 MiB |  00m00s
-[  5/220] Installing expat-0:2.7.1-3.fc 100% |   7.2 MiB/s | 296.3 KiB |  00m00s
-[  6/220] Installing libglvnd-1:1.7.0-8 100% |  25.8 MiB/s | 527.5 KiB |  00m00s
-[  7/220] Installing cmake-filesystem-0 100% | 330.0 KiB/s |   7.6 KiB |  00m00s
-[  8/220] Installing zlib-ng-compat-dev 100% |   7.6 MiB/s | 108.5 KiB |  00m00s
-[  9/220] Installing libX11-xcb-0:1.8.1 100% | 905.6 KiB/s |  11.8 KiB |  00m00s
-[ 10/220] Installing libjpeg-turbo-0:3. 100% |  32.6 MiB/s | 801.2 KiB |  00m00s
-[ 11/220] Installing dbus-libs-1:1.16.0 100% |  13.5 MiB/s | 346.6 KiB |  00m00s
+[  1/220] Verify package files          100% | 277.0   B/s | 218.0   B |  00m01s
+[  2/220] Prepare transaction           100% |   1.1 KiB/s | 218.0   B |  00m00s
+[  3/220] Installing glib2-0:2.85.4-1.f 100% |  19.0 MiB/s |  14.7 MiB |  00m01s
+[  4/220] Installing xorg-x11-proto-dev 100% |  49.5 MiB/s |   1.8 MiB |  00m00s
+[  5/220] Installing expat-0:2.7.1-3.fc 100% |   6.7 MiB/s | 296.3 KiB |  00m00s
+[  6/220] Installing libglvnd-1:1.7.0-8 100% |  30.3 MiB/s | 527.5 KiB |  00m00s
+[  7/220] Installing cmake-filesystem-0 100% | 361.4 KiB/s |   7.6 KiB |  00m00s
+[  8/220] Installing zlib-ng-compat-dev 100% |   5.3 MiB/s | 108.5 KiB |  00m00s
+[  9/220] Installing libX11-xcb-0:1.8.1 100% | 535.2 KiB/s |  11.8 KiB |  00m00s
+[ 10/220] Installing libjpeg-turbo-0:3. 100% |  30.1 MiB/s | 801.2 KiB |  00m00s
+[ 11/220] Installing dbus-libs-1:1.16.0 100% |  16.9 MiB/s | 346.6 KiB |  00m00s
 [ 12/220] Installing libwayland-client- 100% |   3.4 MiB/s |  63.2 KiB |  00m00s
-[ 13/220] Installing libpng-2:1.6.50-2. 100% |  12.3 MiB/s | 239.0 KiB |  00m00s
-[ 14/220] Installing libpng-devel-2:1.6 100% |  19.3 MiB/s | 889.5 KiB |  00m00s
-[ 15/220] Installing avahi-libs-0:0.9~r 100% |   6.5 MiB/s | 174.0 KiB |  00m00s
-[ 16/220] Installing shared-mime-info-0 100% |  47.9 MiB/s |   2.6 MiB |  00m00s
+[ 13/220] Installing libpng-2:1.6.50-2. 100% |   8.6 MiB/s | 239.0 KiB |  00m00s
+[ 14/220] Installing libpng-devel-2:1.6 100% |  18.5 MiB/s | 889.5 KiB |  00m00s
+[ 15/220] Installing avahi-libs-0:0.9~r 100% |  10.0 MiB/s | 174.0 KiB |  00m00s
+[ 16/220] Installing shared-mime-info-0 100% |  43.9 MiB/s |   2.6 MiB |  00m00s
 [ 17/220] Installing python-rpm-macros- 100% |   2.8 MiB/s |  28.5 KiB |  00m00s
-[ 18/220] Installing libwebp-0:1.6.0-2. 100% |  49.4 MiB/s | 960.7 KiB |  00m00s
-[ 19/220] Installing libicu-0:77.1-1.fc 100% | 265.6 MiB/s |  36.4 MiB |  00m00s
+[ 18/220] Installing libwebp-0:1.6.0-2. 100% |  46.9 MiB/s | 960.7 KiB |  00m00s
+[ 19/220] Installing libicu-0:77.1-1.fc 100% | 288.8 MiB/s |  36.4 MiB |  00m00s
 [ 20/220] Installing lcms2-0:2.16-6.fc4 100% |  25.0 MiB/s | 435.3 KiB |  00m00s
-[ 21/220] Installing fonts-filesystem-1 100% |  59.2 KiB/s | 788.0   B |  00m00s
-[ 22/220] Installing fribidi-0:1.0.16-3 100% |   4.2 MiB/s | 192.8 KiB |  00m00s
+[ 21/220] Installing fonts-filesystem-1 100% |  38.5 KiB/s | 788.0   B |  00m00s
+[ 22/220] Installing fribidi-0:1.0.16-3 100% |   3.9 MiB/s | 192.8 KiB |  00m00s
 [ 23/220] Installing libepoxy-0:1.5.10- 100% |  63.4 MiB/s |   1.1 MiB |  00m00s
-[ 24/220] Installing fribidi-devel-0:1. 100% |   4.4 MiB/s |  81.9 KiB |  00m00s
-[ 25/220] Installing python3-rpm-macros 100% | 567.1 KiB/s |   6.8 KiB |  00m00s
-[ 26/220] Installing libwayland-cursor- 100% |   2.1 MiB/s |  38.5 KiB |  00m00s
-[ 27/220] Installing libjpeg-turbo-deve 100% |  16.6 MiB/s | 356.5 KiB |  00m00s
-[ 28/220] Installing libcloudproviders- 100% |   5.9 MiB/s | 126.2 KiB |  00m00s
-[ 29/220] Installing json-glib-0:1.10.6 100% |  20.2 MiB/s | 598.6 KiB |  00m00s
-[ 30/220] Installing libffi-devel-0:3.5 100% |   1.8 MiB/s |  35.6 KiB |  00m00s
+[ 24/220] Installing fribidi-devel-0:1. 100% |   5.0 MiB/s |  81.9 KiB |  00m00s
+[ 25/220] Installing python3-rpm-macros 100% | 425.3 KiB/s |   6.8 KiB |  00m00s
+[ 26/220] Installing libwayland-cursor- 100% |   1.7 MiB/s |  38.5 KiB |  00m00s
+[ 27/220] Installing libjpeg-turbo-deve 100% |  18.3 MiB/s | 356.5 KiB |  00m00s
+[ 28/220] Installing libcloudproviders- 100% |   6.2 MiB/s | 126.2 KiB |  00m00s
+[ 29/220] Installing json-glib-0:1.10.6 100% |  18.3 MiB/s | 598.6 KiB |  00m00s
+[ 30/220] Installing libffi-devel-0:3.5 100% |   1.5 MiB/s |  35.6 KiB |  00m00s
 [ 31/220] Installing libtextstyle-0:0.2 100% |  14.0 MiB/s | 200.3 KiB |  00m00s
-[ 32/220] Installing gettext-libs-0:0.2 100% |  71.9 MiB/s |   2.2 MiB |  00m00s
-[ 33/220] Installing libdav1d-0:1.5.1-2 100% |  56.5 MiB/s |   1.7 MiB |  00m00s
+[ 32/220] Installing gettext-libs-0:0.2 100% |  76.9 MiB/s |   2.2 MiB |  00m00s
+[ 33/220] Installing libdav1d-0:1.5.1-2 100% |  73.6 MiB/s |   1.7 MiB |  00m00s
 [ 34/220] Installing liblerc-0:4.0.0-9. 100% |  29.1 MiB/s | 625.6 KiB |  00m00s
-[ 35/220] Installing libdatrie-0:0.2.13 100% |   3.0 MiB/s |  54.9 KiB |  00m00s
-[ 36/220] Installing libthai-0:0.1.29-1 100% |  31.9 MiB/s | 785.2 KiB |  00m00s
-[ 37/220] Installing libseccomp-0:2.6.0 100% |  10.5 MiB/s | 226.8 KiB |  00m00s
-[ 38/220] Installing libXau-0:1.0.12-3. 100% |   3.8 MiB/s |  74.5 KiB |  00m00s
-[ 39/220] Installing libxcb-0:1.17.0-6. 100% |  27.0 MiB/s |   1.1 MiB |  00m00s
-[ 40/220] Installing xml-common-0:0.6.3 100% |   2.6 MiB/s |  81.1 KiB |  00m00s
-[ 41/220] Installing graphite2-0:1.3.14 100% |   4.5 MiB/s | 193.9 KiB |  00m00s
-[ 42/220] Installing harfbuzz-0:11.4.5- 100% |  98.0 MiB/s |   2.8 MiB |  00m00s
+[ 35/220] Installing libdatrie-0:0.2.13 100% |   2.7 MiB/s |  54.9 KiB |  00m00s
+[ 36/220] Installing libthai-0:0.1.29-1 100% |  40.4 MiB/s | 785.2 KiB |  00m00s
+[ 37/220] Installing libseccomp-0:2.6.0 100% |  11.1 MiB/s | 226.8 KiB |  00m00s
+[ 38/220] Installing libXau-0:1.0.12-3. 100% |   4.0 MiB/s |  74.5 KiB |  00m00s
+[ 39/220] Installing libxcb-0:1.17.0-6. 100% |  30.0 MiB/s |   1.1 MiB |  00m00s
+[ 40/220] Installing xml-common-0:0.6.3 100% |   4.0 MiB/s |  81.1 KiB |  00m00s
+[ 41/220] Installing graphite2-0:1.3.14 100% |   4.1 MiB/s | 193.9 KiB |  00m00s
+[ 42/220] Installing harfbuzz-0:11.4.5- 100% | 123.6 MiB/s |   2.8 MiB |  00m00s
 [ 43/220] Installing freetype-0:2.13.3- 100% |  41.6 MiB/s | 851.9 KiB |  00m00s
-[ 44/220] Installing libwayland-egl-0:1 100% | 484.0 KiB/s |  13.6 KiB |  00m00s
-[ 45/220] Installing pixman-0:0.46.2-2. 100% |  43.4 MiB/s | 711.4 KiB |  00m00s
-[ 46/220] Installing pixman-devel-0:0.4 100% |   4.3 MiB/s |  56.9 KiB |  00m00s
-[ 47/220] Installing lzo-0:2.10-15.fc43 100% |   8.4 MiB/s | 180.5 KiB |  00m00s
-[ 48/220] Installing libmpc-0:1.3.1-8.f 100% |   4.4 MiB/s | 162.1 KiB |  00m00s
-[ 49/220] Installing cpp-0:15.2.1-1.fc4 100% | 216.9 MiB/s |  37.9 MiB |  00m00s
-[ 50/220] Installing harfbuzz-icu-0:11. 100% |   1.1 MiB/s |  16.3 KiB |  00m00s
-[ 51/220] Installing graphite2-devel-0: 100% |   3.1 MiB/s |  50.8 KiB |  00m00s
-[ 52/220] Installing libXau-devel-0:1.0 100% | 323.0 KiB/s |   9.4 KiB |  00m00s
-[ 53/220] Installing libxcb-devel-0:1.1 100% |  19.3 MiB/s |   3.1 MiB |  00m00s
-[ 54/220] Installing libseccomp-devel-0 100% |   3.0 MiB/s | 121.0 KiB |  00m00s
-[ 55/220] Installing libdatrie-devel-0: 100% |  14.2 MiB/s | 565.3 KiB |  00m00s
-[ 56/220] Installing libthai-devel-0:0. 100% |  33.7 MiB/s | 656.3 KiB |  00m00s
-[ 57/220] Installing liblerc-devel-0:4. 100% | 126.1 MiB/s |   4.3 MiB |  00m00s
-[ 58/220] Installing libgusb-0:0.4.9-4. 100% |   8.0 MiB/s | 163.7 KiB |  00m00s
+[ 44/220] Installing libwayland-egl-0:1 100% | 903.4 KiB/s |  13.6 KiB |  00m00s
+[ 45/220] Installing pixman-0:0.46.2-2. 100% |  46.3 MiB/s | 711.4 KiB |  00m00s
+[ 46/220] Installing pixman-devel-0:0.4 100% |   5.0 MiB/s |  56.9 KiB |  00m00s
+[ 47/220] Installing lzo-0:2.10-15.fc43 100% |   9.3 MiB/s | 180.5 KiB |  00m00s
+[ 48/220] Installing libmpc-0:1.3.1-8.f 100% |   7.5 MiB/s | 162.1 KiB |  00m00s
+[ 49/220] Installing cpp-0:15.2.1-1.fc4 100% | 240.2 MiB/s |  37.9 MiB |  00m00s
+[ 50/220] Installing harfbuzz-icu-0:11. 100% |   1.2 MiB/s |  16.3 KiB |  00m00s
+[ 51/220] Installing graphite2-devel-0: 100% |   3.8 MiB/s |  50.8 KiB |  00m00s
+[ 52/220] Installing libXau-devel-0:1.0 100% | 346.9 KiB/s |   9.4 KiB |  00m00s
+[ 53/220] Installing libxcb-devel-0:1.1 100% |  20.7 MiB/s |   3.1 MiB |  00m00s
+[ 54/220] Installing libseccomp-devel-0 100% |   2.9 MiB/s | 121.0 KiB |  00m00s
+[ 55/220] Installing libdatrie-devel-0: 100% |  14.5 MiB/s | 565.3 KiB |  00m00s
+[ 56/220] Installing libthai-devel-0:0. 100% |  35.6 MiB/s | 656.3 KiB |  00m00s
+[ 57/220] Installing liblerc-devel-0:4. 100% | 194.9 MiB/s |   4.3 MiB |  00m00s
+[ 58/220] Installing libgusb-0:0.4.9-4. 100% |  10.0 MiB/s | 163.7 KiB |  00m00s
 [ 59/220] Installing colord-libs-0:1.4. 100% |  33.9 MiB/s | 833.8 KiB |  00m00s
-[ 60/220] Installing libcloudproviders- 100% |  13.3 MiB/s | 382.6 KiB |  00m00s
-[ 61/220] Installing pyproject-rpm-macr 100% |   4.2 MiB/s | 116.5 KiB |  00m00s
-[ 62/220] Installing abattis-cantarell- 100% |  11.9 MiB/s | 194.4 KiB |  00m00s
+[ 60/220] Installing libcloudproviders- 100% |  17.8 MiB/s | 382.6 KiB |  00m00s
+[ 61/220] Installing pyproject-rpm-macr 100% |   6.3 MiB/s | 116.5 KiB |  00m00s
+[ 62/220] Installing abattis-cantarell- 100% |   9.5 MiB/s | 194.4 KiB |  00m00s
 [ 63/220] Installing lcms2-devel-0:2.16 100% |   9.5 MiB/s | 136.4 KiB |  00m00s
-[ 64/220] Installing libicu-devel-0:77. 100% |  72.6 MiB/s |   5.1 MiB |  00m00s
-[ 65/220] Installing libwebp-devel-0:1. 100% |   6.1 MiB/s | 125.4 KiB |  00m00s
-[ 66/220] Installing avahi-glib-0:0.9~r 100% |   1.8 MiB/s |  20.4 KiB |  00m00s
-[ 67/220] Installing libglvnd-opengl-1: 100% |   7.5 MiB/s | 145.6 KiB |  00m00s
-[ 68/220] Installing gobject-introspect 100% |  16.2 MiB/s | 397.1 KiB |  00m00s
-[ 69/220] Installing libsoup3-0:3.6.5-4 100% |  34.9 MiB/s |   1.2 MiB |  00m00s
-[ 70/220] Installing libtinysparql-0:3. 100% |  51.7 MiB/s |   1.3 MiB |  00m00s
-[ 71/220] Installing annobin-docs-0:12. 100% |   4.7 MiB/s | 100.1 KiB |  00m00s
-[ 72/220] Installing libcap-devel-0:2.7 100% |   1.5 MiB/s |  49.8 KiB |  00m00s
-[ 73/220] Installing systemd-devel-0:25 100% |   8.8 MiB/s | 749.4 KiB |  00m00s
-[ 74/220] Installing dbus-devel-1:1.16. 100% |   5.1 MiB/s | 136.5 KiB |  00m00s
-[ 75/220] Installing kernel-headers-0:6 100% |  63.7 MiB/s |   6.9 MiB |  00m00s
-[ 76/220] Installing glibc-devel-0:2.42 100% |   4.7 MiB/s |   2.4 MiB |  00m01s
-[ 77/220] Installing libxcrypt-devel-0: 100% | 551.3 KiB/s |  33.1 KiB |  00m00s
-[ 78/220] Installing llvm-filesystem-0: 100% |  59.0 KiB/s |   1.1 KiB |  00m00s
-[ 79/220] Installing libedit-0:3.1-56.2 100% |  10.3 MiB/s | 241.8 KiB |  00m00s
-[ 80/220] Installing llvm-libs-0:20.1.8 100% | 311.8 MiB/s | 139.7 MiB |  00m00s
-[ 81/220] Installing hwdata-0:0.398-1.f 100% | 234.0 MiB/s |   9.6 MiB |  00m00s
-[ 82/220] Installing libpciaccess-0:0.1 100% |   2.5 MiB/s |  45.9 KiB |  00m00s
-[ 83/220] Installing libdrm-0:2.4.125-3 100% |  13.9 MiB/s | 399.7 KiB |  00m00s
-[ 84/220] Installing spirv-tools-libs-0 100% | 129.5 MiB/s |   5.6 MiB |  00m00s
-[ 85/220] Installing mesa-filesystem-0: 100% | 306.6 KiB/s |   4.3 KiB |  00m00s
-[ 86/220] Installing lm_sensors-libs-0: 100% |   3.7 MiB/s |  86.9 KiB |  00m00s
-[ 87/220] Installing libxshmfence-0:1.3 100% | 502.2 KiB/s |  13.6 KiB |  00m00s
-[ 88/220] Installing mesa-dri-drivers-0 100% | 263.2 MiB/s |  47.9 MiB |  00m00s
-[ 89/220] Installing mesa-libgbm-0:25.2 100% |   1.4 MiB/s |  20.5 KiB |  00m00s
-[ 90/220] Installing mesa-libEGL-0:25.2 100% |  17.7 MiB/s | 307.4 KiB |  00m00s
-[ 91/220] Installing libglvnd-egl-1:1.7 100% |   2.3 MiB/s |  66.3 KiB |  00m00s
-[ 92/220] Installing libglvnd-gles-1:1. 100% |   3.9 MiB/s |  99.3 KiB |  00m00s
-[ 93/220] Installing libglvnd-core-deve 100% |   2.5 MiB/s |  41.1 KiB |  00m00s
-[ 94/220] Installing libblkid-devel-0:2 100% |   2.0 MiB/s |  46.0 KiB |  00m00s
-[ 95/220] Installing libzstd-devel-0:1. 100% |   7.3 MiB/s | 208.8 KiB |  00m00s
-[ 96/220] Installing lzo-minilzo-0:2.10 100% |   1.5 MiB/s |  37.9 KiB |  00m00s
-[ 97/220] Installing lzo-devel-0:2.10-1 100% |   7.5 MiB/s | 215.3 KiB |  00m00s
-[ 98/220] Installing xz-devel-1:5.8.1-2 100% |   6.7 MiB/s | 262.6 KiB |  00m00s
-[ 99/220] Installing libxml2-devel-0:2. 100% |  45.6 MiB/s |   3.4 MiB |  00m00s
-[100/220] Installing bzip2-devel-0:1.0. 100% |  16.0 MiB/s | 310.7 KiB |  00m00s
-[101/220] Installing brotli-0:1.1.0-9.f 100% | 672.7 KiB/s |  32.3 KiB |  00m00s
-[102/220] Installing brotli-devel-0:1.1 100% |   3.0 MiB/s |  68.0 KiB |  00m00s
-[103/220] Installing sysprof-capture-de 100% |  43.7 MiB/s | 805.6 KiB |  00m00s
-[104/220] Installing pcre2-utf32-0:10.4 100% |  27.9 MiB/s | 599.1 KiB |  00m00s
-[105/220] Installing pcre2-utf16-0:10.4 100% |  20.4 MiB/s | 627.2 KiB |  00m00s
-[106/220] Installing pcre2-devel-0:10.4 100% |  37.4 MiB/s |   2.1 MiB |  00m00s
-[107/220] Installing libsepol-devel-0:3 100% |   7.4 MiB/s | 128.9 KiB |  00m00s
-[108/220] Installing libselinux-devel-0 100% |   4.9 MiB/s | 162.1 KiB |  00m00s
-[109/220] Installing libmount-devel-0:2 100% |   2.7 MiB/s |  66.5 KiB |  00m00s
-[110/220] Installing libwayland-server- 100% |   3.4 MiB/s |  79.7 KiB |  00m00s
-[111/220] Installing wayland-devel-0:1. 100% |  13.2 MiB/s | 700.4 KiB |  00m00s
-[112/220] Installing gettext-envsubst-0 100% |   1.7 MiB/s |  76.1 KiB |  00m00s
-[113/220] Installing gettext-runtime-0: 100% |  18.0 MiB/s | 718.7 KiB |  00m00s
-[114/220] Installing gettext-0:0.26-1.f 100% | 179.9 MiB/s |  12.8 MiB |  00m00s
-[115/220] Installing cpuinfo-0:24.09.26 100% |   3.6 MiB/s | 109.7 KiB |  00m00s
-[116/220] Installing svt-av1-libs-0:2.3 100% | 143.9 MiB/s |   5.6 MiB |  00m00s
-[117/220] Installing libvmaf-0:3.0.0-4. 100% |  47.6 MiB/s | 828.4 KiB |  00m00s
-[118/220] Installing libaom-0:3.12.0-3. 100% | 128.0 MiB/s |   5.0 MiB |  00m00s
-[119/220] Installing highway-0:1.2.0-5. 100% | 140.5 MiB/s |   4.4 MiB |  00m00s
-[120/220] Installing libjxl-1:0.11.1-4. 100% |  19.4 MiB/s |   3.1 MiB |  00m00s
-[121/220] Installing rav1e-libs-0:0.7.1 100% |  26.5 MiB/s |   3.0 MiB |  00m00s
-[122/220] Installing openjpeg-0:2.5.3-8 100% |  17.2 MiB/s | 457.7 KiB |  00m00s
-[123/220] Installing noopenh264-0:2.6.0 100% |   1.3 MiB/s |  40.7 KiB |  00m00s
-[124/220] Installing libopenjph-0:0.21. 100% |  15.0 MiB/s | 459.3 KiB |  00m00s
+[ 64/220] Installing libicu-devel-0:77. 100% |  73.7 MiB/s |   5.1 MiB |  00m00s
+[ 65/220] Installing libwebp-devel-0:1. 100% | 290.8 KiB/s | 125.4 KiB |  00m00s
+[ 66/220] Installing avahi-glib-0:0.9~r 100% | 568.0 KiB/s |  20.4 KiB |  00m00s
+[ 67/220] Installing libglvnd-opengl-1: 100% |   4.7 MiB/s | 145.6 KiB |  00m00s
+[ 68/220] Installing gobject-introspect 100% |  15.5 MiB/s | 397.1 KiB |  00m00s
+[ 69/220] Installing libsoup3-0:3.6.5-4 100% |  35.9 MiB/s |   1.2 MiB |  00m00s
+[ 70/220] Installing libtinysparql-0:3. 100% |  61.6 MiB/s |   1.3 MiB |  00m00s
+[ 71/220] Installing annobin-docs-0:12. 100% |   5.4 MiB/s | 100.1 KiB |  00m00s
+[ 72/220] Installing libcap-devel-0:2.7 100% |   1.7 MiB/s |  49.8 KiB |  00m00s
+[ 73/220] Installing systemd-devel-0:25 100% |  10.3 MiB/s | 749.4 KiB |  00m00s
+[ 74/220] Installing dbus-devel-1:1.16. 100% |   6.3 MiB/s | 136.5 KiB |  00m00s
+[ 75/220] Installing kernel-headers-0:6 100% |  70.1 MiB/s |   6.9 MiB |  00m00s
+[ 76/220] Installing glibc-devel-0:2.42 100% |  44.4 MiB/s |   2.4 MiB |  00m00s
+[ 77/220] Installing libxcrypt-devel-0: 100% |   1.3 MiB/s |  33.1 KiB |  00m00s
+[ 78/220] Installing llvm-filesystem-0: 100% |  62.5 KiB/s |   1.1 KiB |  00m00s
+[ 79/220] Installing libedit-0:3.1-56.2 100% |  11.2 MiB/s | 241.8 KiB |  00m00s
+[ 80/220] Installing llvm-libs-0:20.1.8 100% | 348.4 MiB/s | 139.7 MiB |  00m00s
+[ 81/220] Installing hwdata-0:0.398-1.f 100% | 282.2 MiB/s |   9.6 MiB |  00m00s
+[ 82/220] Installing libpciaccess-0:0.1 100% |   2.6 MiB/s |  45.9 KiB |  00m00s
+[ 83/220] Installing libdrm-0:2.4.125-3 100% |  13.5 MiB/s | 399.7 KiB |  00m00s
+[ 84/220] Installing spirv-tools-libs-0 100% | 150.5 MiB/s |   5.6 MiB |  00m00s
+[ 85/220] Installing mesa-filesystem-0: 100% | 252.5 KiB/s |   4.3 KiB |  00m00s
+[ 86/220] Installing lm_sensors-libs-0: 100% |   4.2 MiB/s |  86.9 KiB |  00m00s
+[ 87/220] Installing libxshmfence-0:1.3 100% | 467.5 KiB/s |  13.6 KiB |  00m00s
+[ 88/220] Installing mesa-dri-drivers-0 100% | 321.5 MiB/s |  47.9 MiB |  00m00s
+[ 89/220] Installing mesa-libgbm-0:25.2 100% |   1.8 MiB/s |  20.5 KiB |  00m00s
+[ 90/220] Installing mesa-libEGL-0:25.2 100% |  25.0 MiB/s | 307.4 KiB |  00m00s
+[ 91/220] Installing libglvnd-egl-1:1.7 100% |   3.4 MiB/s |  66.3 KiB |  00m00s
+[ 92/220] Installing libglvnd-gles-1:1. 100% |   5.1 MiB/s |  99.3 KiB |  00m00s
+[ 93/220] Installing libglvnd-core-deve 100% |   3.1 MiB/s |  41.1 KiB |  00m00s
+[ 94/220] Installing libblkid-devel-0:2 100% |   1.9 MiB/s |  46.0 KiB |  00m00s
+[ 95/220] Installing libzstd-devel-0:1. 100% |  10.7 MiB/s | 208.8 KiB |  00m00s
+[ 96/220] Installing lzo-minilzo-0:2.10 100% |   2.1 MiB/s |  37.9 KiB |  00m00s
+[ 97/220] Installing lzo-devel-0:2.10-1 100% |  10.5 MiB/s | 215.3 KiB |  00m00s
+[ 98/220] Installing xz-devel-1:5.8.1-2 100% |  11.1 MiB/s | 262.6 KiB |  00m00s
+[ 99/220] Installing libxml2-devel-0:2. 100% |  63.3 MiB/s |   3.4 MiB |  00m00s
+[100/220] Installing bzip2-devel-0:1.0. 100% |  21.7 MiB/s | 310.7 KiB |  00m00s
+[101/220] Installing brotli-0:1.1.0-9.f 100% | 922.5 KiB/s |  32.3 KiB |  00m00s
+[102/220] Installing brotli-devel-0:1.1 100% |   4.7 MiB/s |  68.0 KiB |  00m00s
+[103/220] Installing sysprof-capture-de 100% |  35.8 MiB/s | 805.6 KiB |  00m00s
+[104/220] Installing pcre2-utf32-0:10.4 100% |  45.0 MiB/s | 599.1 KiB |  00m00s
+[105/220] Installing pcre2-utf16-0:10.4 100% |  29.2 MiB/s | 627.2 KiB |  00m00s
+[106/220] Installing pcre2-devel-0:10.4 100% |  46.5 MiB/s |   2.1 MiB |  00m00s
+[107/220] Installing libsepol-devel-0:3 100% |   6.6 MiB/s | 128.9 KiB |  00m00s
+[108/220] Installing libselinux-devel-0 100% |   6.3 MiB/s | 162.1 KiB |  00m00s
+[109/220] Installing libmount-devel-0:2 100% |   4.6 MiB/s |  66.5 KiB |  00m00s
+[110/220] Installing libwayland-server- 100% |   3.9 MiB/s |  79.7 KiB |  00m00s
+[111/220] Installing wayland-devel-0:1. 100% |  14.0 MiB/s | 700.4 KiB |  00m00s
+[112/220] Installing gettext-envsubst-0 100% |   2.1 MiB/s |  76.1 KiB |  00m00s
+[113/220] Installing gettext-runtime-0: 100% |  18.5 MiB/s | 718.7 KiB |  00m00s
+[114/220] Installing gettext-0:0.26-1.f 100% | 168.0 MiB/s |  12.8 MiB |  00m00s
+[115/220] Installing cpuinfo-0:24.09.26 100% |   3.2 MiB/s | 109.7 KiB |  00m00s
+[116/220] Installing svt-av1-libs-0:2.3 100% | 181.0 MiB/s |   5.6 MiB |  00m00s
+[117/220] Installing libvmaf-0:3.0.0-4. 100% |  50.6 MiB/s | 828.4 KiB |  00m00s
+[118/220] Installing libaom-0:3.12.0-3. 100% | 111.0 MiB/s |   5.0 MiB |  00m00s
+[119/220] Installing highway-0:1.2.0-5. 100% | 150.1 MiB/s |   4.4 MiB |  00m00s
+[120/220] Installing libjxl-1:0.11.1-4. 100% |  76.3 MiB/s |   3.1 MiB |  00m00s
+[121/220] Installing rav1e-libs-0:0.7.1 100% | 106.9 MiB/s |   3.0 MiB |  00m00s
+[122/220] Installing openjpeg-0:2.5.3-8 100% |  20.3 MiB/s | 457.7 KiB |  00m00s
+[123/220] Installing noopenh264-0:2.6.0 100% |   2.0 MiB/s |  40.7 KiB |  00m00s
+[124/220] Installing libopenjph-0:0.21. 100% |  20.4 MiB/s | 459.3 KiB |  00m00s
 [125/220] Installing libheif-0:1.20.1-2 100% |  51.7 MiB/s |   1.5 MiB |  00m00s
-[126/220] Installing google-noto-fonts- 100% | 739.7 KiB/s |  18.5 KiB |  00m00s
-[127/220] Installing google-noto-sans-v 100% |  55.7 MiB/s |   1.4 MiB |  00m00s
-[128/220] Installing default-fonts-core 100% | 727.7 KiB/s |  18.2 KiB |  00m00s
-[129/220] Installing fontconfig-0:2.17. 100% | 716.5 KiB/s | 785.3 KiB |  00m01s
+[126/220] Installing google-noto-fonts- 100% |   1.4 MiB/s |  18.5 KiB |  00m00s
+[127/220] Installing google-noto-sans-v 100% |  60.5 MiB/s |   1.4 MiB |  00m00s
+[128/220] Installing default-fonts-core 100% | 673.8 KiB/s |  18.2 KiB |  00m00s
+[129/220] Installing fontconfig-0:2.17. 100% | 724.5 KiB/s | 785.3 KiB |  00m01s
 [130/220] Installing jbigkit-libs-0:2.1 100% |   4.9 MiB/s | 115.4 KiB |  00m00s
-[131/220] Installing libtiff-0:4.7.0-8. 100% |  19.0 MiB/s | 621.3 KiB |  00m00s
-[132/220] Installing libtiff-devel-0:4. 100% |  24.3 MiB/s | 772.7 KiB |  00m00s
-[133/220] Installing bubblewrap-0:0.11. 100% |   2.5 MiB/s | 137.2 KiB |  00m00s
-[134/220] Installing xkeyboard-config-0 100% | 109.1 MiB/s |  10.3 MiB |  00m00s
-[135/220] Installing libxkbcommon-0:1.1 100% |  12.5 MiB/s | 409.9 KiB |  00m00s
-[136/220] Installing libxkbcommon-devel 100% |  15.0 MiB/s | 385.1 KiB |  00m00s
-[137/220] Installing cups-filesystem-1: 100% |  99.0 KiB/s |   1.8 KiB |  00m00s
-[138/220] Installing cups-libs-1:2.4.12 100% |  15.9 MiB/s | 620.3 KiB |  00m00s
-[139/220] Installing adwaita-icon-theme 100% |  19.3 MiB/s |   2.4 MiB |  00m00s
-[140/220] Installing adwaita-cursor-the 100% |  18.9 MiB/s |  11.4 MiB |  00m01s
-[141/220] Installing adwaita-icon-theme 100% |  18.8 MiB/s |   1.3 MiB |  00m00s
-[142/220] Installing libX11-common-0:1. 100% |  32.1 MiB/s |   1.2 MiB |  00m00s
-[143/220] Installing libX11-0:1.8.12-1. 100% |  45.8 MiB/s |   1.3 MiB |  00m00s
-[144/220] Installing libX11-devel-0:1.8 100% |  16.2 MiB/s |   1.1 MiB |  00m00s
-[145/220] Installing libXext-0:1.3.6-4. 100% |   5.9 MiB/s |  91.2 KiB |  00m00s
-[146/220] Installing libXext-devel-0:1. 100% |   4.0 MiB/s | 110.9 KiB |  00m00s
+[131/220] Installing libtiff-0:4.7.0-8. 100% |  25.3 MiB/s | 621.3 KiB |  00m00s
+[132/220] Installing libtiff-devel-0:4. 100% |  30.2 MiB/s | 772.7 KiB |  00m00s
+[133/220] Installing bubblewrap-0:0.11. 100% |   3.0 MiB/s | 137.2 KiB |  00m00s
+[134/220] Installing xkeyboard-config-0 100% |  12.8 MiB/s |  10.3 MiB |  00m01s
+[135/220] Installing libxkbcommon-0:1.1 100% |   6.1 MiB/s | 409.9 KiB |  00m00s
+[136/220] Installing libxkbcommon-devel 100% |  13.4 MiB/s | 385.1 KiB |  00m00s
+[137/220] Installing cups-filesystem-1: 100% |  77.4 KiB/s |   1.8 KiB |  00m00s
+[138/220] Installing cups-libs-1:2.4.12 100% |  16.8 MiB/s | 620.3 KiB |  00m00s
+[139/220] Installing adwaita-icon-theme 100% |  21.5 MiB/s |   2.4 MiB |  00m00s
+[140/220] Installing adwaita-cursor-the 100% | 259.7 MiB/s |  11.4 MiB |  00m00s
+[141/220] Installing adwaita-icon-theme 100% |  20.6 MiB/s |   1.3 MiB |  00m00s
+[142/220] Installing libX11-common-0:1. 100% |  29.0 MiB/s |   1.2 MiB |  00m00s
+[143/220] Installing libX11-0:1.8.12-1. 100% |  58.3 MiB/s |   1.3 MiB |  00m00s
+[144/220] Installing libX11-devel-0:1.8 100% |  18.7 MiB/s |   1.1 MiB |  00m00s
+[145/220] Installing libXext-0:1.3.6-4. 100% |   5.2 MiB/s |  91.2 KiB |  00m00s
+[146/220] Installing libXext-devel-0:1. 100% |   4.3 MiB/s | 110.9 KiB |  00m00s
 [147/220] Installing libXrender-0:0.9.1 100% |   2.7 MiB/s |  47.3 KiB |  00m00s
-[148/220] Installing cairo-0:1.18.4-2.f 100% |  68.2 MiB/s |   1.8 MiB |  00m00s
-[149/220] Installing libXrender-devel-0 100% |   2.8 MiB/s |  51.0 KiB |  00m00s
-[150/220] Installing cairo-gobject-0:1. 100% |   1.7 MiB/s |  32.0 KiB |  00m00s
+[148/220] Installing cairo-0:1.18.4-2.f 100% |  70.9 MiB/s |   1.8 MiB |  00m00s
+[149/220] Installing libXrender-devel-0 100% |   3.1 MiB/s |  51.0 KiB |  00m00s
+[150/220] Installing cairo-gobject-0:1. 100% |   2.4 MiB/s |  32.0 KiB |  00m00s
 [151/220] Installing libXi-0:1.8.2-3.fc 100% |   4.4 MiB/s |  81.7 KiB |  00m00s
-[152/220] Installing libXfixes-0:6.0.1- 100% |   1.6 MiB/s |  27.6 KiB |  00m00s
-[153/220] Installing libXfixes-devel-0: 100% | 430.2 KiB/s |   9.9 KiB |  00m00s
-[154/220] Installing libXi-devel-0:1.8. 100% |   4.6 MiB/s | 144.6 KiB |  00m00s
-[155/220] Installing libXcursor-0:1.2.3 100% |   2.3 MiB/s |  55.1 KiB |  00m00s
-[156/220] Installing libXdamage-0:1.1.6 100% | 534.9 KiB/s |  41.2 KiB |  00m00s
-[157/220] Installing libXtst-0:1.2.5-3. 100% |   2.6 MiB/s |  34.6 KiB |  00m00s
-[158/220] Installing libXrandr-0:1.5.4- 100% |   5.2 MiB/s |  53.0 KiB |  00m00s
-[159/220] Installing libXft-0:2.3.8-9.f 100% |  14.7 MiB/s | 165.9 KiB |  00m00s
+[152/220] Installing libXfixes-0:6.0.1- 100% |   1.7 MiB/s |  27.6 KiB |  00m00s
+[153/220] Installing libXfixes-devel-0: 100% | 582.0 KiB/s |   9.9 KiB |  00m00s
+[154/220] Installing libXi-devel-0:1.8. 100% |   3.5 MiB/s | 144.6 KiB |  00m00s
+[155/220] Installing libXcursor-0:1.2.3 100% |   2.8 MiB/s |  55.1 KiB |  00m00s
+[156/220] Installing libXdamage-0:1.1.6 100% | 580.1 KiB/s |  41.2 KiB |  00m00s
+[157/220] Installing libXtst-0:1.2.5-3. 100% |   1.9 MiB/s |  34.6 KiB |  00m00s
+[158/220] Installing libXrandr-0:1.5.4- 100% |   5.8 MiB/s |  53.0 KiB |  00m00s
+[159/220] Installing libXft-0:2.3.8-9.f 100% |  16.2 MiB/s | 165.9 KiB |  00m00s
 [160/220] Installing pango-0:1.57.0-1.f 100% |  26.1 MiB/s |   1.0 MiB |  00m00s
 [161/220] Installing rsvg-pixbuf-loader 100% |  47.5 MiB/s | 340.5 KiB |  00m00s
-[162/220] Installing librsvg2-0:2.61.0- 100% | 217.5 MiB/s |   5.0 MiB |  00m00s
-[163/220] Installing glycin-loaders-0:2 100% | 293.4 MiB/s |  13.2 MiB |  00m00s
-[164/220] Installing glycin-libs-0:2.0~ 100% | 218.6 MiB/s |   5.2 MiB |  00m00s
-[165/220] Installing gdk-pixbuf2-0:2.43 100% |  57.6 MiB/s |   2.5 MiB |  00m00s
-[166/220] Installing libXinerama-0:1.1. 100% |   2.6 MiB/s |  16.1 KiB |  00m00s
+[162/220] Installing librsvg2-0:2.61.0- 100% | 208.5 MiB/s |   5.0 MiB |  00m00s
+[163/220] Installing glycin-loaders-0:2 100% | 347.5 MiB/s |  13.2 MiB |  00m00s
+[164/220] Installing glycin-libs-0:2.0~ 100% | 238.5 MiB/s |   5.2 MiB |  00m00s
+[165/220] Installing gdk-pixbuf2-0:2.43 100% |  65.0 MiB/s |   2.5 MiB |  00m00s
+[166/220] Installing libXinerama-0:1.1. 100% |   1.7 MiB/s |  16.1 KiB |  00m00s
 [167/220] Installing libXcomposite-0:0. 100% |   8.2 MiB/s |  42.0 KiB |  00m00s
 [168/220] Installing libXcomposite-deve 100% |   2.1 MiB/s |  10.5 KiB |  00m00s
 [169/220] Installing libXinerama-devel- 100% |   1.7 MiB/s |   8.5 KiB |  00m00s
 [170/220] Installing gdk-pixbuf2-module 100% |  16.3 MiB/s | 116.9 KiB |  00m00s
-[171/220] Installing gtk-update-icon-ca 100% |   2.7 MiB/s |  63.3 KiB |  00m00s
-[172/220] Installing libXrandr-devel-0: 100% |   2.7 MiB/s |  24.7 KiB |  00m00s
-[173/220] Installing libXtst-devel-0:1. 100% |   2.0 MiB/s |  14.0 KiB |  00m00s
+[171/220] Installing gtk-update-icon-ca 100% |   2.3 MiB/s |  63.3 KiB |  00m00s
+[172/220] Installing libXrandr-devel-0: 100% |   4.0 MiB/s |  24.7 KiB |  00m00s
+[173/220] Installing libXtst-devel-0:1. 100% |   2.3 MiB/s |  14.0 KiB |  00m00s
 [174/220] Installing libXdamage-devel-0 100% | 511.1 KiB/s |   3.1 KiB |  00m00s
-[175/220] Installing libXcursor-devel-0 100% |   1.8 MiB/s |  32.8 KiB |  00m00s
-[176/220] Installing harfbuzz-cairo-0:1 100% |   5.3 MiB/s |  49.0 KiB |  00m00s
-[177/220] Installing libXxf86vm-0:1.1.6 100% |   3.2 MiB/s |  26.5 KiB |  00m00s
+[175/220] Installing libXcursor-devel-0 100% |   2.7 MiB/s |  32.8 KiB |  00m00s
+[176/220] Installing harfbuzz-cairo-0:1 100% |   3.7 MiB/s |  49.0 KiB |  00m00s
+[177/220] Installing libXxf86vm-0:1.1.6 100% |   3.7 MiB/s |  26.5 KiB |  00m00s
 [178/220] Installing mesa-libGL-0:25.2. 100% |  31.2 MiB/s | 287.1 KiB |  00m00s
 [179/220] Installing libglvnd-glx-1:1.7 100% |  58.8 MiB/s | 602.6 KiB |  00m00s
-[180/220] Installing libglvnd-devel-1:1 100% |  96.4 MiB/s |   2.1 MiB |  00m00s
-[181/220] Installing libepoxy-devel-0:1 100% | 144.5 MiB/s |   1.6 MiB |  00m00s
-[182/220] Installing xprop-0:1.2.8-4.fc 100% |   2.3 MiB/s |  56.0 KiB |  00m00s
-[183/220] Installing dbus-1:1.16.0-4.fc 100% |  10.1 KiB/s | 124.0   B |  00m00s
-[184/220] Installing tzdata-0:2025b-3.f 100% |  20.8 MiB/s |   1.9 MiB |  00m00s
+[180/220] Installing libglvnd-devel-1:1 100% | 151.5 MiB/s |   2.1 MiB |  00m00s
+[181/220] Installing libepoxy-devel-0:1 100% | 198.7 MiB/s |   1.6 MiB |  00m00s
+[182/220] Installing xprop-0:1.2.8-4.fc 100% |   2.0 MiB/s |  56.0 KiB |  00m00s
+[183/220] Installing dbus-1:1.16.0-4.fc 100% |  12.1 KiB/s | 124.0   B |  00m00s
+[184/220] Installing tzdata-0:2025b-3.f 100% |  22.0 MiB/s |   1.9 MiB |  00m00s
 [185/220] Installing python-pip-wheel-0 100% | 168.5 MiB/s |   1.2 MiB |  00m00s
-[186/220] Installing mpdecimal-0:4.0.1- 100% |  13.4 MiB/s | 218.8 KiB |  00m00s
-[187/220] Installing python3-libs-0:3.1 100% | 185.9 MiB/s |  43.3 MiB |  00m00s
-[188/220] Installing python3-0:3.14.0~r 100% |   1.1 MiB/s |  30.7 KiB |  00m00s
-[189/220] Installing at-spi2-core-0:2.5 100% |  48.7 MiB/s |   1.6 MiB |  00m00s
-[190/220] Installing atk-0:2.57.1-2.fc4 100% |  27.1 MiB/s | 250.0 KiB |  00m00s
-[191/220] Installing at-spi2-atk-0:2.57 100% |  25.4 MiB/s | 285.7 KiB |  00m00s
-[192/220] Installing python3-packaging- 100% |  40.4 MiB/s | 619.9 KiB |  00m00s
-[193/220] Installing glib2-devel-0:2.85 100% | 204.9 MiB/s |  16.0 MiB |  00m00s
-[194/220] Installing atk-devel-0:2.57.1 100% | 120.7 MiB/s |   6.0 MiB |  00m00s
-[195/220] Installing harfbuzz-devel-0:1 100% | 102.5 MiB/s |   5.3 MiB |  00m00s
-[196/220] Installing freetype-devel-0:2 100% | 113.9 MiB/s |   8.5 MiB |  00m00s
-[197/220] Installing fontconfig-devel-0 100% | 692.8 KiB/s | 159.4 KiB |  00m00s
-[198/220] Installing cairo-devel-0:1.18 100% |  54.5 MiB/s |   2.3 MiB |  00m00s
-[199/220] Installing cairo-gobject-deve 100% |   1.1 MiB/s |   7.6 KiB |  00m00s
-[200/220] Installing glycin-devel-0:2.0 100% |  13.4 MiB/s | 123.3 KiB |  00m00s
-[201/220] Installing gdk-pixbuf2-devel- 100% |  49.0 MiB/s |   2.3 MiB |  00m00s
-[202/220] Installing libXft-devel-0:2.3 100% |   4.3 MiB/s |  44.3 KiB |  00m00s
-[203/220] Installing pango-devel-0:1.57 100% |  89.6 MiB/s |   1.5 MiB |  00m00s
-[204/220] Installing at-spi2-core-devel 100% | 120.9 MiB/s |   4.4 MiB |  00m00s
-[205/220] Installing at-spi2-atk-devel- 100% | 428.1 KiB/s |   2.1 KiB |  00m00s
+[186/220] Installing mpdecimal-0:4.0.1- 100% |  15.3 MiB/s | 218.8 KiB |  00m00s
+[187/220] Installing python3-libs-0:3.1 100% | 194.2 MiB/s |  43.3 MiB |  00m00s
+[188/220] Installing python3-0:3.14.0~r 100% |   1.4 MiB/s |  30.7 KiB |  00m00s
+[189/220] Installing at-spi2-core-0:2.5 100% |  74.2 MiB/s |   1.6 MiB |  00m00s
+[190/220] Installing atk-0:2.57.1-2.fc4 100% |  34.9 MiB/s | 250.0 KiB |  00m00s
+[191/220] Installing at-spi2-atk-0:2.57 100% |  39.9 MiB/s | 285.7 KiB |  00m00s
+[192/220] Installing python3-packaging- 100% |  50.4 MiB/s | 619.9 KiB |  00m00s
+[193/220] Installing glib2-devel-0:2.85 100% | 210.3 MiB/s |  16.0 MiB |  00m00s
+[194/220] Installing atk-devel-0:2.57.1 100% | 131.2 MiB/s |   6.0 MiB |  00m00s
+[195/220] Installing harfbuzz-devel-0:1 100% | 121.1 MiB/s |   5.3 MiB |  00m00s
+[196/220] Installing freetype-devel-0:2 100% | 140.0 MiB/s |   8.5 MiB |  00m00s
+[197/220] Installing fontconfig-devel-0 100% |   8.6 MiB/s | 159.4 KiB |  00m00s
+[198/220] Installing cairo-devel-0:1.18 100% | 163.6 MiB/s |   2.3 MiB |  00m00s
+[199/220] Installing cairo-gobject-deve 100% |   1.9 MiB/s |   7.6 KiB |  00m00s
+[200/220] Installing glycin-devel-0:2.0 100% |  20.1 MiB/s | 123.3 KiB |  00m00s
+[201/220] Installing gdk-pixbuf2-devel- 100% |   9.5 MiB/s |   2.3 MiB |  00m00s
+[202/220] Installing libXft-devel-0:2.3 100% |   3.9 MiB/s |  44.3 KiB |  00m00s
+[203/220] Installing pango-devel-0:1.57 100% | 117.2 MiB/s |   1.5 MiB |  00m00s
+[204/220] Installing at-spi2-core-devel 100% | 124.3 MiB/s |   4.4 MiB |  00m00s
+[205/220] Installing at-spi2-atk-devel- 100% | 535.2 KiB/s |   2.1 KiB |  00m00s
 [206/220] Installing python3-rpm-genera 100% |  16.2 MiB/s |  82.9 KiB |  00m00s
-[207/220] Installing python3-cairo-0:1. 100% |  48.5 MiB/s | 496.4 KiB |  00m00s
-[208/220] Installing python3-gobject-ba 100% |  74.4 MiB/s |   1.5 MiB |  00m00s
+[207/220] Installing python3-cairo-0:1. 100% |  53.9 MiB/s | 496.4 KiB |  00m00s
+[208/220] Installing python3-gobject-ba 100% |  78.4 MiB/s |   1.5 MiB |  00m00s
 [209/220] Installing hicolor-icon-theme 100% |   6.1 MiB/s | 179.7 KiB |  00m00s
-[210/220] Installing gtk3-0:3.24.49-3.f 100% | 185.2 MiB/s |  23.1 MiB |  00m00s
+[210/220] Installing gtk3-0:3.24.49-3.f 100% | 224.7 MiB/s |  23.1 MiB |  00m00s
 [211/220] Installing make-1:4.4.1-11.fc 100% |  52.9 MiB/s |   1.8 MiB |  00m00s
-[212/220] Installing gcc-0:15.2.1-1.fc4 100% | 188.7 MiB/s | 111.9 MiB |  00m01s
-[213/220] Installing emacs-filesystem-1 100% |  75.9 KiB/s | 544.0   B |  00m00s
-[214/220] Installing desktop-file-utils 100% |   4.4 MiB/s | 222.2 KiB |  00m00s
+[212/220] Installing gcc-0:15.2.1-1.fc4 100% | 131.7 MiB/s | 111.9 MiB |  00m01s
+[213/220] Installing emacs-filesystem-1 100% |   4.6 KiB/s | 544.0   B |  00m00s
+[214/220] Installing desktop-file-utils 100% |   2.0 MiB/s | 222.2 KiB |  00m00s
 [215/220] Installing annobin-plugin-gcc 100% |  41.1 MiB/s |   1.0 MiB |  00m00s
 [216/220] Installing gcc-plugin-annobin 100% |   1.7 MiB/s |  58.8 KiB |  00m00s
-[217/220] Installing gtk3-devel-0:3.24. 100% |  59.4 MiB/s |  34.2 MiB |  00m01s
-[218/220] Installing python3-gobject-0: 100% |   2.8 MiB/s |  28.6 KiB |  00m00s
-[219/220] Installing python3-devel-0:3. 100% |  42.3 MiB/s |   2.0 MiB |  00m00s
-[220/220] Installing systemd-rpm-macros 100% | 692.0   B/s |   8.9 KiB |  00m13s
+[217/220] Installing gtk3-devel-0:3.24. 100% | 231.3 MiB/s |  34.2 MiB |  00m00s
+[218/220] Installing python3-gobject-0: 100% |   5.6 MiB/s |  28.6 KiB |  00m00s
+[219/220] Installing python3-devel-0:3. 100% |  43.3 MiB/s |   2.0 MiB |  00m00s
+[220/220] Installing systemd-rpm-macros 100% | 712.0   B/s |   8.9 KiB |  00m13s
 Complete!
 Finish: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
 Start: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
 Building target platforms: x86_64
 Building for target x86_64
 setting SOURCE_DATE_EPOCH=1755734400
-Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.aMbrsG
-Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.eq62hJ
+Executing(%mkbuilddir): /bin/sh -e /var/tmp/rpm-tmp.IjP4UU
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.Efj88s
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
@@ -1092,10 +1098,11 @@ Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.eq62hJ
 + /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
 + /usr/lib/rpm/rpmuncompress /builddir/build/SOURCES/0001-drop-data_files-and-ez_setup.patch
 + /usr/bin/patch -p1 -s --fuzz=0 --no-backup-if-mismatch -f
++ rm ez_setup.py
 + RPM_EC=0
 ++ jobs -p
 + exit 0
-Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.t5UUTN
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.vQvRtp
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
@@ -1136,7 +1143,7 @@ Exiting dependency generation pass: build backend
 Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.buildreqs.nosrc.rpm
 INFO: Going to install missing dynamic buildrequires
 Updating and loading repositories:
- fedora                                 100% |  10.3 KiB/s |   6.8 KiB |  00m01s
+ fedora                                 100% |   7.8 KiB/s |   6.8 KiB |  00m01s
 Repositories loaded.
 Package "desktop-file-utils-0.28-2.fc43.x86_64" is already installed.
 Package "gcc-15.2.1-1.fc44.1.x86_64" is already installed.
@@ -1156,23 +1163,24 @@ Installing:
 Transaction Summary:
  Installing:         2 packages
 
-Total size of inbound packages is 5 MiB. Need to download 3 MiB.
+Total size of inbound packages is 5 MiB. Need to download 0 B.
 After this operation, 20 MiB extra will be used (install 20 MiB, remove 0 B).
-[1/2] python3-setuptools-0:78.1.1-12.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+[1/2] python3-pip-0:25.2-2.fc44.noarch  100% |   0.0   B/s |   0.0   B |  00m00s
 >>> Already downloaded
-[2/2] python3-pip-0:25.2-2.fc44.noarch  100% |   2.2 MiB/s |   2.6 MiB |  00m01s
+[2/2] python3-setuptools-0:78.1.1-12.fc 100% |   0.0   B/s |   0.0   B |  00m00s
+>>> Already downloaded
 --------------------------------------------------------------------------------
-[2/2] Total                             100% |   2.2 MiB/s |   2.6 MiB |  00m01s
+[2/2] Total                             100% |   0.0   B/s |   0.0   B |  00m00s
 Running transaction
-[1/4] Verify package files              100% | 105.0   B/s |   2.0   B |  00m00s
-[2/4] Prepare transaction               100% |  46.0   B/s |   2.0   B |  00m00s
-[3/4] Installing python3-setuptools-0:7 100% |  85.4 MiB/s |   9.2 MiB |  00m00s
-[4/4] Installing python3-pip-0:25.2-2.f 100% |  25.0 MiB/s |  11.5 MiB |  00m00s
+[1/4] Verify package files              100% |  83.0   B/s |   2.0   B |  00m00s
+[2/4] Prepare transaction               100% |  40.0   B/s |   2.0   B |  00m00s
+[3/4] Installing python3-setuptools-0:7 100% |  80.2 MiB/s |   9.2 MiB |  00m00s
+[4/4] Installing python3-pip-0:25.2-2.f 100% |  25.4 MiB/s |  11.5 MiB |  00m00s
 Complete!
 Building target platforms: x86_64
 Building for target x86_64
 setting SOURCE_DATE_EPOCH=1755734400
-Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.sWekuF
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.j7Rd1M
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
@@ -1227,6 +1235,7 @@ writing top-level names to gshogi.egg-info/top_level.txt
 writing manifest file 'gshogi.egg-info/SOURCES.txt'
 reading manifest file 'gshogi.egg-info/SOURCES.txt'
 reading manifest template 'MANIFEST.in'
+warning: no files found matching 'ez_setup.py'
 adding license file 'LICENSE'
 writing manifest file 'gshogi.egg-info/SOURCES.txt'
 running dist_info
@@ -1236,6 +1245,7 @@ writing entry points to gshogi.egg-info/entry_points.txt
 writing top-level names to gshogi.egg-info/top_level.txt
 reading manifest file 'gshogi.egg-info/SOURCES.txt'
 reading manifest template 'MANIFEST.in'
+warning: no files found matching 'ez_setup.py'
 adding license file 'LICENSE'
 writing manifest file 'gshogi.egg-info/SOURCES.txt'
 creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-0.5.1.dist-info'
@@ -1253,7 +1263,7 @@ removed directory 'gshogi-0.5.1.dist-info/'
 Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.buildreqs.nosrc.rpm
 INFO: Going to install missing dynamic buildrequires
 Updating and loading repositories:
- fedora                                 100% |   9.4 KiB/s |   6.8 KiB |  00m01s
+ fedora                                 100% |   8.3 KiB/s |   6.8 KiB |  00m01s
 Repositories loaded.
 Nothing to do.
 Package "desktop-file-utils-0.28-2.fc43.x86_64" is already installed.
@@ -1273,7 +1283,7 @@ Finish: Outputting list of installed packages
 Building target platforms: x86_64
 Building for target x86_64
 setting SOURCE_DATE_EPOCH=1755734400
-Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.0NEfts
+Executing(%generate_buildrequires): /bin/sh -e /var/tmp/rpm-tmp.t9S0J1
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
@@ -1326,6 +1336,7 @@ writing entry points to gshogi.egg-info/entry_points.txt
 writing top-level names to gshogi.egg-info/top_level.txt
 reading manifest file 'gshogi.egg-info/SOURCES.txt'
 reading manifest template 'MANIFEST.in'
+warning: no files found matching 'ez_setup.py'
 adding license file 'LICENSE'
 writing manifest file 'gshogi.egg-info/SOURCES.txt'
 running dist_info
@@ -1335,6 +1346,7 @@ writing entry points to gshogi.egg-info/entry_points.txt
 writing top-level names to gshogi.egg-info/top_level.txt
 reading manifest file 'gshogi.egg-info/SOURCES.txt'
 reading manifest template 'MANIFEST.in'
+warning: no files found matching 'ez_setup.py'
 adding license file 'LICENSE'
 writing manifest file 'gshogi.egg-info/SOURCES.txt'
 creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/gshogi-0.5.1.dist-info'
@@ -1349,7 +1361,7 @@ removed directory 'gshogi-0.5.1.dist-info/'
 + RPM_EC=0
 ++ jobs -p
 + exit 0
-Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.tC9A7I
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.78oe8r
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
@@ -1403,17 +1415,18 @@ Processing /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7
   !!
     self._finalize_license_expression()
   running dist_info
-  creating /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info
-  writing /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/PKG-INFO
-  writing dependency_links to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/dependency_links.txt
-  writing entry points to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/entry_points.txt
-  writing top-level names to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/top_level.txt
-  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/SOURCES.txt'
-  reading manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/SOURCES.txt'
+  creating /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info
+  writing /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/PKG-INFO
+  writing dependency_links to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/dependency_links.txt
+  writing entry points to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/entry_points.txt
+  writing top-level names to /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/top_level.txt
+  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/SOURCES.txt'
+  reading manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/SOURCES.txt'
   reading manifest template 'MANIFEST.in'
+  warning: no files found matching 'ez_setup.py'
   adding license file 'LICENSE'
-  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi.egg-info/SOURCES.txt'
-  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-hqmmglmq/gshogi-0.5.1.dist-info'
+  writing manifest file '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi.egg-info/SOURCES.txt'
+  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-modern-metadata-sj7pugvr/gshogi-0.5.1.dist-info'
   Preparing metadata (pyproject.toml): finished with status 'done'
 Building wheels for collected packages: gshogi
   Building wheel for gshogi (pyproject.toml): started
@@ -1462,6 +1475,7 @@ Building wheels for collected packages: gshogi
   writing top-level names to gshogi.egg-info/top_level.txt
   reading manifest file 'gshogi.egg-info/SOURCES.txt'
   reading manifest template 'MANIFEST.in'
+  warning: no files found matching 'ez_setup.py'
   adding license file 'LICENSE'
   writing manifest file 'gshogi.egg-info/SOURCES.txt'
   /usr/lib/python3.14/site-packages/setuptools/command/build_py.py:212: _Warning: Package 'gshogi.data' is absent from the `packages` configuration.
@@ -2005,7 +2019,7 @@ Building wheels for collected packages: gshogi
   Copying gshogi.egg-info to build/bdist.linux-x86_64/wheel/./gshogi-0.5.1-py3.14.egg-info
   running install_scripts
   creating build/bdist.linux-x86_64/wheel/gshogi-0.5.1.dist-info/WHEEL
-  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-wheel-zvr8zpja/.tmp-7ldmc9nw/gshogi-0.5.1-cp314-cp314-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+  creating '/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/gshogi-7c4bd90199c5bda61984347ea68c32521e82a637/.pyproject-builddir/pip-wheel-irwsf05i/.tmp-m5px11dx/gshogi-0.5.1-cp314-cp314-linux_x86_64.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
   adding 'gshogi/__init__.py'
   adding 'gshogi/board.py'
   adding 'gshogi/comments.py'
@@ -2126,7 +2140,7 @@ Successfully built gshogi
 + RPM_EC=0
 ++ jobs -p
 + exit 0
-Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.ws9vC8
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.jxICf5
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + '[' /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT '!=' / ']'
@@ -2224,29 +2238,29 @@ Bytecompiling .py files below /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/__init__.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/constants.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/comments.cpython-314.pyc: rewriting with normalized contents
-/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/drag_and_drop.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_debug.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/drag_and_drop.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_output.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gamelist.cpython-314.pyc: rewriting with normalized contents
-/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_manager.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/board.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gv.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/engine_manager.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/move_list.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/load_save.cpython-314.pyc: rewriting with normalized contents
-/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/pieces.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gshogi.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/pieces.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/psn.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/set_board_colours.cpython-314.pyc: rewriting with normalized contents
-/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gui.cpython-314.pyc: rewriting with normalized contents
-/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/utils.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/time_control.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/utils.cpython-314.pyc: rewriting with normalized contents
+/builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/gui.cpython-314.pyc: rewriting with normalized contents
 /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT/usr/lib64/python3.14/site-packages/gshogi/__pycache__/usi.cpython-314.pyc: rewriting with normalized contents
 Scanned 36 directories and 177 files,
                processed 20 inodes,
                20 modified (0 replaced + 20 rewritten),
                0 unsupported format, 0 errors
 Reading /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/SPECPARTS/rpm-debuginfo.specpart
-Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.aM59IF
+Executing(%check): /bin/sh -e /var/tmp/rpm-tmp.rLuxMR
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + CFLAGS='-O2 -flto=auto -ffat-lto-objects -fexceptions -g -grecord-gcc-switches -pipe -Wall -Werror=format-security -Wp,-U_FORTIFY_SOURCE,-D_FORTIFY_SOURCE=3 -Wp,-D_GLIBCXX_ASSERTIONS -specs=/usr/lib/rpm/redhat/redhat-hardened-cc1 -fstack-protector-strong -specs=/usr/lib/rpm/redhat/redhat-annobin-cc1  -m64 -march=x86-64 -mtune=generic -fasynchronous-unwind-tables -fstack-clash-protection -fcf-protection -mtls-dialect=gnu2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer  '
@@ -2306,7 +2320,7 @@ Check import: gshogi.utils
 ++ jobs -p
 + exit 0
 Processing files: gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64
-Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.1N8KdW
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.3xoEJl
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
@@ -2319,7 +2333,7 @@ Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.1N8KdW
 + RPM_EC=0
 ++ jobs -p
 + exit 0
-Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.utb1lw
+Executing(%license): /bin/sh -e /var/tmp/rpm-tmp.G7A68H
 + umask 022
 + cd /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build
 + cd gshogi-7c4bd90199c5bda61984347ea68c32521e82a637
@@ -2344,11 +2358,12 @@ Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 
 Recommends: gshogi-debugsource(x86-64) = 0.5.1^20250818.git7c4bd90-7.fc44
 Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILD/gshogi-0.5.1_20250818.git7c4bd90-build/BUILDROOT
 Wrote: /builddir/build/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-Wrote: /builddir/build/RPMS/gshogi-debuginfo-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
 Wrote: /builddir/build/RPMS/gshogi-debugsource-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
+Wrote: /builddir/build/RPMS/gshogi-debuginfo-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
 Wrote: /builddir/build/RPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.x86_64.rpm
 Finish: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
 Finish: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-INFO: Done(/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm) Config(fedora-rawhide-x86_64) 1 minutes 3 seconds
+INFO: Done(/root/rpmbuild/SRPMS/gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm) Config(fedora-rawhide-x86_64) 0 minutes 55 seconds
 INFO: Results and/or logs in: /var/lib/mock/fedora-rawhide-x86_64/result
 Finish: run
+

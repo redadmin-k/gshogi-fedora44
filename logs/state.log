@@ -1,22 +1,22 @@
-2025-09-01 19:15:29,452 - Mock Version: 6.3
-2025-09-01 19:15:29,471 - Start(bootstrap): chroot init
-2025-09-01 19:15:29,516 - Start(bootstrap): cleaning package manager metadata
-2025-09-01 19:15:29,516 - Finish(bootstrap): cleaning package manager metadata
-2025-09-01 19:15:30,107 - Finish(bootstrap): chroot init
-2025-09-01 19:15:30,116 - Start: chroot init
-2025-09-01 19:15:30,150 - Start: unpacking root cache
-2025-09-01 19:15:31,115 - Finish: unpacking root cache
-2025-09-01 19:15:31,124 - Start: cleaning package manager metadata
-2025-09-01 19:15:31,130 - Finish: cleaning package manager metadata
-2025-09-01 19:15:31,749 - Start: dnf5 update
-2025-09-01 19:15:34,741 - Finish: dnf5 update
-2025-09-01 19:15:35,639 - Finish: chroot init
-2025-09-01 19:15:35,643 - Start: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:15:35,646 - Start: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:16:09,506 - Finish: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:16:09,507 - Start: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:16:19,267 - Start: Outputting list of installed packages
-2025-09-01 19:16:19,667 - Finish: Outputting list of installed packages
-2025-09-01 19:16:32,633 - Finish: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:16:32,642 - Finish: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
-2025-09-01 19:16:32,651 - Finish: run
+2025-09-01 20:24:20,269 - Mock Version: 6.3
+2025-09-01 20:24:20,288 - Start(bootstrap): chroot init
+2025-09-01 20:24:20,336 - Start(bootstrap): cleaning package manager metadata
+2025-09-01 20:24:20,336 - Finish(bootstrap): cleaning package manager metadata
+2025-09-01 20:24:20,928 - Finish(bootstrap): chroot init
+2025-09-01 20:24:20,937 - Start: chroot init
+2025-09-01 20:24:20,972 - Start: unpacking root cache
+2025-09-01 20:24:21,851 - Finish: unpacking root cache
+2025-09-01 20:24:21,859 - Start: cleaning package manager metadata
+2025-09-01 20:24:21,864 - Finish: cleaning package manager metadata
+2025-09-01 20:24:22,476 - Start: dnf5 update
+2025-09-01 20:24:24,265 - Finish: dnf5 update
+2025-09-01 20:24:25,194 - Finish: chroot init
+2025-09-01 20:24:25,198 - Start: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:24:25,201 - Start: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:24:54,635 - Finish: build setup for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:24:54,637 - Start: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:25:01,756 - Start: Outputting list of installed packages
+2025-09-01 20:25:02,155 - Finish: Outputting list of installed packages
+2025-09-01 20:25:15,277 - Finish: rpmbuild gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:25:15,285 - Finish: build phase for gshogi-0.5.1^20250818.git7c4bd90-7.fc44.src.rpm
+2025-09-01 20:25:15,295 - Finish: run

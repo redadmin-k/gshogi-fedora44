@@ -9,7 +9,7 @@ Summary:        A graphical GTK interface for playing GNU Shogi
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/johncheetham/gshogi
-Source0:        %{name}-%{commit}.tar.gz
+Source0: 	https://github.com/johncheetham/gshogi/archive/%{commit}/gshogi-%{commit}.tar.gz
 
 # If any Fedora-specific bugfixes, add Patch here. No Patch for artifact removal.
 Patch0:         0001-drop-data_files-and-ez_setup.patch
@@ -28,6 +28,7 @@ BuildRequires:  python3-cairo
 # Manually added runtime deps, as they are loaded dynamically
 Requires:       python3-gobject
 Requires:       python3-cairo
+Requires:       hicolor-icon-theme
 
 # gshogi bundles its own copy of the gnushogi engine sources
 Provides:       bundled(gnushogi)
@@ -37,7 +38,8 @@ gshogi is a GTK-based graphical front end for the GNU Shogi engine.
 It provides a simple user interface to play shogi against the computer.
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n gshogi-%{commit}
+rm ez_setup.py
 
 %generate_buildrequires
 %pyproject_buildrequires
